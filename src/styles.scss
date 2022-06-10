@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+$color-primary: #7b1fa2;
+    $color-secondary: #303f9f;
+    $color-success: #117948;
+    $color-danger: #a82431;
+    $color-light: #ede5f5;
+    $color-dark: #12031f;
+    $color-shadow: rgba(22, 0, 48, 0.75);
+
+$primary: $color-primary;
+$secondary: $color-secondary;
+$success: $color-success;
+$danger: $color-danger;
+$light: $color-light;
+$dark: $color-dark;
+$facebook: #3b5998;
+$twitter: #1da1f2;
+$instagram: #e1306c;
+$linkedin: #0077b5;
+$github: #333;
+
+// $enable-cssgrid: true;
