@@ -7,12 +7,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/dashboard', pathMatch: 'full', data: {animation: 'dashboard'}},
-  {path: 'home', component: HomeComponent, data: {animation: 'dashboard'}},
-  {path: 'about', component: AboutComponent, data: {animation: 'about'}},
-  {path: 'projects', component: ProjectsComponent, data: {animation: 'projects'}},
-  {path: 'contact', component: ContactComponent, data: {animation: 'contact'}},  
-  {path: 'blog', component: BlogComponent, data: {animation: 'blog'}}
+  {path: '', redirectTo: '/home', pathMatch: 'full', data: {animation: 'home'}},
+  {path: 'home', component: HomeComponent, data: {animation: 'home'}},
+  {path: 'about', component: AboutComponent, data: {animation: 'about'}, title: 'About'},
+  {path: 'projects', component: ProjectsComponent, data: {animation: 'projects'}, title: 'Projects'},
+  {path: 'contact', component: ContactComponent, data: {animation: 'contact'}, title: 'Contact'},  
+  {path: 'blog', component: BlogComponent, data: {animation: 'blog'}, title: 'Blog'},
 ];
 
 @NgModule({

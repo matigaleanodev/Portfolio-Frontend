@@ -12,12 +12,18 @@ import { BlogModule } from './pages/blog/blog.module';
 import { AppComponent } from './app.component';
 import { SidebarNavComponent } from './components/sidebar-nav/sidebar-nav.component';
 import { BodyComponent } from './components/body/body.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SocialBoxComponent } from './components/social-box/social-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarNavComponent,
-    BodyComponent
+    BodyComponent,
+    HeaderComponent,
+    FooterComponent,
+    SocialBoxComponent
   ],
   imports: [
     BrowserModule,

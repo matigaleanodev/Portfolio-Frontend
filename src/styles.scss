@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
 @import 'variables';
 
-$primary: $color-primary;
-$secondary: $color-secondary;
-$success: $color-success;
-$danger: $color-danger;
-$light: $color-light;
-$dark: $color-dark;
+$primary: #7b1fa2;
+$secondary: #303f9f;
+$success: #117948;
+$danger: #a82431;
+$light: #ede5f5;
+$dark: #12031f;
 
 $enable-cssgrid: true;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
   }
 body {
-    position: relative;
-    font-family: 'Roboto', sans-serif;
+  background: $light;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
   }

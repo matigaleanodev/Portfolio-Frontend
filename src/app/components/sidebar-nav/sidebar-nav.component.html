@@ -1,4 +1,4 @@
-<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+<nav class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
     <div class="sidenav-logo">
         <button class="sidenav-logo-button" (click)="toggleCollapsed()">MG</button>
         <div class="sidenav-logo-text" @fadeInOut *ngIf="collapsed">Matias Galeano</div>
@@ -17,4 +17,4 @@
             </a>
         </li>
     </ul>
-</div>
+</nav>
