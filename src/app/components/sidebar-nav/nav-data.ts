@@ -5,7 +5,7 @@ export const navData = [
         routerLink: 'home',
     },
     {
-        label: 'About Me',
+        label: 'About',
         icon: 'fa-solid fa-address-card',
         routerLink: 'about',
     },
@@ -15,7 +15,7 @@ export const navData = [
         routerLink: 'projects',
     },
     {
-        label: 'Contact Me',
+        label: 'Contact',
         icon: 'fa-solid fa-envelope',
         routerLink: 'contact',
     },

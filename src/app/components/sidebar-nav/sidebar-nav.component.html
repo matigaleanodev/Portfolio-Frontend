@@ -1,7 +1,11 @@
 <nav class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
     <div class="sidenav-logo">
-        <button class="sidenav-logo-button" (click)="toggleCollapsed()">MG</button>
-        <div class="sidenav-logo-text" @fadeInOut *ngIf="collapsed">Matias Galeano</div>
+        <button class="sidenav-logo-button" (click)="toggleCollapsed()">
+            <img src="assets/images/APTransparentLogo.png" alt="Logo Argentina Programa" class="img-fluid">
+        </button>
+        <div class="sidenav-logo-text" @fadeInOut *ngIf="collapsed">
+            Argentina&nbsp;Programa
+        </div>
         <button class="sidenav-logo-close" @rotate *ngIf="collapsed" (click)="closeSideBar()">
             <i class="fa-solid fa-xmark close-icon"></i>
         </button>

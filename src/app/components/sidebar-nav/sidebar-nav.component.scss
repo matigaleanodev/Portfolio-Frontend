@@ -6,23 +6,23 @@
     position: fixed;
     z-index: 1;
     top: 0;
-    width: 5.5rem;
+    width: 5rem;
     height: 100vh;
     box-shadow: 0.063rem 0 1.25rem 0 $color-shadow;
 
     &-logo {
         display: flex;
         align-items: center;
-        padding: 1rem 1rem 0 1rem;
+        padding: 1rem 1rem 0 0.75rem;
         width: 100%;
 
         &-button{
-            background: $color-light;
+            background: inherit;
             text-align: center;
             width: 3.5rem;
             min-width: 3.5rem;
             border-radius: 0.4rem;
-            padding: 0.3rem;
+            padding: 0.1rem;
             font-size: 24px;
             font-weight: 900;
             cursor: pointer;
@@ -30,8 +30,9 @@
         }
         &-text{
             margin-left: 1.2rem;
-            font-size: 24px;
-            color: $color-light;
+            font-size: 20px;
+            font-weight: 900;
+            color: rgb(58, 158, 240);
         }
         &-close{
             margin-left: auto;
@@ -83,7 +84,7 @@
             font-size: 22px;
             width: 2rem;
             min-width: 2rem;
-            margin: 0 0.75rem;
+            margin: 0 0.50rem;
             text-align: center;
         }
         &-text{
