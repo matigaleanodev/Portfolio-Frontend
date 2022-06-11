@@ -1,11 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
+import { RouteAnimation } from 'src/app/animations/routing-animations';
 
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
-  styleUrls: ['./body.component.scss']
+  styleUrls: ['./body.component.scss'],
+  animations: [RouteAnimation]
 })
 export class BodyComponent implements OnInit {
 

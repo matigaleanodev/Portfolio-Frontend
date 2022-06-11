@@ -1,10 +1,5 @@
-$color-primary: #7b1fa2;
-    $color-secondary: #303f9f;
-    $color-success: #117948;
-    $color-danger: #a82431;
-    $color-light: #ede5f5;
-    $color-dark: #12031f;
-    $color-shadow: rgba(22, 0, 48, 0.75);
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
+@import 'variables';
 
 $primary: $color-primary;
 $secondary: $color-secondary;
@@ -12,10 +7,19 @@ $success: $color-success;
 $danger: $color-danger;
 $light: $color-light;
 $dark: $color-dark;
-$facebook: #3b5998;
-$twitter: #1da1f2;
-$instagram: #e1306c;
-$linkedin: #0077b5;
-$github: #333;
 
-// $enable-cssgrid: true;
+$enable-cssgrid: true;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+  }
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+  }

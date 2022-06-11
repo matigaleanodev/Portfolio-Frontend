@@ -6,7 +6,7 @@ import {
     animate,
 } from '@angular/animations';
 
-export const RouteAnimation = 
+export const RouteAnimation =  
     trigger('fadeInOut', [
         transition('* <=> *', [
             query(':enter', [

@@ -1,4 +1,4 @@
-@import "src/styles";
+@import 'variables';
 
 .sidenav {
     background-color: $color-dark;
@@ -8,7 +8,7 @@
     top: 0;
     width: 5.5rem;
     height: 100vh;
-    box-shadow: 0.075rem 0 1.25rem 0 $color-shadow;
+    box-shadow: 0.063rem 0 1.25rem 0 $color-shadow;
 
     &-logo {
         display: flex;
