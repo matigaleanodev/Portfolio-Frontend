@@ -1,6 +1,7 @@
 @import 'variables';
 
 .socialbox {
+    z-index: 2;
   &-link{
     display: flex;
     align-items: center;

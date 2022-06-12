@@ -8,7 +8,8 @@
     position: relative;
     top: 0;
     transition: all 0.5s ease;
-    background: $color-light;
+    background: $color-dark;
+    background: linear-gradient(180deg, $color-dark 50%, $color-light 50%);
 
     &-trimmed{
         width: calc(100% - 20rem);
