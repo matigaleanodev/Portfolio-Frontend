@@ -1,5 +1,18 @@
 @import 'variables';
 
+@media (max-width: 767px) {
+    .body {
+        background: $color-dark;
+        background: linear-gradient(180deg, $color-dark 70%, $color-light 30%);
+    }
+}
+@media (min-width: 768px) {
+    .body {
+        background: $color-dark;
+        background: linear-gradient(180deg, $color-dark 50%, $color-light 50%);
+    }
+}
+
 .body {
     width: calc(100% - 5rem);
     height: calc(100vh - 3rem);
@@ -8,8 +21,6 @@
     position: relative;
     top: 0;
     transition: all 0.5s ease;
-    background: $color-dark;
-    background: linear-gradient(180deg, $color-dark 50%, $color-light 50%);
 
     &-trimmed{
         width: calc(100% - 20rem);
