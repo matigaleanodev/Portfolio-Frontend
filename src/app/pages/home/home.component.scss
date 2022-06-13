@@ -1,21 +1,5 @@
 @import 'variables';
 
-.banner {
-    height: 28rem;
-    background-image: url(https://img.freepik.com/foto-gratis/diseno-diseno-fondo-naranja-abstracto_1258-82842.jpg?t=st=1650659340~exp=1650659940~hmac=95004538ced450a07566ff49c7a45cd0ed49cef5284da76f3c6d9eed61ea7306&w=826);
-    background-position: top center;
-    background-size: 100% 45%;
-    background-repeat: no-repeat;
-    -webkit-background-size: 100% 45%;
-    -moz-background-size: 100% 45%;
-    -o-background-size: 100% 45%;
-
-}
-.profile {
-    max-height: 12rem;
-    max-width: 12rem;
-    height: 12rem;
-    width: 12rem;
-    background-color: cadetblue;
-    border-radius: 50%;
+section {
+    padding-top: 4rem;
 }
