@@ -18,9 +18,22 @@ $enable-cssgrid: true;
   border: 0;
   box-sizing: border-box;
   vertical-align: baseline;
-  }
+}
 body {
-  background: $light;
+  background: $dark;
   position: relative;
   font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  border-left: $light solid 1px;
+  border-radius: 3px;
+  &-track{
+    background: $dark;  
   }
+  &-thumb{
+    background: $primary;
+    border-radius: 3px;
+  }
+}

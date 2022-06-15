@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  bannerSrc = 'assets/images/banner.webp';
+  
   constructor() { }
 
   ngOnInit(): void {

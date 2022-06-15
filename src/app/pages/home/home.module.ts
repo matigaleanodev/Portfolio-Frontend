@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { HomeComponent } from './home.component';
-import { SubtitleComponent } from 'src/app/components/subtitle/subtitle.component';
-import { ProfilePictureComponent } from 'src/app/components/profile-picture/profile-picture.component';
+import { SubtitleComponent } from '../../components/subtitle/subtitle.component';
+import { ProfileComponent } from '../../components/profile/profile.component';
 
 
 
@@ -10,7 +11,7 @@ import { ProfilePictureComponent } from 'src/app/components/profile-picture/prof
   declarations: [
     HomeComponent,
     SubtitleComponent,
-    ProfilePictureComponent
+    ProfileComponent
   ],
   imports: [
     CommonModule
