@@ -1,28 +1,17 @@
 @import 'variables';
 
-@media (max-width: 767px) {
-    .body {
-        background: $color-dark;
-        background: linear-gradient(180deg, $color-dark 70%, $color-light 30%);
-    }
-}
-@media (min-width: 768px) {
-    .body {
-        background: $color-dark;
-        background: linear-gradient(180deg, $color-dark 50%, $color-light 50%);
-    }
-}
-
 .body {
-    background: $color-dark;
     width: calc(100% - 5rem);
-    height: calc(100vh - 3rem);
+    height: calc(100vh - 6rem);
     margin-left: 5rem;
     padding: 0;
     z-index: 0;
-    position: relative;
     top: 3rem;
     transition: all 0.5s ease;
+    position:  relative;
+	overflow:  hidden;
+	perspective:  1200px;
+	transform-style:  preserve-3d;
 
     &-trimmed{
         width: calc(100% - 20rem);

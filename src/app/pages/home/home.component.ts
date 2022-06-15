@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  bannerSrc = 'assets/images/banner.webp';
-  
+  avatar: string = 'assets/images/profilePicture.jpg';
+  banner: string = 'https://thumbs.dreamstime.com/b/creative-glowing-coding-hologram-blue-background-information-technology-business-data-concept-d-rendering-229164340.jpg';
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,26 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import { RouterOutlet } from '@angular/router';
-import { RouteAnimation } from 'src/app/animations/routing-animations';
+import { trigger, transition, useAnimation }  from  "@angular/animations";
+import { scaleDownFromBottom }  from  "ngx-router-animations";
 
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss'],
-  animations: [RouteAnimation]
+  animations: [
+    trigger('animation',  [ transition('* => *', useAnimation(scaleDownFromBottom))])
+  ]
 })
-export class BodyComponent implements OnInit {
+export class BodyComponent {
 
   @Input() collapsed: boolean = false;
   @Input() screenWidth: number = 0;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  }
+  getState(outlet: any )  {
+		return outlet.activatedRouteData.animation;
+	}
   getBodyClass(): string{
     let styleClass = '';
     if(this.collapsed && this.screenWidth > 768){

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './home.component';
 import { SubtitleComponent } from '../../components/subtitle/subtitle.component';
-import { ProfileComponent } from '../../components/profile/profile.component';
 
 
 
@@ -11,7 +10,6 @@ import { ProfileComponent } from '../../components/profile/profile.component';
   declarations: [
     HomeComponent,
     SubtitleComponent,
-    ProfileComponent
   ],
   imports: [
     CommonModule
