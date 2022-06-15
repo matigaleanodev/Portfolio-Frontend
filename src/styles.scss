@@ -20,9 +20,10 @@ $enable-cssgrid: true;
   vertical-align: baseline;
 }
 body {
-  background: $dark;
+  background: $dark;  
   position: relative;
   font-family: 'Roboto', sans-serif;
+  color: $light;
 }
 
 ::-webkit-scrollbar {

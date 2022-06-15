@@ -2,4 +2,11 @@
     <div class="row d-flex justify-content-center align-item-center">
         <h2 class="col-12 text-light fs-2 pt-2 text-center">Projects</h2>
     </div>
+    <div class="row">
+        <app-project-card 
+            *ngFor="let project of projects"
+            [project]="project"
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3"
+            ></app-project-card>
+    </div>
 </section>

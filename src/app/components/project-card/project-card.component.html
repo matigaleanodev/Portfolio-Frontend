@@ -1,1 +1,18 @@
-<p>project-card works!</p>
+<article class="card bg-light border border-dark">
+    <div class="card-header">
+        <h5 class="card-title text-center text-primary">{{project.name}}</h5>
+    </div>
+    <img src={{project.images[0].url}} alt={{project.name}} class="card-img-top">
+    <div class="card-body bg-light text-center">
+        <p class="card-text text-dark">{{project.description}}</p>
+        <time class="text-dark">Project Release: {{project.startDate | date }}</time>
+    </div>
+    <div 
+        class="card-footer d-flex gap-1 justify-content-around"        
+        >
+        <i  class="fa-brands fs-3 card-icon"
+            *ngFor="let tech of this.project.technologies"
+            [ngStyle]="{'color' : tech.color}"
+            [ngClass]="tech.icon"></i>
+    </div>
+</article>

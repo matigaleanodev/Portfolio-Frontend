@@ -7,6 +7,7 @@ interface Technologie{
     id: number;
     name: string;
     icon: string;
+    color: string;
 }
 
 export interface Project {
