@@ -12,7 +12,7 @@ export const CollapsePanelAnimation = [
             'hidden',
             style({
                 height: '0',
-                padding: '0',
+                padding: '0',                
                 overflow: 'hidden',
             })
         ),

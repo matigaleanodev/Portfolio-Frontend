@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CollapsePanelAnimation } from 'src/app/animations/collapse-panel.animation';
+import { Education } from 'src/app/models/education.interface';
+import { Work } from 'src/app/models/works.interface';
 
 
 @Component({
@@ -9,9 +11,11 @@ import { CollapsePanelAnimation } from 'src/app/animations/collapse-panel.animat
   animations:[CollapsePanelAnimation]
 })
 export class CollapsePanelComponent {
-
-  @Input() headerText:string = '';
+  
   @Input() collapsed:boolean = false;
+  @Input() data!:Work|Education;
+  @Output() Edit = new EventEmitter<number>();
+  @Output() Delete = new EventEmitter<number>();
 
   animating:boolean = false;
   transitionOptions:string = '400ms cubic-bezier(0.86, 0, 0.07, 1)';
@@ -31,7 +35,16 @@ export class CollapsePanelComponent {
 
   onToggleDone(){
     this.animating = false;
+  }  
 
+  onEdit(event: any){
+    event.preventDefault();
+    this.Edit.emit(this.data.id);
+  }
+
+  onDelete(event: any){
+    event.preventDefault();
+    this.Delete.emit(this.data.id);
   }
 
 }

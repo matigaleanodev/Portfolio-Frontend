@@ -6,4 +6,5 @@ export interface Education {
     endDate: Date;
     actual: boolean;
     logo: string;
+    description: string;
 }

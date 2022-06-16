@@ -1,5 +1,7 @@
 @import 'variables';
 
-con {
-    z-index: 0;
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

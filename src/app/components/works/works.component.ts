@@ -18,4 +18,16 @@ export class WorksComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onEdit(id: number){
+    console.log(id)
+  }
+
+  onDelete(id: number){
+    for (let inx = 0; inx < this.works.length; inx++) {
+      if (this.works[inx].id === id) {
+        this.works.splice(inx, 1);
+      }
+    }
+  }
+
 }

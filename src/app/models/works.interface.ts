@@ -6,4 +6,5 @@ export interface Work {
     startDate: Date;
     endDate: Date;
     logo: string;
+    description: string;
 }

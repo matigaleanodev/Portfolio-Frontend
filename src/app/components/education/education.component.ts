@@ -17,4 +17,16 @@ export class EducationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onEdit(id: number){
+    console.log(id)
+  }
+
+  onDelete(id: number){
+    for (let inx = 0; inx < this.educationData.length; inx++) {
+      if (this.educationData[inx].id === id) {
+        this.educationData.splice(inx, 1);
+      }
+    }
+  }
+
 }

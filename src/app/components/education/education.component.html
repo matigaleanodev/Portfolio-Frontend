@@ -8,11 +8,14 @@
         <app-collapse-panel 
             *ngFor="let education of educationData" 
             [collapsed]="true"
+            [data]="education"           
+            (Edit)="onEdit($event)"
+            (Delete)="onDelete($event)"
             class="col-12 col-sm-6 col-lg-4 p-0 m-0"
             >
             <app-collapse-header class="row">
                 <div class="col-12 d-flex">
-                    <h4 class="m-auto">{{education.degree}}</h4>
+                    <h4 class="fs-5 my-auto">{{education.degree}}</h4>
                 </div>
             </app-collapse-header>
             <app-collapse-content>
@@ -34,7 +37,10 @@
                             </label>
                         </div>
                     </div>
-                </div>                    
+                </div>
+                <div class="row mt-3 education-description">
+                    <p>{{education.description}}</p>
+                </div>
             </app-collapse-content>
         </app-collapse-panel>
     </div>

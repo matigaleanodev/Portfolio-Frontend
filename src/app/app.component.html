@@ -1,8 +1,10 @@
-<app-sidebar-nav (onToggleSideBar)="onToggleSideBar($event)"></app-sidebar-nav>
-<app-header></app-header>
-<app-body
+<div class="app">
+    <app-sidebar-nav (onToggleSideBar)="onToggleSideBar($event)"></app-sidebar-nav>
+    <app-header></app-header>
+    <app-body
     [collapsed]="isSideBarCollapsed"
     [screenWidth]="screenWidth"
-></app-body>
-<app-footer></app-footer>
+    ></app-body>
+    <app-footer class="mt-auto"></app-footer>
+</div>
       
