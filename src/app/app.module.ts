@@ -8,6 +8,7 @@ import { AboutModule } from './pages/about/about.module';
 import { ProjectsModule } from './pages/projects/projects.module';
 import { ContactModule } from './pages/contact/contact.module';
 import { BlogModule } from './pages/blog/blog.module';
+import { LoginModule } from './pages/login/login.module';
 
 import { AppComponent } from './app.component';
 import { SidebarNavComponent } from './components/sidebar-nav/sidebar-nav.component';
@@ -33,7 +34,8 @@ import { SocialBoxComponent } from './components/social-box/social-box.component
     AboutModule,
     ProjectsModule,
     ContactModule,
-    BlogModule
+    BlogModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

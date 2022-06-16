@@ -1,0 +1,67 @@
+<a  class="login" 
+    data-bs-toggle="modal" 
+    data-bs-target="#loginModal">
+    <i class="fa-solid fa-user login-icon"></i>
+    <span class="login-text" @fadeInOut *ngIf="collapsed">
+        Login
+    </span>
+</a>
+<div 
+    class="modal fade" id="loginModal" 
+    tabindex="-1" aria-labelledby="loginModalLabel" 
+    aria-hidden="true" data-bs-backdrop="static" 
+    data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <form
+            [formGroup]="loginForm"
+            (ngSubmit)="login()" 
+            autocomplete="off">
+            <div class="modal-header">
+                <h5 class="modal-title" 
+                    id="loginModalLabel">
+                    Login
+                </h5>
+                <button 
+                    type="button" 
+                    class="btn-close" 
+                    data-bs-dismiss="modal" 
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-dark text-dark">
+                <div class="form-floating mb-3">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="username"
+                        formControlName="username"                         
+                        placeholder="Username">
+                    <label for="username">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="password" 
+                        formControlName="password"
+                        placeholder="Password">
+                    <label for="password">Password</label>
+                </div>
+                <div class="mb-3">
+                    <input 
+                        class="form-check-input" 
+                        type="checkbox" 
+                        value=""
+                        formControlName="reminder"
+                        id="reminder">
+                    <label class="ms-3 form-check-label text-white" for="reminder">Remember Me</label>
+                </div>
+            </div>            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
