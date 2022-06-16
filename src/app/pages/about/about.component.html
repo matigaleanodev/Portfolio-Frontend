@@ -2,4 +2,58 @@
     <div class="row d-flex justify-content-center align-item-center">
         <h2 class="col-12 text-light fs-2 pt-2 text-center">About Me</h2>
     </div>
+    <div class="about">
+        <div class="about-works">
+            <h2>Work Exp</h2>
+            <app-collapse-panel *ngFor="let work of works" [collapsed]="work.id != 0">
+                <app-collapse-header>
+                    <div class="header-container">
+                        <h4 class="header-title">{{work.title}}</h4>
+                    </div>
+                </app-collapse-header>
+                <app-collapse-content>
+                    <div class="profile">
+                        <div class="profile-head">
+                            <div class="profile-img img-fluid">
+                                <img src={{work.logo}} alt="Profile">
+                            </div>
+                            <h5 class="profile-title">{{work.company}}</h5>
+                            <label class="profile-desig">
+                                {{work.startDate | date: 'MMM yyyy'}}
+                            </label>&nbsp;-&nbsp;
+                            <label class="profile-desig" *ngIf="!work.actual">
+                                {{work.endDate | date: 'MMM yyyy'}}
+                            </label>
+                        </div>
+                    </div>                    
+                </app-collapse-content>
+            </app-collapse-panel>
+        </div>
+        <div class="about-education">
+            <h2>Education</h2>
+            <app-collapse-panel *ngFor="let education of educationData" [collapsed]="education.id != 0">
+                <app-collapse-header>
+                    <div class="header-container">
+                        <h4 class="header-title">{{education.degree}}</h4>
+                    </div>
+                </app-collapse-header>
+                <app-collapse-content>
+                    <div class="profile">
+                        <div class="profile-head">
+                            <div class="profile-img">
+                                <img src={{education.logo}} alt="Profile">
+                            </div>
+                            <h5 class="profile-title">{{education.institution}}</h5>
+                            <label class="profile-desig">
+                                {{education.startDate | date: 'MMM yyyy'}}
+                            </label>&nbsp;-&nbsp;
+                            <label class="profile-desig">
+                                {{education.endDate | date: 'MMM yyyy'}}
+                            </label>
+                        </div>
+                    </div>                    
+                </app-collapse-content>
+            </app-collapse-panel>
+        </div>
+    </div>
 </section>

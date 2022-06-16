@@ -1,1 +1,97 @@
 @import 'variables';
+
+:host {
+    width: 100%;
+  
+    .about {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 50px;
+  
+      h2 {
+        text-align: center;
+        color: #fff;
+      }
+  
+      &-works,
+      &-education {
+        width: 500px;
+      }
+    }
+  
+    .header-container {
+      display: flex;
+    }
+  
+    .header-title {
+      margin-right: 150px;
+    }
+  
+    .social-section {
+      font-weight: normal;
+      display: flex;
+    }
+  
+    .fa-facebook {
+      color: $facebook;
+    }
+  
+    .fa-twitter {
+      color: $twitter;
+    }
+  
+    .fa-instagram {
+      color: $instagram;
+    }
+  
+    .fa-twitter,
+    .fa-instagram {
+      font-size: 20px;
+    }
+  
+    .profile {
+      .profile-head {
+        align-items: center;
+        margin-bottom: 20px;
+      }
+  
+      .profile-img {
+        background-color: #fff;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba(129, 129, 129, 0.16),
+          0 3px 6px rgba(105, 105, 105, 0.23);
+        margin-right: 20px;
+  
+        img {
+          width: 90px;
+          height: 90px;
+          border-radius: 100%;
+        }
+      }
+  
+      .profile-title {
+        font-weight: 600;
+        font-size: 1.25rem;
+        display: inherit;
+      }
+  
+      .profile-desig {
+        margin-top: 5px;
+        font-size: 13px;
+        font-weight: 500;
+        color: black;
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  .mr-10 {
+    margin-right: 10px;
+  }
+  
+  .mr-20 {
+    margin-right: 20px;
+  }

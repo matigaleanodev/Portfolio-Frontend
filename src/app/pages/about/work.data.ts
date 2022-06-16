@@ -1,0 +1,58 @@
+import { Work } from "src/app/models/works.interface";
+
+export const works: Work[] = [
+    {
+        id: 0,
+        title: "Game Developer",
+        company: "Blizzard",
+        actual: false,
+        startDate: new Date(2016, 9, 1),
+        endDate: new Date(2017, 8, 1),
+        logo: "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/937ea3f7714dc0d01475da7bff33b596/32/256x256.png",
+    },
+    {
+        id: 1,
+        title: "Java Spring Developer",
+        company: "Mercado Libre",
+        actual: false,
+        startDate: new Date(2020, 9, 1),
+        endDate: new Date(2021, 8, 1),
+        logo: "https://d2zftyvti5s458.cloudfront.net/wp-content/uploads/2017/08/mercadolibre-certificado-180.png",
+    },
+    {
+        id: 2,
+        title: "MEAN Stack Developer",
+        company: "Globant",
+        actual: false,
+        startDate: new Date(2019, 9, 1),
+        endDate: new Date(2020, 8, 1),
+        logo: "https://takingcare.globant.com/ES/assets/images/globant-lightbg-color-2.png",
+    },
+    {
+        id: 3,
+        title: "Angular Developer",
+        company: "Google",
+        actual: false,
+        startDate: new Date(2018, 9, 1),
+        endDate: new Date(2019, 8, 1),
+        logo: "https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png",
+    },
+    {
+        id: 4,
+        title: "Project Manager",
+        company: "Facebook",
+        actual: false,
+        startDate: new Date(2017, 9, 1),
+        endDate: new Date(2018, 8, 1),
+        logo: "https://www.facebook.com/images/fb_icon_325x325.png",
+    },
+    {
+        id: 5,
+        title: "Fullstack Developer",
+        company: "Instituto Nacional de Tecnologia Industrial",
+        actual: true,
+        startDate: new Date(2021, 10, 1),
+        endDate: new Date(2022, 9, 29),
+        logo: "https://www.ocla.org.ar/Images/entidades/entidades_logo_inti.webp",
+    },
+];

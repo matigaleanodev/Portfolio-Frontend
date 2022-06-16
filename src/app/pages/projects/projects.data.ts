@@ -38,12 +38,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-memory/mobile.avif'
+                url: 'assets/images/projects/pokemon-memory/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-memory/desktop.avif'
+                url: 'assets/images/projects/pokemon-memory/desktop.avif'
             }
         ]
     },
@@ -77,12 +77,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-api/mobile.avif'
+                url: 'assets/images/projects/pokemon-api/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-api/desktop.avif'
+                url: 'assets/images/projects/pokemon-api/desktop.avif'
             }
         ]
     },
@@ -122,12 +122,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-memory/mobile.avif'
+                url: 'assets/images/projects/pokemon-memory/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-memory/desktop.avif'
+                url: 'assets/images/projects/pokemon-memory/desktop.avif'
             }
         ]
     },
@@ -161,12 +161,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-api/mobile.avif'
+                url: 'assets/images/projects/pokemon-api/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-api/desktop.avif'
+                url: 'assets/images/projects/pokemon-api/desktop.avif'
             }
         ]
     },
@@ -206,12 +206,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-memory/mobile.avif'
+                url: 'assets/images/projects/pokemon-memory/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-memory/desktop.avif'
+                url: 'assets/images/projects/pokemon-memory/desktop.avif'
             }
         ]
     },
@@ -245,12 +245,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-api/mobile.avif'
+                url: 'assets/images/projects/pokemon-api/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-api/desktop.avif'
+                url: 'assets/images/projects/pokemon-api/desktop.avif'
             }
         ]
     },
@@ -290,12 +290,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-memory/mobile.avif'
+                url: 'assets/images/projects/pokemon-memory/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-memory/desktop.avif'
+                url: 'assets/images/projects/pokemon-memory/desktop.avif'
             }
         ]
     },
@@ -329,12 +329,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-api/mobile.avif'
+                url: 'assets/images/projects/pokemon-api/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-api/desktop.avif'
+                url: 'assets/images/projects/pokemon-api/desktop.avif'
             }
         ]
     },
@@ -374,12 +374,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-memory/mobile.avif'
+                url: 'assets/images/projects/pokemon-memory/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-memory/desktop.avif'
+                url: 'assets/images/projects/pokemon-memory/desktop.avif'
             }
         ]
     },
@@ -413,12 +413,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-api/mobile.avif'
+                url: 'assets/images/projects/pokemon-api/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-api/desktop.avif'
+                url: 'assets/images/projects/pokemon-api/desktop.avif'
             }
         ]
     },
@@ -458,12 +458,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-memory/mobile.avif'
+                url: 'assets/images/projects/pokemon-memory/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-memory/desktop.avif'
+                url: 'assets/images/projects/pokemon-memory/desktop.avif'
             }
         ]
     },
@@ -497,12 +497,12 @@ export const projectsData: Project[] = [
             {
                 id: 1,
                 name: 'mobile',
-                url: '/assets/images/projects/pokemon-api/mobile.avif'
+                url: 'assets/images/projects/pokemon-api/mobile.avif'
             },
             {
                 id: 2,
                 name: 'desktop',
-                url: '/assets/images/projects/pokemon-api/desktop.avif'
+                url: 'assets/images/projects/pokemon-api/desktop.avif'
             }
         ]
     },

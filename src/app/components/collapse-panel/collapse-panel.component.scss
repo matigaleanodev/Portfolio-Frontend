@@ -1,0 +1,35 @@
+@import 'variables';
+
+.c-panel {
+  border: 1px solid #dee2e6;
+  background: #f9f9f9;
+  color: #495057;
+  border-radius: 6px;
+  margin: 20px;
+
+  &-header {
+    border: 1px solid #dee2e6;
+    color: #343a40;
+    background: #fff;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+
+    &-container {
+      display: flex;
+      align-items: center;
+      padding: 1.25rem;
+    }
+    &-icon {
+      margin-right: 0.5rem;
+    }
+    &-text {
+      line-height: 1;
+    }
+  }
+  &-content {
+    background: #f9f9f9;
+    padding: 1.25rem;
+  }
+}
