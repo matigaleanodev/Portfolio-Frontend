@@ -49,7 +49,7 @@ export const works: Work[] = [
     {
         id: 5,
         title: "Fullstack Developer",
-        company: "Instituto Nacional de Tecnologia Industrial",
+        company: "I.N.T.I.",
         actual: true,
         startDate: new Date(2021, 10, 1),
         endDate: new Date(2022, 9, 29),

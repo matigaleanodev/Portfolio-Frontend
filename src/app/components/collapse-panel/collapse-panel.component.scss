@@ -1,16 +1,16 @@
 @import 'variables';
 
 .c-panel {
-  border: 1px solid #dee2e6;
-  background: #f9f9f9;
-  color: #495057;
+  border: 1px solid $color-gray;
+  background: $color-white;
+  color: $color-dark;
   border-radius: 6px;
-  margin: 20px;
+  margin: 20px 5px;
 
   &-header {
-    border: 1px solid #dee2e6;
-    color: #343a40;
-    background: #fff;
+    border: 1px solid $color-gray;
+    color: $color-dark;
+    background: $color-white;
     font-weight: 700;
     border-radius: 6px;
     cursor: pointer;
@@ -29,7 +29,7 @@
     }
   }
   &-content {
-    background: #f9f9f9;
-    padding: 1.25rem;
+    background: $color-white;
+    padding: 0.75rem;
   }
 }

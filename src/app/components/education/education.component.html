@@ -1,0 +1,41 @@
+<section class="container-fluid  p-0 m-0 education">
+    <div class="row">
+        <div class="col-12 d-flex">
+            <h2 class="ms-5 education-title">Education</h2>
+        </div>
+    </div>
+    <div class="row">
+        <app-collapse-panel 
+            *ngFor="let education of educationData" 
+            [collapsed]="true"
+            class="col-12 col-sm-6 col-lg-4 p-0 m-0"
+            >
+            <app-collapse-header class="row">
+                <div class="col-12 d-flex">
+                    <h4 class="m-auto">{{education.degree}}</h4>
+                </div>
+            </app-collapse-header>
+            <app-collapse-content>
+                <div class="row education-content">
+                    <div class="col-12 d-inline-flex education-content-head">
+                        <div class="education-content-img">
+                            <img src={{education.logo}} alt="{{education.institution}}" class="img m-0 p-0">
+                        </div>
+                        <div class="ms-auto me-md-auto">
+                            <h5 class="education-content-title">{{education.institution}}</h5>
+                            <label class="education-content-desig">
+                                {{education.startDate | date: 'MMM yyyy'}}
+                            </label>&nbsp;-&nbsp;
+                            <label class="education-content-desig" *ngIf="!education.actual">
+                                {{education.endDate | date: 'MMM yyyy'}}
+                            </label>
+                            <label class="education-content-desig" *ngIf="education.actual">
+                                Actual
+                            </label>
+                        </div>
+                    </div>
+                </div>                    
+            </app-collapse-content>
+        </app-collapse-panel>
+    </div>
+</section>

@@ -1,0 +1,41 @@
+<section class="container-fluid  p-0 m-0 work">
+    <div class="row">
+        <div class="col-12 d-flex">
+            <h2 class="ms-5 work-title">Work Exp</h2>
+        </div>
+    </div>
+    <div class="row">
+        <app-collapse-panel 
+            *ngFor="let work of works" 
+            [collapsed]="true"
+            class="col-12 col-sm-6 col-lg-4 p-0 m-0"
+            >
+            <app-collapse-header class="row">
+                <div class="col-12 d-flex">
+                    <h4 class="m-auto">{{work.title}}</h4>
+                </div>
+            </app-collapse-header>
+            <app-collapse-content>
+                <div class="row work-content">
+                    <div class="col-12 d-inline-flex justify-content-around work-content-head">
+                        <div class="work-content-img">
+                            <img src={{work.logo}} alt="{{work.company}} logo" class="img m-0 p-0">
+                        </div>
+                        <div class="ms-auto me-md-auto">
+                            <h5 class="work-content-title">{{work.company}}</h5>
+                            <label class="work-content-desig">
+                                {{work.startDate | date: 'MMM yyyy'}}
+                            </label>&nbsp;-&nbsp;
+                            <label class="work-content-desig" *ngIf="!work.actual">
+                                {{work.endDate | date: 'MMM yyyy'}}
+                            </label>
+                            <label class="work-content-desig" *ngIf="work.actual">
+                                Actual
+                            </label>
+                        </div>
+                    </div>
+                </div>                    
+            </app-collapse-content>
+        </app-collapse-panel>
+    </div>
+</section>

@@ -4,5 +4,6 @@ export interface Education {
     degree: string;
     startDate: Date;
     endDate: Date;
+    actual: boolean;
     logo: string;
 }
