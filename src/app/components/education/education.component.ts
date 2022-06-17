@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as AOS  from 'aos';
 import { Education } from '../../models/education.interface';
 import { educationData } from '../../pages/about/education.data';
 
@@ -15,6 +16,8 @@ export class EducationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
   }
 
   onEdit(id: number){

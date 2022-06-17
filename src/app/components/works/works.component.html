@@ -1,17 +1,22 @@
-<section class="container-fluid  p-0 m-0 work">
+<section class="container-fluid p-0 m-0 work">
     <div class="row">
         <div class="col-12 d-flex">
             <h2 class="ms-5 work-title">Work Exp</h2>
         </div>
     </div>
-    <div class="row">
-        <app-collapse-panel 
-            *ngFor="let work of works" 
-            [collapsed]="true"
+    <div class="row d-flex justify-content-between gap-1 mx-auto my-sm-5 work-container"
+        *ngFor="let work of works
+        let i = index
+        let odd = odd
+        let even = even">
+        <app-collapse-panel
+            [collapsed]="false"
             [data]="work"
             (Edit)="onEdit($event)"
             (Delete)="onDelete($event)"
-            class="col-12 col-sm-6 col-lg-4 p-0 m-0"
+            class="col-12 col-sm-5"
+            [attr.data-aos]="odd ? 'fade-left' : 'fade-right'"
+            [ngClass]="{'order-2' : odd}">
             >
             <app-collapse-header class="row">
                 <div class="col-12 d-flex">
@@ -43,5 +48,19 @@
                 </div>
             </app-collapse-content>
         </app-collapse-panel>
+        <div class="col-12 d-none d-sm-flex col-sm-6 work-timeline"
+        [ngClass]="{'order-1' : odd}">
+            <div class="m-auto">
+                <label class="work-content-desig">
+                    {{work.startDate | date: 'MMM yyyy'}}
+                </label>&nbsp;-&nbsp;
+                <label class="work-content-desig" *ngIf="!work.actual">
+                    {{work.endDate | date: 'MMM yyyy'}}
+                </label>
+                <label class="work-content-desig" *ngIf="work.actual">
+                    Actual
+                </label>
+            </div>
+        </div>
     </div>
 </section>

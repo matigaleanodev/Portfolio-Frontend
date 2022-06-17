@@ -1,2 +1,9 @@
 @import 'variables';
 
+@media (min-width: 576px) {
+    .about{
+        &-section{
+            margin: 12rem 0;
+        }
+    }
+}

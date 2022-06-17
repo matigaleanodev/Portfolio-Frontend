@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as AOS  from 'aos';
 import { Work } from '../../models/works.interface';
 import { works } from '../../pages/about/work.data';
 
@@ -13,9 +14,12 @@ export class WorksComponent implements OnInit {
   
   works: Work[] = works;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
   }
 
   onEdit(id: number){
