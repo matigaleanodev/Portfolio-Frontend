@@ -1,19 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { BlogComponent } from './pages/blog/blog.component';
-
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full', data: {animation: 'home'}, title: 'Matias Galeano'},
-  {path: 'home', component: HomeComponent, data: {animation: 'home'}, title: 'Matias Galeano'},
-  {path: 'about', component: AboutComponent, data: {animation: 'about'}, title: 'About'},
-  {path: 'projects', component: ProjectsComponent, data: {animation: 'projects'}, title: 'Projects'},
-  {path: 'contact', component: ContactComponent, data: {animation: 'contact'}, title: 'Contact'},  
-  {path: 'blog', component: BlogComponent, data: {animation: 'blog'}, title: 'Blog'},
+  {path: '', redirectTo: '/', 
+        pathMatch: 'full', 
+        data: {animation: 'home'}, 
+        title: 'Matias Galeano'
+  },
+  {path: 'home', loadChildren: ()=> 
+        import('./pages/home/home.module').then(m => m.HomeModule),
+  },
+  {path: 'about', loadChildren: ()=> 
+        import('./pages/about/about.module').then(m => m.AboutModule),
+  },
+  {path: 'projects', loadChildren: ()=> 
+  import('./pages/projects/projects.module').then(m => m.ProjectsModule),
+  },
+  {path: 'contact', loadChildren: ()=> 
+  import('./pages/contact/contact.module').then(m => m.ContactModule),
+  },
+  {path: 'blog', loadChildren: ()=> 
+  import('./pages/blog/blog.module').then(m => m.BlogModule),
+  },
 ];
 
 @NgModule({

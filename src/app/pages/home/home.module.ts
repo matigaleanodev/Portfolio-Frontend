@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './home.component';
 import { SubtitleComponent } from '../../components/subtitle/subtitle.component';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 
@@ -12,7 +13,8 @@ import { SubtitleComponent } from '../../components/subtitle/subtitle.component'
     SubtitleComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HomeRoutingModule
   ],
   exports: [
     HomeComponent
