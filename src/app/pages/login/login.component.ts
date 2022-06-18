@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SidebarAnimation } from 'src/app/animations/sidebar-animations';
+import { SidebarAnimation } from 'src/app/animations/sidebar.animations';
 
 @Component({
   selector: 'app-login',

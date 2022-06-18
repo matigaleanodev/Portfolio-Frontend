@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
-import { SidebarAnimation } from 'src/app/animations/sidebar-animations';
+import { SidebarAnimation } from 'src/app/animations/sidebar.animations';
 import { navData } from './nav-data';
 
 interface SideNavToggle {

@@ -31,6 +31,12 @@ body {
   font-family: 'Roboto', sans-serif;
   color: $light;
 }
+:host  {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
 
 ::-webkit-scrollbar {
   width: 0px;

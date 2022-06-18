@@ -1,14 +1,19 @@
 import { Component, Input } from '@angular/core';
 
 import { trigger, transition, useAnimation }  from  "@angular/animations";
-import { scaleDownFromBottom }  from  "ngx-router-animations";
+import { fromBottomEasing, fromLeftEasing, fromRightEasing, fromTopEasing }  from  "ngx-router-animations";
 
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss'],
   animations: [
-    trigger('animation',  [ transition('* => *', useAnimation(scaleDownFromBottom))])
+    trigger('animation',  [
+      transition('* => home', useAnimation(fromTopEasing, {params: {timing: 0.5}})),
+      transition('* => about', useAnimation(fromLeftEasing)),
+      transition('* => projects', useAnimation(fromRightEasing)),
+      transition('* => contact', useAnimation(fromBottomEasing))
+    ]),
   ]
 })
 export class BodyComponent {
@@ -18,7 +23,7 @@ export class BodyComponent {
 
   constructor() { }
   getState(outlet: any )  {
-		return outlet.activatedRouteData.animation;
+		return outlet.activatedRouteData.state;
 	}
   getBodyClass(): string{
     let styleClass = '';
