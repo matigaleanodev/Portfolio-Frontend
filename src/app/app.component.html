@@ -1,4 +1,6 @@
 <div class="app">
+    <ng-particles [id]="id" [options]="particlesOptions" [particlesInit]="particlesInit"
+              (particlesLoaded)="particlesLoaded($event)"></ng-particles>
     <app-sidebar-nav (onToggleSideBar)="onToggleSideBar($event)"></app-sidebar-nav>
     <app-header></app-header>
     <app-body

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { NgParticlesModule } from 'ng-particles';
 
 import { HomeModule } from './pages/home/home.module';
 import { AboutModule } from './pages/about/about.module';
@@ -30,6 +31,7 @@ import { SocialBoxComponent } from './components/social-box/social-box.component
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    NgParticlesModule,
     HomeModule,
     AboutModule,
     ProjectsModule,
