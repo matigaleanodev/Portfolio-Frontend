@@ -7,9 +7,10 @@
             height: 350px;
             width: cover;
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: 0% 50%;
             background-size: cover;
             border-bottom: 2px solid $color-light;
+            animation: ken-burns 5s ease 0s infinite alternate both;
         }
         &-banner {
             width: 100%;

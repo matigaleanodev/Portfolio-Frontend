@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  banner: string = 'assets/images/banner_02.png';
+
   constructor() { }
 
   ngOnInit(): void {
