@@ -1,23 +1,14 @@
-<section class="container-fluid profile">
-    <div class="row profile-header">
-        <div class="col-12 profile-header-wrap" [style.background-image]="'url(' + banner + ')'">
-        </div>
-        <div class="col-12 profile-info">
-            <div class="profile-info-wrap">
-                <div class="rounded-circle profile-info-avatar">
-                    <div class="profile-info-avatar-inner">
-                        <img [src]="avatar" alt="Profile Avatar" class="img-fluid rounded-circle">
-                        <i class="fa-solid fa-user-pen profile-edit"></i>
-                    </div>
-                </div>                
+<section class="container profile">
+    <div class="row profile-container">
+        <div class="col-12 d-flex justify-content-center align-items-center align-items-lg-start text-center col-lg-6 profile-title">
+            <div>
+                <h1 class="text-light profile-title-h1">Matias Galeano</h1>
+                <h2 class=" text-light text-center profile-title-h2 ">Desarrollador Web Fullstack</h2>
+                <app-subtitle class="fs-3"></app-subtitle>
             </div>
         </div>
+        <picture class="col-12 col-lg-6 d-flex justify-content-center align-items-center align-items-lg-end profile-banner">
+            <img src="{{banner}}" alt="" class="img-fluid col-12 profile-banner-image">
+        </picture>
     </div>
-    <div class="row">
-        <div class="col-12 profile-content">
-            <h1 class="text-light fs-1 text">Matias Galeano</h1>
-            <h3 class="text-light fs-2 text">Fullstack Web Developer</h3>
-            <app-subtitle class="fs-4"></app-subtitle>
-        </div>
-    </div>    
 </section>

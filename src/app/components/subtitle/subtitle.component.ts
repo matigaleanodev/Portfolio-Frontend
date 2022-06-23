@@ -4,7 +4,7 @@ import Typed from 'typed.js';
 @Component({
   selector: 'app-subtitle',
   template: `
-  <span class="typed-element text-primary subtitle"></span>`,
+  <span class="text-primary typed-element subtitle"></span>`,
   styleUrls: ['subtitle.component.scss']
 })
 export class SubtitleComponent implements OnInit {
@@ -14,9 +14,9 @@ export class SubtitleComponent implements OnInit {
   ngOnInit() {
     const options ={
       strings: [
-        'Working with Angular <i class="fa-brands fa-angular" style="color: #dd4b39; font-size: 1.8rem"></i>',
-        'Working with Node <i class="fa-brands fa-node" style="color: #339933; font-size: 1.8rem"></i>',
-        'Working with Spring Boot <img src="assets/images/icons/springboot.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
+        'Work with Angular <i class="fa-brands fa-angular" style="color: #dd4b39; font-size: 1.8rem"></i>',
+        'Work with Node <i class="fa-brands fa-node" style="color: #339933; font-size: 1.8rem"></i>',
+        'Work with Spring Boot <img src="assets/images/icons/springboot.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
         'Working with MySQL <i class="fa-solid fa-database" style="color: #8bbbfa"></i>',
         'Coding in Javascript <i class="fa-brands fa-js-square" style="color: #f9a825; font-size: 1.8rem"></i>',
         'Coding in Typescript <img src="assets/images/icons/typescript.svg" style="height: 1.5rem; width: 1.5rem; margin-bottom: 0.5rem">',

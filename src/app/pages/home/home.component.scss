@@ -2,71 +2,112 @@
 
 .profile{    
     height: calc(100vh - 6rem);
-    &-header{
-        &-wrap{
-            height: 350px;
-            width: cover;
-            background-repeat: no-repeat;
-            background-position: 0% 50%;
-            background-size: cover;
-            border-bottom: 2px solid $color-light;
-            animation: ken-burns 5s ease 0s infinite alternate both;
+    min-width: calc(100vw - 15rem);
+    &-container{
+        height: 100%;
+    } 
+    &-title{
+        &-h1, &-h2 {
+            text-shadow: 0px 5px 15px $color-shadow-light;     
+            font-weight: 900;
+            line-height: 3.5rem;
+            -webkit-text-stroke: .8px $color-primary;
         }
-        &-banner {
-            width: 100%;
-            height: 100%;
+        &-h1{
+            font-size: 4rem;
         }
-        &-img{
-            width: auto;
-            height: 100%;
-            object-fit: scale-down;
-        }
-    }
-    &-info{
-        &-wrap{
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-        &-avatar{
-            widows: 200px;
-            height: 10px;
-            float: left;
-            position: relative;
-            &-inner{
-                width: 200px;
-                height: 200px;
-                border-radius: 100%;
-                position: absolute;
-                top: -100px;
-                background-color: $color-light;
-                border: 5px solid $color-light;
+        &-h2{
+            font-size: 2rem;
+            &::before, &::after{ 
+                font-size: 2.5rem;
+                color: $color-primary;
+            }
+            &::before{
+                content: '< ';
+            }
+            &::after{
+                content: ' />';
             }
         }
-        
     }
-    &-content{
-        max-width: 1300px;
-        margin: 100px auto 0;
-    }
-    &-edit{
-        color: $color-light;
-        position: absolute;
-        bottom: 0;
-        right: 25;
-        font-size: 1.2em;
-        cursor: pointer;
-        transition: all .3s ease-in-out;
-        &:hover{
-            color: $color-success;
-            transform: scale(1.2);
-            opacity: 0.7;
-            text-shadow: 0 5px 15px $color-success;
+    &-banner {
+        &-image{
+            height: 40vh;
+            width: auto;
         }
     }
 }
 
-.text {
-    text-shadow: 0px 5px 15px $color-shadow-light;
-    font-weight: 900;
-    -webkit-text-stroke: .8px $color-primary;
+@media (min-width: 992px) {
+    .profile{
+        &-title{
+            padding-top: 15vh;
+        }
+        &-banner{
+            padding-bottom: 10vh;
+        }
+    }
 }
+
+
+// &-header{
+//     &-wrap{
+//         height: 350px;
+//         width: cover;
+//         background-repeat: no-repeat;
+//         background-position: 0% 50%;
+//         background-size: cover;
+//         border-bottom: 2px solid $color-light;
+//         animation: ken-burns 5s ease 0s infinite alternate both;
+//     }
+//     &-banner {
+//         width: 100%;
+//         height: 100%;
+//     }
+//     &-img{
+//         width: auto;
+//         height: 100%;
+//         object-fit: scale-down;
+//     }
+// }
+// &-info{
+//     &-wrap{
+//         max-width: 1300px;
+//         margin: 0 auto;
+//     }
+//     &-avatar{
+//         widows: 200px;
+//         height: 10px;
+//         float: left;
+//         position: relative;
+//         &-inner{
+//             width: 200px;
+//             height: 200px;
+//             border-radius: 100%;
+//             position: absolute;
+//             top: -100px;
+//             background-color: $color-light;
+//             border: 5px solid $color-light;
+//         }
+//     }
+    
+// }
+// &-content{
+//     max-width: 1300px;
+//     margin: 100px auto 0;
+// }
+// &-edit{
+//     color: $color-light;
+//     position: absolute;
+//     bottom: 0;
+//     right: 25;
+//     font-size: 1.2em;
+//     cursor: pointer;
+//     transition: all .3s ease-in-out;
+//     &:hover{
+//         color: $color-success;
+//         transform: scale(1.2);
+//         opacity: 0.7;
+//         text-shadow: 0 5px 15px $color-success;
+//     }
+// }
