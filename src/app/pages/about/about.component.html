@@ -1,10 +1,8 @@
 <section class="container-fluid about">
-    <div class="row justify-content-center title"
-        >        
-        <h2 class="col-8 col-sm-6 col-md-3 col-lg-2 text-dark fs-2 pt-2 text-center m-auto about-text">
-            About Me</h2>
-            <app-skills></app-skills>
+    <div class="row d-flex align-items-center justify-content-center bg-dark bg-opacity-50 about-title">
+        <app-profile></app-profile>
     </div>
+    <app-skills></app-skills>
     <div class="row d-flex justify-content-around gap-1 mx-auto my-sm-5 about-panel-container"
         *ngFor="let work of works
         let i = index

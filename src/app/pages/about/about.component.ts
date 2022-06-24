@@ -16,7 +16,6 @@ import { works } from './work.data';
 })
 export class AboutComponent implements OnInit {
 
-  banner: string = 'assets/images/banner_02.png';
   works: Work[] = works;
   educationData: Education[] = educationData;
 

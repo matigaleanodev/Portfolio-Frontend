@@ -7,6 +7,7 @@ import { AboutRoutingModule } from './about-routing.module';
 import { CollapsePanelComponent } from 'src/app/components/collapse-panel/collapse-panel.component';
 import { TimelineComponent } from '../../components/timeline/timeline.component';
 import { SkillsComponent } from '../../components/skills/skills.component';
+import { ProfileComponent } from '../../components/profile/profile.component';
 
 
 
@@ -15,7 +16,8 @@ import { SkillsComponent } from '../../components/skills/skills.component';
     AboutComponent,
     CollapsePanelComponent,
     TimelineComponent,
-    SkillsComponent
+    SkillsComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  avatar: string = 'assets/images/profilePicture.jpg';
   banner: string = 'assets/images/banner-home.png';
 
   constructor() { }

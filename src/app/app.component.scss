@@ -4,4 +4,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    &-footer{
+        z-index: 0;
+    }
 }

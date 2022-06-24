@@ -3,6 +3,10 @@
 
 @media (min-width: 786px) {
     .about{
+        &-title{
+          height: calc(100vh - 3rem);
+          padding: 3rem 0;
+        }
         &-panel {
             &-container {
                 position: relative;
