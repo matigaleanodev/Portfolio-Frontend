@@ -4,7 +4,7 @@ export const educationData: Education[] = [
     {
         id: 0,
         institution: "I.N.T.I.",
-        degree: "Fullstack Developer",
+        title: "Fullstack Developer",
         startDate: new Date(2021, 10, 1),
         endDate: new Date(2022, 9, 29),
         actual: true,
@@ -14,7 +14,7 @@ export const educationData: Education[] = [
     {
         id: 1,
         institution: "University of California, Irvine",
-        degree: "Bachelor of Science",
+        title: "Bachelor of Science",
         startDate: new Date(2010, 9, 1),
         endDate: new Date(2014, 6, 1),
         actual: false,
@@ -24,7 +24,7 @@ export const educationData: Education[] = [
     {
         id: 2,
         institution: "E.P.E.T N° 1 Unesco",
-        degree: "Secundary Education",
+        title: "Secundary Education",
         startDate: new Date(2002, 3, 1),
         endDate: new Date(2008, 11, 30),
         actual: false,

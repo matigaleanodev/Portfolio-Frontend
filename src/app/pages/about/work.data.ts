@@ -4,7 +4,7 @@ export const works: Work[] = [
     {
         id: 0,
         title: "Game Developer",
-        company: "Blizzard",
+        institution: "Blizzard",
         actual: false,
         startDate: new Date(2016, 9, 1),
         endDate: new Date(2017, 8, 1),
@@ -14,7 +14,7 @@ export const works: Work[] = [
     {
         id: 1,
         title: "Java Spring Developer",
-        company: "Mercado Libre",
+        institution: "Mercado Libre",
         actual: false,
         startDate: new Date(2020, 9, 1),
         endDate: new Date(2021, 8, 1),
@@ -24,7 +24,7 @@ export const works: Work[] = [
     {
         id: 2,
         title: "MEAN Stack Developer",
-        company: "Globant",
+        institution: "Globant",
         actual: false,
         startDate: new Date(2019, 9, 1),
         endDate: new Date(2020, 8, 1),
@@ -34,7 +34,7 @@ export const works: Work[] = [
     {
         id: 3,
         title: "Angular Developer",
-        company: "Google",
+        institution: "Google",
         actual: false,
         startDate: new Date(2018, 9, 1),
         endDate: new Date(2019, 8, 1),
@@ -44,7 +44,7 @@ export const works: Work[] = [
     {
         id: 4,
         title: "Project Manager",
-        company: "Facebook",
+        institution: "Facebook",
         actual: false,
         startDate: new Date(2017, 9, 1),
         endDate: new Date(2018, 8, 1),
@@ -54,7 +54,7 @@ export const works: Work[] = [
     {
         id: 5,
         title: "Fullstack Developer",
-        company: "I.N.T.I.",
+        institution: "I.N.T.I.",
         actual: true,
         startDate: new Date(2021, 10, 1),
         endDate: new Date(2022, 9, 29),

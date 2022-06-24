@@ -14,15 +14,14 @@ export class SubtitleComponent implements OnInit {
   ngOnInit() {
     const options ={
       strings: [
-        'Work with Angular <i class="fa-brands fa-angular" style="color: #dd4b39; font-size: 1.8rem"></i>',
-        'Work with Node <i class="fa-brands fa-node" style="color: #339933; font-size: 1.8rem"></i>',
+        'Work with Angular <img src="assets/images/icons/angular.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
         'Work with Spring Boot <img src="assets/images/icons/springboot.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
-        'Working with MySQL <i class="fa-solid fa-database" style="color: #8bbbfa"></i>',
-        'Coding in Javascript <i class="fa-brands fa-js-square" style="color: #f9a825; font-size: 1.8rem"></i>',
-        'Coding in Typescript <img src="assets/images/icons/typescript.svg" style="height: 1.5rem; width: 1.5rem; margin-bottom: 0.5rem">',
-        'Coding in HTML <i class="fa-brands fa-html5" style="color: #e34f26; font-size: 1.8rem"></i>',
-        'Coding in CSS <i class="fa-brands fa-css3-alt" style="color: #167cdb; font-size: 1.8rem"></i>',
-        'Coding in Java <i class="fa-brands fa-java" style="color: #b01919; font-size: 1.8rem"></i>',
+        'Work with MySQL <img src="assets/images/icons/mysql.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
+        'Coding in Javascript <img src="assets/images/icons/javascript.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
+        'Coding in Typescript <img src="assets/images/icons/typescript.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
+        'Coding in HTML <img src="assets/images/icons/html.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
+        'Coding in CSS <img src="assets/images/icons/css.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
+        'Coding in Java <img src="assets/images/icons/java.svg" style="height: 1.8rem; width: 1.8rem; margin-bottom: 0.5rem">',
       ],
       typeSpeed: 50,
       backSpeed: 100,

@@ -1,6 +1,8 @@
 @import 'variables';
 
 .subtitle {    
-    font-weight: 700;
+    font-weight: 800;
+    text-shadow: 2px 4px 12px $color-shadow;
+    line-height: 2rem;
     padding: 5px;
 }

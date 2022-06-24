@@ -1,0 +1,76 @@
+<section class="container skill">
+  <div class="skill-panel">
+    <div class="bg-dark bg-opacity-50 rounded-2 skill-item">
+      <input type="radio" name="css-tabs" id="frontend" checked class="skill-item-switch">
+      <label for="frontend" class="skill-item-label">Frontend</label>
+      <article class="skill-item-content">
+        <h3 class="p-2 text-primary fs-2 fw-bold">Frontend</h3>
+        <p class="text-light">
+          Tengo mucha afinidad con la programacion modular y orientada 
+          a componentes que ofrece Angular y todo su entorno. Trabajo 
+          tanto con Javascript nativo como con Typescript y para los estilos
+          me gusta convinar librerias como Bootstrap con el toque personal que
+          le puede dar sass.
+        </p>
+        <div class="d-inline py-3">
+          <picture  
+            *ngFor="let skill of skills"
+            [ngClass]="{'d-inline-flex': skill.function === 'frontend',
+                        'd-none': skill.function !== 'frontend'}" 
+            >
+            <img 
+                  src="{{skill.url}}" 
+                  alt="icono de {{skill.name}}" 
+                  class="mx-0 px-1 skill-item-icon">
+          </picture>
+        </div>
+      </article>
+    </div>
+    <div class="bg-dark bg-opacity-50 rounded-2 skill-item">
+      <input type="radio" name="css-tabs" id="backend"class="skill-item-switch">
+      <label for="backend" class="skill-item-label">Backend</label>
+      <article class="skill-item-content">
+        <h3 class="p-2 text-primary fs-2 fw-bold">Backend</h3>
+        <p class="text-light">
+          Eh desarrollado algunas Rest API utilizando Spring Boot conectando una 
+          base de datos de MySQL y algunos proyectos pequeños en Node Js
+        </p>
+        <div class="d-inline py-3">
+          <picture 
+            *ngFor="let skill of skills"
+            [ngClass]="{'d-inline-flex': skill.function === 'backend',
+                        'd-none': skill.function !== 'backend'}" 
+            class="d-none">
+            <img
+                  src="{{skill.url}}" 
+                  alt="icono de {{skill.name}}" 
+                  class="mx-0 px-1 skill-item-icon">
+          </picture>
+        </div>
+      </article>
+    </div>
+    <div class="bg-dark bg-opacity-50 rounded-2 skill-item">
+      <input type="radio" name="css-tabs" id="tools"class="skill-item-switch">
+      <label for="tools" class="skill-item-label">Tools</label>
+      <article class="skill-item-content">
+        <h3 class="p-2 text-primary fs-2 fw-bold">Tools</h3>
+        <p class="text-light">
+            Llevo mi dia a dia con varias herramientas para organizar y agilizar 
+            mi trabajo asi poder optimizar mi tiempo
+        </p>
+        <div class="d-inline py-3 px-0">
+          <picture 
+            *ngFor="let skill of skills"
+            [ngClass]="{'d-inline-flex': skill.function === 'tool',
+                        'd-none': skill.function !== 'tool'}"
+            class="d-none">
+            <img  
+                  src="{{skill.url}}" 
+                  alt="icono de {{skill.name}}" 
+                  class="mx-0 px-1 skill-item-icon">
+          </picture>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

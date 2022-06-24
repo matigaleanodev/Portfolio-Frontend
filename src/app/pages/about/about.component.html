@@ -3,11 +3,46 @@
         >        
         <h2 class="col-8 col-sm-6 col-md-3 col-lg-2 text-dark fs-2 pt-2 text-center m-auto about-text">
             About Me</h2>
+            <app-skills></app-skills>
     </div>
-    <div class="row p-0 mx-0 about-section">
-        <app-works class="col-12 p-0 m-0"></app-works>
+    <div class="row d-flex justify-content-around gap-1 mx-auto my-sm-5 about-panel-container"
+        *ngFor="let work of works
+        let i = index
+        let odd = odd
+        let even = even">
+        <app-collapse-panel
+            [collapsed]="false"
+            [data]="work"
+            (Edit)="onEditWork($event)"
+            (Delete)="onDeleteWork($event)"
+            class="col-12 col-sm-7 col-md-5 col-lg-3 p-0 mx-0 mx-sm-2 mx-lg-5"
+            [attr.data-aos]="odd ? 'zoom-out-left' : 'zoom-out-right'"
+            data-aos-offset="100" data-aos-delay="100" data-aos-duration="750"
+            [ngClass]="{'order-2' : odd}">
+        </app-collapse-panel>
+        <div class="d-none d-sm-flex col-12 col-sm-4 p-0 about-timeline"
+            [ngClass]="{'order-1' : odd}">
+            <app-timeline [data]="work" class="m-auto"></app-timeline>
+        </div>
     </div>
-    <div class="row p-0 mx-0 about-section">
-        <app-education class="col-12 p-0 m-0"></app-education>
+    <div class="row d-flex justify-content-around gap-1 mx-auto my-sm-5 about-panel-container"
+        *ngFor="let education of educationData
+        let i = index
+        let odd = odd
+        let even = even">
+        <app-collapse-panel
+            [collapsed]="false"
+            [data]="education"
+            (Edit)="onEditEducation($event)"
+            (Delete)="onDeleteEducation($event)"
+            class="col-12 col-sm-7 col-md-5 col-lg-3 p-0 mx-0 mx-sm-2 mx-lg-5"
+            [attr.data-aos]="odd ? 'zoom-out-left' : 'zoom-out-right'"
+            data-aos-offset="100" data-aos-delay="100" data-aos-duration="750"
+            [ngClass]="{'order-2' : odd}">
+        </app-collapse-panel>
+        <div class="d-none d-sm-flex col-12 col-sm-4 p-0 about-timeline"
+            [ngClass]="{'order-1' : odd}">
+            <app-timeline [data]="education" class="m-auto"></app-timeline>
+        </div>
     </div>
 </section>

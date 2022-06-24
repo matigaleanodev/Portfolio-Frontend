@@ -44,5 +44,18 @@
   &-content {
     background: $color-white;
     padding: 0.75rem;
+    &-picture{
+      width: 85px;
+      height: 85px;
+      margin: auto 5px auto 5px;
+      padding: 2px;
+      border-radius: 100%;
+      box-shadow: 0 5px 15px $color-shadow;
+      &-img {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+    }
   }
 }

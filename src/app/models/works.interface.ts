@@ -1,7 +1,7 @@
 export interface Work {
     id: number;
     title: string;
-    company: string;
+    institution: string;
     actual: boolean;
     startDate: Date;
     endDate: Date;
