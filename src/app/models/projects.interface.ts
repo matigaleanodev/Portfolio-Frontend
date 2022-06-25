@@ -3,19 +3,13 @@ interface Image {
     name: string;
     url: string;
 }
-interface Technologie{
-    id: number;
-    name: string;
-    icon: string;
-    color: string;
-}
 
 export interface Project {
     id: number;
     name: string;
     description: string;
-    startDate: Date;
+    date: Date;
     repositoryUrl: string;
-    technologies: Technologie[];
+    url: string;
     images: Image[];    
 }

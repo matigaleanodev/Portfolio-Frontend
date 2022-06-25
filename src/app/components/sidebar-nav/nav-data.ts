@@ -6,22 +6,17 @@ export const navData = [
     },
     {
         label: 'About',
-        icon: 'fa-solid fa-address-card',
+        icon: 'fa-solid fa-user',
         routerLink: 'about',
     },
     {
         label: 'Projects',
-        icon: 'fa-solid fa-laptop-code',
+        icon: 'fa-solid fa-display',
         routerLink: 'projects',
     },
     {
         label: 'Contact',
         icon: 'fa-solid fa-envelope',
         routerLink: 'contact',
-    },
-    {
-        label: 'Blog',
-        icon: 'fa-solid fa-blog',
-        routerLink: 'blog',
     }
 ];

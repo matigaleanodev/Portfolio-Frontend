@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ClickMode, Container, Engine, HoverMode, MoveDirection, OutMode } from 'tsparticles-engine';
+
+import { particles } from './animations/particles.animation';
+import { Container, Engine } from 'tsparticles-engine';
 import { loadFull } from "tsparticles";
 
 interface SideNavToggle {
@@ -26,71 +28,7 @@ export class AppComponent {
     this.isSideBarCollapsed = data.collapsed;
     this.screenWidth = data.screenWidth;
   }
-  particlesOptions = {
-    background: {
-      color: {
-        value: "#160129"
-      }
-    },
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        onClick: {
-          enable: true,
-          mode: ClickMode.push
-        },
-        onHover: {
-          enable: true,
-          mode: HoverMode.repulse
-        },
-        resize: true
-      },
-      modes: {
-        push: {
-          quantity: 2
-        },
-        repulse: {
-          distance: 75,
-          duration: 0.5
-        }
-      }
-    },
-    particles: {
-      color: {
-        value: "#e8d9f7"
-      },
-      collisions: {
-        enable: true
-      },
-      move: {
-        direction: MoveDirection.none,
-        enable: true,
-        outModes: {
-          default: OutMode.bounce
-        },
-        random: true,
-        speed: 1,
-        straight: false
-      },
-      number: {
-        density: {
-          enable: true,
-          area: 700
-        },
-        value: 100
-      },
-      opacity: {
-        value: 0.5
-      },
-      shape: {
-        type: "circle"
-      },
-      size: {
-        value: {min: 1, max: 3 },
-      }
-    },
-    detectRetina: true
-  };
+  particlesOptions = particles;
 
   particlesLoaded(container: Container): void {
     console.log(container);

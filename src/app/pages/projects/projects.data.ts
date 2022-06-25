@@ -5,35 +5,10 @@ export const projectsData: Project[] = [
     {
         id: 1,
         name: 'Pokemon Memory',
-        description: 'A simple memory game for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        description: 'Juego de memoria con tematica de pokemon. Creado con Angular y TypeScript, estilos CSS y Bootstrap. Imagenes de pokemon de la pokeapi.co',
+        date: new Date(2022, 5, 1),
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-Memory',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            },
-            {
-                id: 4,
-                name: 'Sass',
-                icon: 'fa-sass',
-                color: '#e38282'
-            }
-        ],        
+        url: 'https://matigaleano.github.io/Pokemon-Memory/',                
         images: [
             {
                 id: 1,
@@ -51,28 +26,9 @@ export const projectsData: Project[] = [
         id: 2,
         name: 'Pokemon API',
         description: 'A simple API for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        date: new Date(2022, 5, 1),
+        url: 'https://pokeapi.co/',
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-API',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            }
-        ],
         images: [
             {
                 id: 1,
@@ -89,35 +45,10 @@ export const projectsData: Project[] = [
     {
         id: 1,
         name: 'Pokemon Memory',
-        description: 'A simple memory game for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        description: 'Juego de memoria con tematica de pokemon. Crea, estilo Imagens s o ',
+        date: new Date(2022, 5, 1),
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-Memory',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            },
-            {
-                id: 4,
-                name: 'Sass',
-                icon: 'fa-sass',
-                color: '#e38282'
-            }
-        ],        
+        url: 'https://matigaleano.github.io/Pokemon-Memory/',                
         images: [
             {
                 id: 1,
@@ -135,28 +66,9 @@ export const projectsData: Project[] = [
         id: 2,
         name: 'Pokemon API',
         description: 'A simple API for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        date: new Date(2022, 5, 1),
+        url: 'https://pokeapi.co/',
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-API',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            }
-        ],
         images: [
             {
                 id: 1,
@@ -173,35 +85,10 @@ export const projectsData: Project[] = [
     {
         id: 1,
         name: 'Pokemon Memory',
-        description: 'A simple memory game for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        description: 'Juego de memoria con tematica de pokemon. Crea, estilo Imagens s o ',
+        date: new Date(2022, 5, 1),
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-Memory',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            },
-            {
-                id: 4,
-                name: 'Sass',
-                icon: 'fa-sass',
-                color: '#e38282'
-            }
-        ],        
+        url: 'https://matigaleano.github.io/Pokemon-Memory/',                
         images: [
             {
                 id: 1,
@@ -219,28 +106,9 @@ export const projectsData: Project[] = [
         id: 2,
         name: 'Pokemon API',
         description: 'A simple API for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        date: new Date(2022, 5, 1),
+        url: 'https://pokeapi.co/',
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-API',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            }
-        ],
         images: [
             {
                 id: 1,
@@ -257,35 +125,10 @@ export const projectsData: Project[] = [
     {
         id: 1,
         name: 'Pokemon Memory',
-        description: 'A simple memory game for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        description: 'Juego de memoria con tematica de pokemon. Crea, estilo Imagens s o ',
+        date: new Date(2022, 5, 1),
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-Memory',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            },
-            {
-                id: 4,
-                name: 'Sass',
-                icon: 'fa-sass',
-                color: '#e38282'
-            }
-        ],        
+        url: 'https://matigaleano.github.io/Pokemon-Memory/',                
         images: [
             {
                 id: 1,
@@ -303,28 +146,9 @@ export const projectsData: Project[] = [
         id: 2,
         name: 'Pokemon API',
         description: 'A simple API for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        date: new Date(2022, 5, 1),
+        url: 'https://pokeapi.co/',
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-API',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            }
-        ],
         images: [
             {
                 id: 1,
@@ -341,35 +165,10 @@ export const projectsData: Project[] = [
     {
         id: 1,
         name: 'Pokemon Memory',
-        description: 'A simple memory game for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        description: 'Juego de memoria con tematica de pokemon. Crea, estilo Imagens s o ',
+        date: new Date(2022, 5, 1),
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-Memory',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            },
-            {
-                id: 4,
-                name: 'Sass',
-                icon: 'fa-sass',
-                color: '#e38282'
-            }
-        ],        
+        url: 'https://matigaleano.github.io/Pokemon-Memory/',                
         images: [
             {
                 id: 1,
@@ -387,28 +186,9 @@ export const projectsData: Project[] = [
         id: 2,
         name: 'Pokemon API',
         description: 'A simple API for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        date: new Date(2022, 5, 1),
+        url: 'https://pokeapi.co/',
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-API',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            }
-        ],
         images: [
             {
                 id: 1,
@@ -425,35 +205,10 @@ export const projectsData: Project[] = [
     {
         id: 1,
         name: 'Pokemon Memory',
-        description: 'A simple memory game for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        description: 'Juego de memoria con tematica de pokemon. Crea, estilo Imagens s o ',
+        date: new Date(2022, 5, 1),
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-Memory',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            },
-            {
-                id: 4,
-                name: 'Sass',
-                icon: 'fa-sass',
-                color: '#e38282'
-            }
-        ],        
+        url: 'https://matigaleano.github.io/Pokemon-Memory/',                
         images: [
             {
                 id: 1,
@@ -471,28 +226,9 @@ export const projectsData: Project[] = [
         id: 2,
         name: 'Pokemon API',
         description: 'A simple API for the Pokemon API.',
-        startDate: new Date(2022, 5, 1),
+        date: new Date(2022, 5, 1),
+        url: 'https://pokeapi.co/',
         repositoryUrl: 'https://github.com/MatiGaleano/Pokemon-API',
-        technologies: [
-            {
-                id: 1,
-                name: 'TypeScript',
-                icon: 'fa-js',
-                color: '#0a66c2'
-            },
-            {
-                id: 2,
-                name: 'Angular',
-                icon: 'fa-angular',
-                color: '#a82431'
-            },
-            {
-                id: 3,
-                name: 'Bootstrap',
-                icon: 'fa-bootstrap',
-                color: '#7b1fa2'
-            }
-        ],
         images: [
             {
                 id: 1,

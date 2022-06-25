@@ -79,6 +79,12 @@ export const skillData: Skill[] = [
         url: 'assets/images/icons/vscode.svg'
     },
     {
+        id: 16,
+        name: 'Net Beans',
+        function: 'tool',
+        url: 'assets/images/icons/netbeans.svg'
+    },
+    {
         id: 13,
         name: 'Git',
         function: 'tool',
@@ -89,19 +95,7 @@ export const skillData: Skill[] = [
         name: 'Npm',
         function: 'tool',
         url: 'assets/images/icons/npm.svg'
-    },
-    {
-        id: 15,
-        name: 'Notion',
-        function: 'tool',
-        url: 'assets/images/icons/notion.svg'
-    },    
-    {
-        id: 16,
-        name: 'Net Beans',
-        function: 'tool',
-        url: 'assets/images/icons/netbeans.svg'
-    },
+    },   
     {
         id: 17,
         name: 'Maven',

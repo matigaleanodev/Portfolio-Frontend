@@ -1,12 +1,14 @@
 @import 'variables';
-@import 'animations';
+
+.about{
+  &-section{
+    min-height: calc(100vh - 6rem);
+    margin: 0;
+  }
+}
 
 @media (min-width: 786px) {
-    .about{
-        &-title{
-          height: calc(100vh - 3rem);
-          padding: 3rem 0;
-        }
+    .timeline{
         &-panel {
             &-container {
                 position: relative;
@@ -37,19 +39,4 @@
             }
         }
     }
-}
-
-.about-text{
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.title {    
-    background-repeat: no-repeat;
-    background-position: center;
-    animation: ken-burns 12s ease 0s infinite alternate both;
 }

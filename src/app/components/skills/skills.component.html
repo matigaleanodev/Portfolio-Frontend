@@ -47,14 +47,14 @@
       aria-labelledby="home-tab"
       tabindex="0">
       <h3 class="p-2 text-primary mb-auto fs-2 fw-bold skill-panel-title">Frontend</h3>
-      <p class="text-light my-auto skill-panel-text">
+      <p class="text-light pb-2 skill-panel-text">
         Tengo mucha afinidad con la programacion modular y orientada 
         a componentes que ofrece Angular y todo su entorno. Trabajo 
         tanto con Javascript nativo como con Typescript y para los estilos
         me gusta convinar librerias como Bootstrap con el toque personal que
         le puede dar sass.
       </p>
-      <div class="d-inline align-self-end mt-auto mb-0 py-3">
+      <div class="d-inline align-self-end py-3">
         <picture  
           *ngFor="let skill of skills"
           [ngClass]="{'d-inline-flex': skill.function === 'frontend',
@@ -62,8 +62,9 @@
           class="d-none skill-panel-picture">
           <img 
                 src="{{skill.url}}" 
-                alt="icono de {{skill.name}}" 
-                class="mx-0 px-1 skill-panel-icon">
+                alt="icono de {{skill.name}}"
+                ngbTooltip="{{skill.name}}"
+                class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon">
         </picture>
       </div>
     </article>
@@ -74,7 +75,7 @@
       aria-labelledby="back-tab"
       tabindex="0">
       <h3 class="p-2 text-primary fs-2 fw-bold skill-panel-title">Backend</h3>
-      <p class="text-light skill-panel-text">
+      <p class="text-light pb-2 skill-panel-text">
         Eh desarrollado algunas Rest API utilizando Spring Boot conectando una 
         base de datos de MySQL y algunos proyectos pequeños en Node Js
       </p>
@@ -87,7 +88,8 @@
           <img
                 src="{{skill.url}}" 
                 alt="icono de {{skill.name}}" 
-                class="mx-0 px-1 skill-panel-icon">
+                ngbTooltip="{{skill.name}}"
+                class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon">
         </picture>
       </div>
     </article>
@@ -98,7 +100,7 @@
       aria-labelledby="tools-tab"
       tabindex="0">
       <h3 class="p-2 text-primary fs-2 fw-bold skill-panel-title">Tools</h3>
-      <p class="text-light skill-panel-text">
+      <p class="text-light pb-2 skill-panel-text">
           Llevo mi dia a dia con varias herramientas para organizar y agilizar 
           mi trabajo asi poder optimizar mi tiempo
       </p>
@@ -111,7 +113,8 @@
           <img  
                 src="{{skill.url}}" 
                 alt="icono de {{skill.name}}" 
-                class="mx-0 px-1 skill-panel-icon">
+                ngbTooltip="{{skill.name}}"
+                class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon">
         </picture>
       </div>
     </article>

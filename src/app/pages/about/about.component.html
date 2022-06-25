@@ -1,9 +1,12 @@
-<section class="container-fluid about">
-    <div class="row d-flex align-items-center justify-content-center bg-dark bg-opacity-50 about-title">
+<div class="container about">
+    <section class="row d-flex align-items-center justify-content-center bg-dark bg-opacity-50 about-section">
         <app-profile></app-profile>
-    </div>
-    <app-skills></app-skills>
-    <div class="row d-flex justify-content-around gap-1 mx-auto my-sm-5 about-panel-container"
+    </section>
+    <section class="about-section" id="hard-skills">
+        <app-skills></app-skills>
+    </section>
+    <section class="about-section" id="experience">
+        <div class="row d-flex justify-content-around gap-1 mx-auto my-sm-5 timeline-panel-container"
         *ngFor="let work of works
         let i = index
         let odd = odd
@@ -18,12 +21,14 @@
             data-aos-offset="100" data-aos-delay="100" data-aos-duration="750"
             [ngClass]="{'order-2' : odd}">
         </app-collapse-panel>
-        <div class="d-none d-sm-flex col-12 col-sm-4 p-0 about-timeline"
+        <div class="d-none d-sm-flex col-12 col-sm-4 p-0"
             [ngClass]="{'order-1' : odd}">
             <app-timeline [data]="work" class="m-auto"></app-timeline>
         </div>
     </div>
-    <div class="row d-flex justify-content-around gap-1 mx-auto my-sm-5 about-panel-container"
+    </section>
+    <section class="about-section" id="education">
+        <div class="row d-flex justify-content-around gap-1 mx-auto my-sm-5 timeline-panel-container"
         *ngFor="let education of educationData
         let i = index
         let odd = odd
@@ -38,9 +43,10 @@
             data-aos-offset="100" data-aos-delay="100" data-aos-duration="750"
             [ngClass]="{'order-2' : odd}">
         </app-collapse-panel>
-        <div class="d-none d-sm-flex col-12 col-sm-4 p-0 about-timeline"
+        <div class="d-none d-sm-flex col-12 col-sm-4 p-0"
             [ngClass]="{'order-1' : odd}">
             <app-timeline [data]="education" class="m-auto"></app-timeline>
         </div>
     </div>
-</section>
+    </section>
+</div>

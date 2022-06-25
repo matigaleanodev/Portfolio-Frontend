@@ -1,18 +1,19 @@
-<article class="card bg-light border border-dark">
+<article class="card bg-light bg-opacity-25 border border-primary">
     <div class="card-header">
         <h5 class="card-title text-center text-primary">{{project.name}}</h5>
     </div>
     <img src={{project.images[0].url}} alt={{project.name}} class="card-img-top">
-    <div class="card-body bg-light text-center">
-        <p class="card-text text-dark">{{project.description}}</p>
-        <time class="text-dark">Project Release: {{project.startDate | date }}</time>
+    <div class="card-body bg-dark bg-opacity-25">
+        <p class="card-text text-light text-center">{{project.description}}</p>
     </div>
     <div 
-        class="card-footer d-flex gap-1 justify-content-around"        
-        >
-        <i  class="fa-brands fs-3 card-icon"
-            *ngFor="let tech of this.project.technologies"
-            [ngStyle]="{'color' : tech.color}"
-            [ngClass]="tech.icon"></i>
+        class="card-footer d-flex gap-1 justify-content-center align-items-center"        
+        >        
+        <a type="button" class="btn btn-primary card-button" href={{project.repositoryUrl}} target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github card-button-icon"></i> Github Repo
+        </a>
+        <a type="button" class="btn btn-primary card-button" href={{project.url}} target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square card-button-icon"></i> Live Demo
+        </a>
     </div>
 </article>

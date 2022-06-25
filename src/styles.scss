@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
 @import 'variables';
 
-$primary: #7b1fa2;
-$secondary: #303f9f;
-$success: #117948;
-$danger: #a82431;
-$light: #e8d9f7;
-$gray: #acafb3;
-$dark: #12031f;
-$white: #ede5f5;
+$primary: $color-primary;
+$secondary: $color-secondary;
+$success: $color-success;
+$danger: $color-danger;
+$light: $color-light;
+$gray: $color-gray;
+$dark: $color-dark;
+$white: $color-white;
 
 $enable-cssgrid: true;
+$tooltip-bg: $primary;
+$tooltip-color: $dark;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import "/node_modules/aos/dist/aos";
@@ -30,6 +32,65 @@ body {
   position: relative;
   font-family: 'Roboto', sans-serif;
   color: $light;
+  line-height: 1.4rem;
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img , picture , video , iframe , figure{
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color:inherit;
+  font-size:inherit;
+}
+p a {
+  display: inline;
+}
+li {
+  list-style-type: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color:inherit;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+form , input, textarea, select , button , label{
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color:inherit;
+  display: block;
+  appearance: none;
+}
+table , tr , td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+svg{
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+::selection {
+  background-color: $primary;
+  color: $dark;
 }
 :host  {
 	display: block;

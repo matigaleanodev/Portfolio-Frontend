@@ -23,10 +23,6 @@ const routes: Routes = [
       import('./pages/contact/contact.module').then(m => m.ContactModule),
       data: {state: 'contact'},
   },
-  {path: 'blog', loadChildren: ()=> 
-      import('./pages/blog/blog.module').then(m => m.BlogModule),
-      data: {state: 'blog'},
-  },
 ];
 
 @NgModule({
