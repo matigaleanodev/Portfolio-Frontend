@@ -5,10 +5,22 @@
                 <picture class="mx-auto mb-4 profile-picture">
                     <img src={{profilePic}} alt="Matias Galeano foto de perfil" class="profile-picture-img">
                 </picture>
-                <a type="button" class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12" href="./about/#soft-skills">Soft Skills</a>
-                <a type="button" class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12" href="./about/#hard-skills">Hard Skills</a>
-                <a type="button" class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12" href="./about/#experience">Experiencia</a>
-                <a type="button" class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12" href="./about/#education">Educacion</a>
+                <a  type="button" 
+                    class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+                    (click)="$event.stopPropagation()" 
+                    href="./about/#soft-skills">Soft Skills</a>
+                <a  type="button" 
+                    class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+                    (click)="$event.stopPropagation()" 
+                    href="./about/#hard-skills">Hard Skills</a>
+                <a  type="button" 
+                    class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+                    (click)="$event.stopPropagation()" 
+                    href="./about/#experience">Experiencia</a>
+                <a  type="button" 
+                    class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+                    (click)="$event.stopPropagation()" 
+                    href="./about/#education">Educacion</a>
             </ul>           
         </div>
         <div class="d-flex order-0 order-md-1 justify-content-center col-12 col-md-8 py-5 py-md-2 mx-auto profile-right">

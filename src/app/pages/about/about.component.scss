@@ -3,7 +3,8 @@
 .about{
   &-section{
     min-height: calc(100vh - 6rem);
-    margin: 0;
+    margin: 3rem 0 6rem;
+    scroll-behavior: smooth;
   }
 }
 
