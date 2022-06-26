@@ -55,6 +55,10 @@
             &:active{
                 transform: scale(.8);
             }
+        }
+        &-body{
+            margin: auto 0;
+            padding: auto;
         }       
         &-p{
             text-justify: distribute;

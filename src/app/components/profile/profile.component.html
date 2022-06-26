@@ -5,22 +5,22 @@
                 <picture class="mx-auto mb-4 profile-picture">
                     <img src={{profilePic}} alt="Matias Galeano foto de perfil" class="profile-picture-img">
                 </picture>
-                <a  type="button" 
-                    class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
-                    (click)="$event.stopPropagation()" 
-                    href="./about/#soft-skills">Soft Skills</a>
-                <a  type="button" 
-                    class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
-                    (click)="$event.stopPropagation()" 
-                    href="./about/#hard-skills">Hard Skills</a>
-                <a  type="button" 
-                    class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
-                    (click)="$event.stopPropagation()" 
-                    href="./about/#experience">Experiencia</a>
-                <a  type="button" 
-                    class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
-                    (click)="$event.stopPropagation()" 
-                    href="./about/#education">Educacion</a>
+                <button class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+                    (click)="onClick('soft-skills')">
+                    Soft Skills
+                </button>
+                <button class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+                    (click)="onClick('hard-skills')">
+                    Hard Skills
+                </button>
+                <button class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+                    (click)="onClick('experience')">
+                    Experiencia
+                </button>
+                <button class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+                    (click)="onClick('education')">
+                    Educacion
+                </button>
             </ul>           
         </div>
         <div class="d-flex order-0 order-md-1 justify-content-center col-12 col-md-8 py-5 py-md-2 mx-auto profile-right">
@@ -29,7 +29,7 @@
                     <h3 class="bold fs-2 text-primary profile-content-title">Sobre Mi</h3>
                     <i class="ms-auto me-0 pb-2 fa-solid fa-user-pen profile-content-icon"></i>
                 </div>
-                <div class="pt-2">
+                <div class="pt-2 profile-content-body">
                     <p class="profile-content-p">
                         Soy de Posadas, Misiones, Argentina. Desde 2020 estudio programacion y desarrollo web de forma autodidacta. 
                         A mitad de 2021 tuve la oportunidad de participar de Argentina Programa y termine de descubrir mi pasion por el desarrollo web. 

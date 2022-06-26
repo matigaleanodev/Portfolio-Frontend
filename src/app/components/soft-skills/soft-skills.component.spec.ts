@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CollapsePanelComponent } from './collapse-panel.component';
+import { SoftSkillsComponent } from './soft-skills.component';
 
-describe('CollapsePanelComponent', () => {
-  let component: CollapsePanelComponent;
-  let fixture: ComponentFixture<CollapsePanelComponent>;
+describe('SoftSkillsComponent', () => {
+  let component: SoftSkillsComponent;
+  let fixture: ComponentFixture<SoftSkillsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CollapsePanelComponent ]
+      declarations: [ SoftSkillsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CollapsePanelComponent);
+    fixture = TestBed.createComponent(SoftSkillsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

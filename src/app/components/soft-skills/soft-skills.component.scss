@@ -1,0 +1,23 @@
+@import 'variables';
+
+.skill{
+    &-wrapped{
+        min-height: 20rem;
+        box-shadow: 5px 5px 15px $color-shadow-light;
+    }
+    &-picture{
+        padding-top: 5px;
+    }
+    &-icon{
+        width: 5rem;
+        height: 5rem;               
+        background: $color-secondary;
+        border: 1px solid $color-secondary;
+        box-shadow: 2px 5px 10px $color-shadow;
+        border-radius: 50%;
+    }
+    // &-body{
+    //     &-title{}
+    //     &-description{}
+    // }
+}

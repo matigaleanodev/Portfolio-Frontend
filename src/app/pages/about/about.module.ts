@@ -5,20 +5,22 @@ import { AboutRoutingModule } from './about-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-import { CollapsePanelComponent } from 'src/app/components/collapse-panel/collapse-panel.component';
-import { TimelineComponent } from '../../components/timeline/timeline.component';
-import { SkillsComponent } from '../../components/skills/skills.component';
 import { ProfileComponent } from '../../components/profile/profile.component';
+import { HardSkillsComponent } from 'src/app/components/hard-skills/hard-skills.component';
+import { SoftSkillsComponent } from '../../components/soft-skills/soft-skills.component';
+import { TimelineComponent } from '../../components/timeline/timeline.component';
+import { AboutTitlesComponent } from './about-titles.component';
 
 
 
 @NgModule({
   declarations: [
     AboutComponent,
-    CollapsePanelComponent,
+    ProfileComponent,
+    HardSkillsComponent,
+    SoftSkillsComponent,
     TimelineComponent,
-    SkillsComponent,
-    ProfileComponent
+    AboutTitlesComponent,
   ],
   imports: [
     CommonModule,

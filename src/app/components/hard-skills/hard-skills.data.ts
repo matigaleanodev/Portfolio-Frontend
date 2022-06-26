@@ -1,11 +1,11 @@
-export interface Skill {
+export interface HardSkill {
     id: number,
     name: string,
     function: 'frontend' | 'backend' | 'tool',
     url: string
   }
 
-export const skillData: Skill[] = [
+export const hardSkillData: HardSkill[] = [
     {
         id: 1,
         name: 'HTML',

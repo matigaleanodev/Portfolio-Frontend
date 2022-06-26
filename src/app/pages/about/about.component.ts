@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as AOS  from 'aos';
-import { Education } from 'src/app/models/education.interface';
-import { Work } from 'src/app/models/works.interface';
-import { educationData } from './education.data';
-import { works } from './work.data';
 
 
 
@@ -16,9 +12,6 @@ import { works } from './work.data';
 })
 export class AboutComponent implements OnInit {
 
-  works: Work[] = works;
-  educationData: Education[] = educationData;
-
   constructor() { }
 
   ngOnInit(): void {
@@ -26,28 +19,28 @@ export class AboutComponent implements OnInit {
     window.addEventListener('load', AOS.refresh);
   }
 
-  onEditWork(id: number){
-    console.log(id)
-  }
+  // onEditWork(id: number){
+  //   console.log(id)
+  // }
 
-  onDeleteWork(id: number){
-    for (let inx = 0; inx < this.works.length; inx++) {
-      if (this.works[inx].id === id) {
-        this.works.splice(inx, 1);
-      }
-    }
-  }
+  // onDeleteWork(id: number){
+  //   for (let inx = 0; inx < this.works.length; inx++) {
+  //     if (this.works[inx].id === id) {
+  //       this.works.splice(inx, 1);
+  //     }
+  //   }
+  // }
 
-  onEditEducation(id: number){
-    console.log(id)
-  }
+  // onEditEducation(id: number){
+  //   console.log(id)
+  // }
 
-  onDeleteEducation(id: number){
-    for (let inx = 0; inx < this.educationData.length; inx++) {
-      if (this.educationData[inx].id === id) {
-        this.educationData.splice(inx, 1);
-      }
-    }
-  }
+  // onDeleteEducation(id: number){
+  //   for (let inx = 0; inx < this.educationData.length; inx++) {
+  //     if (this.educationData[inx].id === id) {
+  //       this.educationData.splice(inx, 1);
+  //     }
+  //   }
+  // }
 
 }

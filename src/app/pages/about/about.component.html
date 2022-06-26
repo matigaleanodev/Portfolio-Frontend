@@ -1,58 +1,24 @@
 <div class="container about">
-    <section class="row d-flex align-items-center justify-content-center bg-dark bg-opacity-50 about-section">
+    <section class="row d-flex align-items-center justify-content-center bg-dark bg-opacity-50 about-section" id="about">
         <app-profile></app-profile>
     </section>
-    <section class="d-flex align-items-center justify-content-center about-section" 
-            id="hard-skills">
-        <app-skills            
+    <section class="container about-section" id="soft-skills">
+        <app-about-titles class="row" [title]="'Soft Skills'"></app-about-titles>
+        <app-soft-skills
+            class="row d-flex align-items-center justify-content-center"
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
             data-aos-duration="1550">
-        </app-skills>
+        </app-soft-skills>
     </section>
-    <section class="about-section" id="experience">
-        <div class="row d-flex justify-content-around gap-1 mx-auto my-sm-5 timeline-panel-container"
-        *ngFor="let work of works
-        let i = index
-        let odd = odd
-        let even = even">
-        <app-collapse-panel
-            [collapsed]="false"
-            [data]="work"
-            (Edit)="onEditWork($event)"
-            (Delete)="onDeleteWork($event)"
-            class="col-12 col-sm-7 col-md-5 col-lg-3 p-0 mx-0 mx-sm-2 mx-lg-5"
-            [attr.data-aos]="odd ? 'zoom-out-left' : 'zoom-out-right'"
-            data-aos-offset="100" data-aos-delay="100" data-aos-duration="750"
-            [ngClass]="{'order-2' : odd}">
-        </app-collapse-panel>
-        <div class="d-none d-sm-flex col-12 col-sm-4 p-0"
-            [ngClass]="{'order-1' : odd}">
-            <app-timeline [data]="work" class="m-auto"></app-timeline>
-        </div>
-    </div>
-    </section>
-    <section class="about-section" id="education">
-        <div class="row d-flex justify-content-around gap-1 mx-auto my-sm-5 timeline-panel-container"
-        *ngFor="let education of educationData
-        let i = index
-        let odd = odd
-        let even = even">
-        <app-collapse-panel
-            [collapsed]="false"
-            [data]="education"
-            (Edit)="onEditEducation($event)"
-            (Delete)="onDeleteEducation($event)"
-            class="col-12 col-sm-7 col-md-5 col-lg-3 p-0 mx-0 mx-sm-2 mx-lg-5"
-            [attr.data-aos]="odd ? 'zoom-out-left' : 'zoom-out-right'"
-            data-aos-offset="100" data-aos-delay="100" data-aos-duration="750"
-            [ngClass]="{'order-2' : odd}">
-        </app-collapse-panel>
-        <div class="d-none d-sm-flex col-12 col-sm-4 p-0"
-            [ngClass]="{'order-1' : odd}">
-            <app-timeline [data]="education" class="m-auto"></app-timeline>
-        </div>
-    </div>
-    </section>
+    <section class="container about-section" id="hard-skills">        
+        <app-about-titles class="row" [title]="'Hard Skills'"></app-about-titles>
+        <app-hard-skills
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="1550">
+        </app-hard-skills>
+    </section>    
 </div>
