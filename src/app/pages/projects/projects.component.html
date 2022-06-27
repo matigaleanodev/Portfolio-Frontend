@@ -1,12 +1,13 @@
-<section class="container">
+<section class="container project">
     <div class="row d-flex justify-content-center align-item-center">
-        <h2 class="col-12 text-light fs-2 pt-2 text-center">Projects</h2>
+        <h2 class="col-12 text-primary fw-bolder fs-2 pt-2 text-center">Projects</h2>
     </div>
     <div class="row d-flex justify-content-center align-item-center">
         <app-project-card 
             *ngFor="let project of projects"
-            [project]="project"
+            [data]="project"
             class="d-flex justify-content-center align-item-center col-12 col-md-6 col-lg-4 col-xl-3 mb-3 px-1 px-lg-2 px-xl-3"
-            ></app-project-card>
+            (onEdit)="onEdit($event)"
+            (onDelete)="onDelete($event)"></app-project-card>
     </div>
 </section>

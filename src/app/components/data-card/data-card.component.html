@@ -1,0 +1,18 @@
+<article class="card bg-light bg-opacity-25 border border-primary article">
+    <div class="d-flex justify-content-end gap-3 text-primary card-header">
+        <i class="fa-solid fa-pencil article-icon"(click)="onEdit.emit(data.id)"></i>
+        <i class="fa-solid fa-trash article-icon"(click)="onDelete.emit(data.id)"></i>
+    </div>
+    <div class="card-body d-flex row justify-content-center">
+        <picture class="article-picture">
+            <img src={{data.logo}} alt={{data.institution}} class="article-img">
+        </picture>
+        <h5 class="text-center fs-4 text-primary article-title">{{data.title}}</h5>        
+        <p class="text-light fs-5 article-text">{{data.description}}</p>
+        <time class="text-center article-footer-desig">
+            {{data.startDate | date: 'MMM yyyy'}} - 
+            <span *ngIf="!data.actual">{{data.endDate | date: 'MMM yyyy'}}</span>
+            <span *ngIf="data.actual">Actual</span>
+        </time>
+    </div>
+</article>

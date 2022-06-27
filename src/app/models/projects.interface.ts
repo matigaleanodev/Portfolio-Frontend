@@ -9,7 +9,7 @@ export interface Project {
     name: string;
     description: string;
     date: Date;
-    repositoryUrl: string;
+    repositoryUrl: string[];
     url: string;
     images: Image[];    
 }

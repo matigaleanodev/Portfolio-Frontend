@@ -1,1 +1,6 @@
 @import 'variables';
+
+.project{
+    min-height: calc(100vh - 6rem);
+    min-width: calc(100vw - 15rem);
+}

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Project } from 'src/app/models/projects.interface';
 
@@ -9,7 +9,9 @@ import { Project } from 'src/app/models/projects.interface';
 })
 export class ProjectCardComponent implements OnInit {
 
-  @Input() project!: Project;
+  @Input() data!: Project;
+  @Output() onEdit = new EventEmitter<number>();
+  @Output() onDelete = new EventEmitter<number>();
   
 
   constructor() {}

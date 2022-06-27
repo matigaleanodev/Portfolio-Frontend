@@ -10,6 +10,9 @@ import { HardSkillsComponent } from 'src/app/components/hard-skills/hard-skills.
 import { SoftSkillsComponent } from '../../components/soft-skills/soft-skills.component';
 import { TimelineComponent } from '../../components/timeline/timeline.component';
 import { AboutTitlesComponent } from './about-titles.component';
+import { ExperienceComponent } from '../../components/experience/experience.component';
+import { EducationComponent } from '../../components/education/education.component';
+import { DataCardComponent } from '../../components/data-card/data-card.component';
 
 
 
@@ -21,6 +24,9 @@ import { AboutTitlesComponent } from './about-titles.component';
     SoftSkillsComponent,
     TimelineComponent,
     AboutTitlesComponent,
+    ExperienceComponent,
+    EducationComponent,
+    DataCardComponent,
   ],
   imports: [
     CommonModule,

@@ -7,7 +7,7 @@
         <app-soft-skills
             class="row d-flex align-items-center justify-content-center"
             data-aos="fade-up"
-            data-aos-offset="100"
+            data-aos-offset="10"
             data-aos-delay="100"
             data-aos-duration="1550">
         </app-soft-skills>
@@ -15,10 +15,28 @@
     <section class="container about-section" id="hard-skills">        
         <app-about-titles class="row" [title]="'Hard Skills'"></app-about-titles>
         <app-hard-skills
-            data-aos="fade-up"
-            data-aos-offset="100"
+            data-aos="zoom-in-up"
+            data-aos-offset="10"
             data-aos-delay="100"
             data-aos-duration="1550">
         </app-hard-skills>
-    </section>    
+    </section>
+    <section class="container about-section" id="experience">        
+        <app-about-titles class="row" [title]="'Experiencia Laboral'"></app-about-titles>
+        <app-experience
+            data-aos="zoom-out-up"
+            data-aos-offset="10"
+            data-aos-delay="100"
+            data-aos-duration="1550">
+        </app-experience>
+    </section>
+    <section class="container about-section" id="education">        
+        <app-about-titles class="row" [title]="'Cursos y Certificaciones'"></app-about-titles>
+        <app-education
+            data-aos="fade-zoom-in"
+            data-aos-offset="10"
+            data-aos-delay="100"
+            data-aos-duration="1550">
+        </app-education>
+    </section>  
 </div>

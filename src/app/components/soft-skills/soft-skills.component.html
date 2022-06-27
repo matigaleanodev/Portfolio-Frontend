@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="row">
-        <article class="col-12 col-md-6 col-lg-4 my-2 skill" *ngFor="let skill of skills">
+    <div class="row d-flex justify-content-center gap-3">
+        <article class="col-12 col-md-5 col-lg-4 col-xl-3 my-2 skill" *ngFor="let skill of skills">
             <div class="border border-primary border-1 rounded-2 skill-wrapped">
                 <picture class="d-flex w-100 skill-picture">
                     <img src="{{skill.url}}" alt="icono de {{skill.name}}" ngbTooltip="{{skill.name}}" class="mx-auto skill-icon">
                 </picture>
-                <div class="skill-body">
+                <div class="p-1 skill-body">
                     <h3 class="p-2 text-primary text-center fs-2 fw-bold skill-body-title">{{skill.name}}</h3>
                     <p class="text-light text-center pb-2 skill-panel-body-description">
                         {{skill.description}}
