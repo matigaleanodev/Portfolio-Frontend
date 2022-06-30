@@ -4,7 +4,7 @@ import { ContactRoutingModule } from './contact-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ContactComponent } from './contact.component';
-import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 
 @NgModule({

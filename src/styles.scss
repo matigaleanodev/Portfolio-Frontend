@@ -13,6 +13,8 @@ $white: $color-white;
 $enable-cssgrid: true;
 $tooltip-bg: $primary;
 $tooltip-color: $dark;
+$form-check-input-checked-bg-color: $primary;
+$form-check-input-checked-border-color: $primary;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import "/node_modules/aos/dist/aos";

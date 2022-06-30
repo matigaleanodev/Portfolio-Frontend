@@ -12,11 +12,11 @@ import { ContactModule } from './pages/contact/contact.module';
 import { LoginModule } from './pages/login/login.module';
 
 import { AppComponent } from './app.component';
-import { SidebarNavComponent } from './components/sidebar-nav/sidebar-nav.component';
-import { BodyComponent } from './components/body/body.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SocialBoxComponent } from './components/social-box/social-box.component';
+import { SidebarNavComponent } from './shared/sidebar-nav/sidebar-nav.component';
+import { BodyComponent } from './shared/body/body.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { SocialBoxComponent } from './shared/social-box/social-box.component';
 
 @NgModule({
   declarations: [
