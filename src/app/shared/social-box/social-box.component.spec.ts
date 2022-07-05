@@ -8,9 +8,8 @@ describe('SocialBoxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SocialBoxComponent ]
-    })
-    .compileComponents();
+      declarations: [SocialBoxComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SocialBoxComponent);
     component = fixture.componentInstance;

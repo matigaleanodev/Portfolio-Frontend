@@ -1,17 +1,30 @@
 <div class="container">
-    <div class="row d-flex justify-content-center gap-3">
-        <article class="col-12 col-md-5 col-lg-4 col-xl-3 my-2 skill" *ngFor="let skill of skills">
-            <div class="border border-primary border-1 rounded-2 skill-wrapped">
-                <picture class="d-flex w-100 skill-picture">
-                    <img src="{{skill.url}}" alt="icono de {{skill.name}}" ngbTooltip="{{skill.name}}" class="mx-auto skill-icon">
-                </picture>
-                <div class="p-1 skill-body">
-                    <h3 class="p-2 text-primary text-center fs-2 fw-bold skill-body-title">{{skill.name}}</h3>
-                    <p class="text-light text-center pb-2 skill-panel-body-description">
-                        {{skill.description}}
-                    </p>
-                </div>
-            </div>
-        </article>
-    </div>
+  <app-about-titles class="row" [title]="'Soft Skills'"></app-about-titles>
+  <div class="row d-flex justify-content-center gap-3 skill">
+    <article
+      class="col-12 col-md-5 col-lg-4 col-xl-3 my-2 skill-article"
+      *ngFor="let skill of skills"
+    >
+      <div class="border border-primary border-1 rounded-2 skill-wrapped">
+        <picture class="d-flex w-100 skill-picture">
+          <img
+            src="{{ skill.url }}"
+            alt="icono de {{ skill.name }}"
+            ngbTooltip="{{ skill.name }}"
+            class="mx-auto skill-icon"
+          />
+        </picture>
+        <div class="p-1 skill-body">
+          <h3
+            class="p-2 text-primary text-center fs-2 fw-bold skill-body-title"
+          >
+            {{ skill.name }}
+          </h3>
+          <p class="text-light text-center pb-2 skill-panel-body-description">
+            {{ skill.description }}
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
 </div>

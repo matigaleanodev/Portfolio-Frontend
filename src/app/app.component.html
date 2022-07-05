@@ -1,12 +1,17 @@
 <div class="app">
-    <ng-particles [id]="id" [options]="particlesOptions" [particlesInit]="particlesInit"
-              (particlesLoaded)="particlesLoaded($event)"></ng-particles>
-    <app-sidebar-nav (onToggleSideBar)="onToggleSideBar($event)"></app-sidebar-nav>
-    <app-header></app-header>
-    <app-body
+  <ng-particles
+    [id]="id"
+    [options]="particlesOptions"
+    [particlesInit]="particlesInit"
+    (particlesLoaded)="particlesLoaded($event)"
+  ></ng-particles>
+  <app-sidebar-nav
+    (onToggleSideBar)="onToggleSideBar($event)"
+  ></app-sidebar-nav>
+  <app-header></app-header>
+  <app-body
     [collapsed]="isSideBarCollapsed"
     [screenWidth]="screenWidth"
-    ></app-body>
-    <app-footer class="mt-auto app-footer"></app-footer>
+  ></app-body>
+  <app-footer class="mt-auto app-footer"></app-footer>
 </div>
-      

@@ -5,15 +5,12 @@ import { Work } from 'src/app/models/works.interface';
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.scss']
+  styleUrls: ['./timeline.component.scss'],
 })
 export class TimelineComponent implements OnInit {
+  @Input() data!: Work | Education;
 
-  @Input() data!:Work|Education;
-  
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

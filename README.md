@@ -15,4 +15,3 @@
 <img src="https://brandlogos.net/wp-content/uploads/2021/09/bootstrap-logo.png" width="30px"/>
 
 <img src="https://iconape.com/wp-content/files/pm/370894/svg/370894.svg" width="20px"/>
-

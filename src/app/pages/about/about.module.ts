@@ -5,7 +5,6 @@ import { AboutRoutingModule } from './about-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 import { ProfileComponent } from './components/profile/profile.component';
 import { HardSkillsComponent } from './components/hard-skills/hard-skills.component';
 import { SoftSkillsComponent } from './components/soft-skills/soft-skills.component';
@@ -15,8 +14,6 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { EducationComponent } from './components/education/education.component';
 import { DataCardComponent } from './components/data-card/data-card.component';
 import { DataFormComponent } from './components/data-form/data-form.component';
-
-
 
 @NgModule({
   declarations: [
@@ -36,10 +33,8 @@ import { DataFormComponent } from './components/data-form/data-form.component';
     CommonModule,
     AboutRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  exports: [
-    AboutComponent
-  ]
+  exports: [AboutComponent],
 })
-export class AboutModule { }
+export class AboutModule {}

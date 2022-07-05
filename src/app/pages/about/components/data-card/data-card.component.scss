@@ -1,40 +1,40 @@
-@import 'variables';
+@import "variables";
 
 .article {
-    min-height: 400px;
-    box-shadow: 5px 5px 10px 3px $color-shadow;
+  min-height: 400px;
+  box-shadow: 5px 5px 10px 3px $color-shadow;
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 20px 3px $color-shadow;
+  }
+  &-icon {
     transition: all 0.5s ease;
-    &:hover{
-        transform: scale(1.05);
-        box-shadow: 10px 10px 20px 3px $color-shadow;
+    &:hover {
+      color: $color-light;
+      transform: scale(1.25);
     }
-    &-icon{
-        transition: all 0.5s ease;
-        &:hover{
-            color: $color-light;
-            transform: scale(1.25);
-        }
-        &:active{
-            color: $color-light;
-            transform: scale(0.75);
-        }
+    &:active {
+      color: $color-light;
+      transform: scale(0.75);
     }
-    &-picture {
-        width: 7rem;
-        height: 7rem;
-        padding: auto;
-    }
-    &-img {
-        width: 100%;
-        height: auto;
-        border-radius: 100%;
-        object-fit: cover;
-    }
-    &-text{
-        padding: .5rem;
-        text-justify: distribute-all-lines;
-    }
-    &-footer{
-        height: 6rem;
-    }
+  }
+  &-picture {
+    width: 7rem;
+    height: 7rem;
+    padding: auto;
+  }
+  &-img {
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+  &-text {
+    padding: 0.5rem;
+    text-justify: distribute-all-lines;
+  }
+  &-footer {
+    height: 6rem;
+  }
 }

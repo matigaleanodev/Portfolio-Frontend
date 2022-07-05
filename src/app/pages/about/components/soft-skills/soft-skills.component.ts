@@ -4,15 +4,12 @@ import { softSkillData, SoftSkill } from './soft-skills.data';
 @Component({
   selector: 'app-soft-skills',
   templateUrl: './soft-skills.component.html',
-  styleUrls: ['./soft-skills.component.scss']
+  styleUrls: ['./soft-skills.component.scss'],
 })
 export class SoftSkillsComponent implements OnInit {
-
   skills: SoftSkill[] = softSkillData;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

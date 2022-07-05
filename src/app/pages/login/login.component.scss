@@ -1,38 +1,38 @@
-@import 'variables';
+@import "variables";
 
 .login {
-    display: flex;
-    align-items: center;
-    height: 3rem;
-    color: $color-light;
-    background: #dac4ee3f;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 5px 30px rgba(221, 194, 253, 0.25);
-    text-decoration: none;
-    border: 1px solid $color-light;
-    border-radius: 0.4rem;
-    transition: color 0.5s ease;
-    &:hover{
-        background-color: $color-light;
-        box-shadow: 0 5px 30px rgba(221, 194, 253, 0.75);
-        color: $color-dark;
-    }
-    &-icon{
-        font-size: 22px;
-        width: 2rem;
-        min-width: 2rem;
-        margin: 0 0.50rem;
-        text-align: center;
-    }
-    &-text{
-        margin-left: 5rem;
-    }
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  color: $color-light;
+  background: #dac4ee3f;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 5px 30px rgba(221, 194, 253, 0.25);
+  text-decoration: none;
+  border: 1px solid $color-light;
+  border-radius: 0.4rem;
+  transition: color 0.5s ease;
+  &:hover {
+    background-color: $color-light;
+    box-shadow: 0 5px 30px rgba(221, 194, 253, 0.75);
+    color: $color-dark;
+  }
+  &-icon {
+    font-size: 22px;
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 0.5rem;
+    text-align: center;
+  }
+  &-text {
+    margin-left: 5rem;
+  }
 }
 .active {
-    background: $color-light;
-    .login-icon,
-    .login-text {
-        color: $color-dark;
-    }
+  background: $color-light;
+  .login-icon,
+  .login-text {
+    color: $color-dark;
+  }
 }

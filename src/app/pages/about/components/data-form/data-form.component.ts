@@ -7,29 +7,27 @@ import { Work } from 'src/app/models/works.interface';
 @Component({
   selector: 'app-data-form',
   templateUrl: './data-form.component.html',
-  styleUrls: ['./data-form.component.scss']
+  styleUrls: ['./data-form.component.scss'],
 })
 export class DataFormComponent implements OnInit {
-
-  @Input() formLabels: string[] = ['institution', 'title']
+  @Input() formLabels: string[] = ['institution', 'title'];
   files: any = [];
   data!: Work | Education;
   form!: FormGroup;
 
-  constructor( private fb: FormBuilder ) {
-    this.form  = this.fb.group({
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
       institution: ['', Validators.required],
       title: ['', Validators.required],
       startDate: [null, Validators.required],
       endDate: [null, Validators.required],
       actual: [Boolean, Validators.required],
       logo: [null, Validators.required],
-      description: ['', Validators.required,],
+      description: ['', Validators.required],
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onFileChange(event: Event): any {
     const target = event.target as HTMLInputElement;
@@ -43,5 +41,4 @@ export class DataFormComponent implements OnInit {
     let logo = this.form.value.logo;
     console.log(logo);
   }
-
 }

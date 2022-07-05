@@ -4,19 +4,16 @@ import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-
   profilePic: string = 'assets/images/profilePicture.jpg';
 
-  constructor(private viewportScroller: ViewportScroller) { }
+  constructor(private viewportScroller: ViewportScroller) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onClick(id: string){
+  onClick(id: string) {
     this.viewportScroller.scrollToAnchor(id);
   }
-
 }

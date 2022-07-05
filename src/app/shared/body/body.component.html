@@ -1,3 +1,7 @@
-<main class="container-fluid body" [ngClass]="getBodyClass()" [@animation]="getState(o)">
-    <router-outlet  #o="outlet" class="body-routes"></router-outlet>
+<main
+  class="container-fluid body"
+  [ngClass]="getBodyClass()"
+  [@animation]="getState(o)"
+>
+  <router-outlet #o="outlet" class="body-routes"></router-outlet>
 </main>

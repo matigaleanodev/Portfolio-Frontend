@@ -1,25 +1,40 @@
 <nav class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
-    <div class="sidenav-logo">
-        <button class="sidenav-logo-button" (click)="toggleCollapsed()">
-            <img src="assets/images/ArgentinaPrograma.png" alt="Logo Argentina Programa" class="img-fluid">
-        </button>
-        <div class="sidenav-logo-text" @fadeInOut *ngIf="collapsed">
-            Argentina&nbsp;Programa
-        </div>
-        <button class="sidenav-logo-close" @rotate *ngIf="collapsed" (click)="closeSideBar()">
-            <i class="fa-solid fa-xmark close-icon"></i>
-        </button>
+  <div class="sidenav-logo">
+    <button class="sidenav-logo-button" (click)="toggleCollapsed()">
+      <img
+        src="assets/images/ArgentinaPrograma.png"
+        alt="Logo Argentina Programa"
+        class="img-fluid"
+      />
+    </button>
+    <div class="sidenav-logo-text" @fadeInOut *ngIf="collapsed">
+      Argentina&nbsp;Programa
     </div>
-    <ul class="sidenav-bar">
-        <li class="sidenav-bar-item" *ngFor="let data of navData">
-            <a class="sidenav-bar-link" [routerLink]="data.routerLink"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}"
-            >
-                <i class="sidenav-bar-icon" [ngClass]="data.icon"></i>
-                <span class="sidenav-bar-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
-            </a>
-        </li>
-        <li class="mt-auto mb-0 sidenav-bar-item"><app-login [collapsed]="collapsed"></app-login></li>
-    </ul>
+    <button
+      class="sidenav-logo-close"
+      @rotate
+      *ngIf="collapsed"
+      (click)="closeSideBar()"
+    >
+      <i class="fa-solid fa-xmark close-icon"></i>
+    </button>
+  </div>
+  <ul class="sidenav-bar">
+    <li class="sidenav-bar-item" *ngFor="let data of navData">
+      <a
+        class="sidenav-bar-link"
+        [routerLink]="data.routerLink"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <i class="sidenav-bar-icon" [ngClass]="data.icon"></i>
+        <span class="sidenav-bar-text" @fadeInOut *ngIf="collapsed">{{
+          data.label
+        }}</span>
+      </a>
+    </li>
+    <li class="mt-auto mb-0 sidenav-bar-item">
+      <app-login [collapsed]="collapsed"></app-login>
+    </li>
+  </ul>
 </nav>

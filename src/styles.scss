@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
-@import 'variables';
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap");
+@import "variables";
 
 $primary: $color-primary;
 $secondary: $color-secondary;
@@ -16,10 +16,9 @@ $tooltip-color: $dark;
 $form-check-input-checked-bg-color: $primary;
 $form-check-input-checked-border-color: $primary;
 
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import "/node_modules/aos/dist/aos";
+@import "node_modules/bootstrap/scss/bootstrap";
 
-html{
+html {
   scroll-behavior: smooth;
 }
 * {
@@ -30,9 +29,9 @@ html{
   vertical-align: baseline;
 }
 body {
-  background: $dark;  
+  background: $dark;
   position: relative;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: $light;
   line-height: 1.4rem;
   hyphens: auto;
@@ -40,7 +39,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-img , picture , video , iframe , figure{
+img,
+picture,
+video,
+iframe,
+figure {
   max-width: 100%;
   width: 100%;
   object-fit: cover;
@@ -49,8 +52,8 @@ img , picture , video , iframe , figure{
 a {
   display: block;
   text-decoration: none;
-  color:inherit;
-  font-size:inherit;
+  color: inherit;
+  font-size: inherit;
 }
 p a {
   display: inline;
@@ -61,31 +64,55 @@ li {
 html {
   scroll-behavior: smooth;
 }
-h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
   font-size: 1em;
   font-weight: inherit;
   font-style: inherit;
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
-blockquote:before, blockquote:after, q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
-form , input, textarea, select , button , label{
+form,
+input,
+textarea,
+select,
+button,
+label {
   font-family: inherit;
   font-size: inherit;
   hyphens: auto;
   background-color: transparent;
-  color:inherit;
+  color: inherit;
   display: block;
   appearance: none;
 }
-table , tr , td {
+table,
+tr,
+td {
   border-collapse: collapse;
   border-spacing: 0;
 }
-svg{
+svg {
   width: 100%;
   display: block;
   fill: currentColor;
@@ -94,21 +121,21 @@ svg{
   background-color: $primary;
   color: $dark;
 }
-:host  {
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
+:host {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 ::-webkit-scrollbar {
   width: 15px;
   border-left: $light solid 1px;
   border-radius: 3px;
-  &-track{
-    background: $dark;  
+  &-track {
+    background: $dark;
   }
-  &-thumb{
+  &-thumb {
     background: $primary;
     border-radius: 3px;
   }

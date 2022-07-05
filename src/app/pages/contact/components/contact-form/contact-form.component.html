@@ -1,40 +1,36 @@
-<form
-    [formGroup]="contact"
-    (ngSubmit)="onSubmit()"
-    autocomplete="off"
->
-    <div class="form-floating mb-1 mb-md-3">
-        <input
-        type="text"
-        class="form-control"
-        id="name"
-        placeholder="Name"
-        formControlName="name"
-        required
-        >
-        <label for="name" class="text-dark mb-1">Name</label>
-    </div>
-    <div class="form-floating mb-1 mb-md-3">
-        <input
-        type="email"
-        class="form-control"
-        id="email"
-        placeholder="Email"
-        formControlName="email"
-        required
-        >
-        <label for="email" class="text-dark mb-1">Email</label>
-    </div>
-    <div class="form-floating mb-1 mb-md-3">
-        <textarea
-        class="form-control"
-        id="message"
-        placeholder="Message"
-        [ngStyle]="{ height: '40vh' }"
-        formControlName="message"
-        required
-        ></textarea>
-        <label for="message" class="text-dark">Message</label>
-    </div>
-    <input type="submit" value="Enviar" class="btn btn-primary mb-1 mb-md-3">
+<form [formGroup]="contact" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-floating mb-1 mb-md-3">
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Name"
+      formControlName="name"
+      required
+    />
+    <label for="name" class="text-dark mb-1">Name</label>
+  </div>
+  <div class="form-floating mb-1 mb-md-3">
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="Email"
+      formControlName="email"
+      required
+    />
+    <label for="email" class="text-dark mb-1">Email</label>
+  </div>
+  <div class="form-floating mb-1 mb-md-3">
+    <textarea
+      class="form-control"
+      id="message"
+      placeholder="Message"
+      [ngStyle]="{ height: '40vh' }"
+      formControlName="message"
+      required
+    ></textarea>
+    <label for="message" class="text-dark">Message</label>
+  </div>
+  <input type="submit" value="Enviar" class="btn btn-primary mb-1 mb-md-3" />
 </form>

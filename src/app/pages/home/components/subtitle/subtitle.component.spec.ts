@@ -8,9 +8,8 @@ describe('SubtitleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubtitleComponent ]
-    })
-    .compileComponents();
+      declarations: [SubtitleComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SubtitleComponent);
     component = fixture.componentInstance;

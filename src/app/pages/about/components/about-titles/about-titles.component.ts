@@ -1,27 +1,40 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-about-titles',
   template: `
     <div class="d-flex mt-5 mb-3 pb-2 border-bottom border-light">
-      <h3 class="fs-1">{{title}}</h3>
-      <button class="btn bg-primary bg-opacity-50 text-light ms-auto"
-                    (click)="onClick('about')">
-                    Volver Arriba <i class="fas fa-angle-up"></i>
-                </button>
+      <h3 class="fs-1 fw-bold">{{ title }}</h3>
+      <div class="d-flex gap-3 ms-auto">
+        <i class="fa-solid fa-plus m-auto icon" (click)="onAdd.emit()"></i>
+        <i class="fa-solid fa-angles-up m-auto icon" (click)="onClick('about')"></i>
+      </div>
     </div>
   `,
-  styles: [
-  ]
+  styles: [`
+    @import "variables";
+
+    .icon {
+      transition: all 0.5s ease;
+      &:hover {
+        color: $color-primary;
+        transform: scale(1.25);
+      }
+      &:active {
+        color: $color-light;
+        transform: scale(0.75);
+      }
+    }
+    `],
 })
 export class AboutTitlesComponent {
-
   @Input() title!: string;
+  @Output() onAdd = new EventEmitter();
 
-  constructor(private viewportScroller: ViewportScroller) { }
+  constructor(private viewportScroller: ViewportScroller) {}
 
-  onClick(id: string){
+  onClick(id: string) {
     this.viewportScroller.scrollToAnchor(id);
   }
 }

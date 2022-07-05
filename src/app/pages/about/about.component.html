@@ -1,43 +1,27 @@
 <div class="container about">
-    <section class="row d-flex align-items-center justify-content-center bg-dark bg-opacity-50 about-section" id="about">
-        <app-data-form></app-data-form>
-        <app-profile></app-profile>
-    </section>
-    <section class="container about-section" id="soft-skills">
-        <app-about-titles class="row" [title]="'Soft Skills'"></app-about-titles>
-        <app-soft-skills
-            class="row d-flex align-items-center justify-content-center"
-            data-aos="fade-up"
-            data-aos-offset="10"
-            data-aos-delay="100"
-            data-aos-duration="1550">
-        </app-soft-skills>
-    </section>
-    <section class="container about-section" id="hard-skills">        
-        <app-about-titles class="row" [title]="'Hard Skills'"></app-about-titles>
-        <app-hard-skills
-            data-aos="zoom-in-up"
-            data-aos-offset="10"
-            data-aos-delay="100"
-            data-aos-duration="1550">
-        </app-hard-skills>
-    </section>
-    <section class="container about-section" id="experience">        
-        <app-about-titles class="row" [title]="'Experiencia Laboral'"></app-about-titles>
-        <app-experience
-            data-aos="zoom-out-up"
-            data-aos-offset="10"
-            data-aos-delay="100"
-            data-aos-duration="1550">
-        </app-experience>
-    </section>
-    <section class="container about-section" id="education">        
-        <app-about-titles class="row" [title]="'Cursos y Certificaciones'"></app-about-titles>
-        <app-education
-            data-aos="fade-zoom-in"
-            data-aos-offset="10"
-            data-aos-delay="100"
-            data-aos-duration="1550">
-        </app-education>
-    </section>  
+  <section
+    class="row d-flex align-items-center justify-content-center bg-dark bg-opacity-50 about-section"
+    id="about"
+  >
+    <app-profile></app-profile>
+  </section>
+  <section class="container about-section" id="soft-skills">
+    <app-soft-skills
+      class="row d-flex align-items-center justify-content-center"
+      data-aos="fade-up"
+      data-aos-offset="10"
+      data-aos-delay="100"
+      data-aos-duration="1550"
+    >
+    </app-soft-skills>
+  </section>
+  <section class="container about-section" id="hard-skills">
+    <app-hard-skills></app-hard-skills>
+  </section>
+  <section class="container about-section" id="experience">
+    <app-experience></app-experience>
+  </section>
+  <section class="container about-section" id="education">
+    <app-education></app-education>
+  </section>
 </div>

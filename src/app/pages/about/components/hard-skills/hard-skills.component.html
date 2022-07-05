@@ -1,20 +1,29 @@
-<section class="container skill">
+<app-about-titles class="row" [title]="'Hard Skills'"></app-about-titles>
+<section
+  class="container skill"
+  data-aos="fade-up"
+  data-aos-offset="10"
+  data-aos-delay="100"
+  data-aos-duration="1550"
+>
   <nav class="skill-nav">
     <ul class="nav nav-tabs skill-nav-list">
       <li class="nav-item skill-nav-item" role="presentation">
-        <button 
-          class="nav-link active skill-nav-button" 
+        <button
+          class="nav-link active skill-nav-button"
           id="front-tab"
           data-bs-toggle="tab"
           data-bs-target="#front"
           type="button"
           role="tab"
           aria-controls="front"
-          aria-selected="true"        
-        >Frontend</button>
+          aria-selected="true"
+        >
+          Frontend
+        </button>
       </li>
       <li class="nav-item skill-nav-item" role="presentation">
-        <button 
+        <button
           class="nav-link skill-nav-button"
           id="back-tab"
           data-bs-toggle="tab"
@@ -23,10 +32,12 @@
           role="tab"
           aria-controls="back"
           aria-selected="false"
-        >Backend</button>
+        >
+          Backend
+        </button>
       </li>
       <li class="nav-item skill-nav-item" role="presentation">
-        <button 
+        <button
           class="nav-link skill-nav-button"
           id="tools-tab"
           data-bs-toggle="tab"
@@ -35,36 +46,45 @@
           role="tab"
           aria-controls="tools"
           aria-selected="false"
-        >Tools</button>
+        >
+          Tools
+        </button>
       </li>
     </ul>
   </nav>
   <div class="d-flex tab-content bg-light bg-opacity-25 rounded-3 skill-panel">
-    <article 
+    <article
       class="tab-pane active skill-panel-article"
       id="front"
       role="tabpanel"
       aria-labelledby="home-tab"
-      tabindex="0">
-      <h3 class="p-2 text-primary mb-auto fs-2 fw-bold skill-panel-title">Frontend</h3>
+      tabindex="0"
+    >
+      <h3 class="p-2 text-primary mb-auto fs-2 fw-bold skill-panel-title">
+        Frontend
+      </h3>
       <p class="text-light pb-2 skill-panel-text">
-        Tengo mucha afinidad con la programacion modular y orientada 
-        a componentes que ofrece Angular y todo su entorno. Trabajo 
-        tanto con Javascript nativo como con Typescript y para los estilos
-        me gusta convinar librerias como Bootstrap con el toque personal que
-        le puede dar sass.
+        Tengo mucha afinidad con la programacion modular y orientada a
+        componentes que ofrece Angular y todo su entorno. Trabajo tanto con
+        Javascript nativo como con Typescript y para los estilos me gusta
+        convinar librerias como Bootstrap con el toque personal que le puede dar
+        sass.
       </p>
       <div class="d-inline align-self-end py-3">
-        <picture  
+        <picture
           *ngFor="let skill of skills"
-          [ngClass]="{'d-inline-flex': skill.function === 'frontend',
-                      'd-none': skill.function !== 'frontend'}" 
-          class="d-none skill-panel-picture">
-          <img 
-                src="{{skill.url}}" 
-                alt="icono de {{skill.name}}"
-                ngbTooltip="{{skill.name}}"
-                class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon">
+          [ngClass]="{
+            'd-inline-flex': skill.function === 'frontend',
+            'd-none': skill.function !== 'frontend'
+          }"
+          class="d-none skill-panel-picture"
+        >
+          <img
+            src="{{ skill.url }}"
+            alt="icono de {{ skill.name }}"
+            ngbTooltip="{{ skill.name }}"
+            class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
+          />
         </picture>
       </div>
     </article>
@@ -73,23 +93,28 @@
       id="back"
       role="tabpanel"
       aria-labelledby="back-tab"
-      tabindex="0">
+      tabindex="0"
+    >
       <h3 class="p-2 text-primary fs-2 fw-bold skill-panel-title">Backend</h3>
       <p class="text-light pb-2 skill-panel-text">
-        Eh desarrollado algunas Rest API utilizando Spring Boot conectando una 
+        Eh desarrollado algunas Rest API utilizando Spring Boot conectando una
         base de datos de MySQL y algunos proyectos pequeños en Node Js
       </p>
       <div class="d-inline py-3">
-        <picture 
+        <picture
           *ngFor="let skill of skills"
-          [ngClass]="{'d-inline-flex': skill.function === 'backend',
-                      'd-none': skill.function !== 'backend'}" 
-          class="d-none skill-panel-picture">
+          [ngClass]="{
+            'd-inline-flex': skill.function === 'backend',
+            'd-none': skill.function !== 'backend'
+          }"
+          class="d-none skill-panel-picture"
+        >
           <img
-                src="{{skill.url}}" 
-                alt="icono de {{skill.name}}" 
-                ngbTooltip="{{skill.name}}"
-                class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon">
+            src="{{ skill.url }}"
+            alt="icono de {{ skill.name }}"
+            ngbTooltip="{{ skill.name }}"
+            class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
+          />
         </picture>
       </div>
     </article>
@@ -98,23 +123,28 @@
       id="tools"
       role="tabpanel"
       aria-labelledby="tools-tab"
-      tabindex="0">
+      tabindex="0"
+    >
       <h3 class="p-2 text-primary fs-2 fw-bold skill-panel-title">Tools</h3>
       <p class="text-light pb-2 skill-panel-text">
-          Llevo mi dia a dia con varias herramientas para organizar y agilizar 
-          mi trabajo asi poder optimizar mi tiempo
+        Llevo mi dia a dia con varias herramientas para organizar y agilizar mi
+        trabajo asi poder optimizar mi tiempo
       </p>
       <div class="d-inline py-3 px-0">
-        <picture 
+        <picture
           *ngFor="let skill of skills"
-          [ngClass]="{'d-inline-flex': skill.function === 'tool',
-                      'd-none': skill.function !== 'tool'}"
-          class="d-none skill-panel-picture">
-          <img  
-                src="{{skill.url}}" 
-                alt="icono de {{skill.name}}" 
-                ngbTooltip="{{skill.name}}"
-                class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon">
+          [ngClass]="{
+            'd-inline-flex': skill.function === 'tool',
+            'd-none': skill.function !== 'tool'
+          }"
+          class="d-none skill-panel-picture"
+        >
+          <img
+            src="{{ skill.url }}"
+            alt="icono de {{ skill.name }}"
+            ngbTooltip="{{ skill.name }}"
+            class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
+          />
         </picture>
       </div>
     </article>

@@ -25,7 +25,7 @@ import { SocialBoxComponent } from './shared/social-box/social-box.component';
     BodyComponent,
     HeaderComponent,
     FooterComponent,
-    SocialBoxComponent
+    SocialBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +37,9 @@ import { SocialBoxComponent } from './shared/social-box/social-box.component';
     AboutModule,
     ProjectsModule,
     ContactModule,
-    LoginModule
+    LoginModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { particles } from './animations/particles.animation';
 import { Container, Engine } from 'tsparticles-engine';
-import { loadFull } from "tsparticles";
+import { loadFull } from 'tsparticles';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -12,7 +12,7 @@ interface SideNavToggle {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'Matias Galeano';
@@ -20,9 +20,8 @@ export class AppComponent {
   isSideBarCollapsed: boolean = false;
   screenWidth: number = 0;
 
-  id = "tsparticles";
-  particlesUrl = "http://foo.bar/particles.json";
-
+  id = 'tsparticles';
+  particlesUrl = 'http://foo.bar/particles.json';
 
   onToggleSideBar(data: SideNavToggle): void {
     this.isSideBarCollapsed = data.collapsed;
@@ -43,4 +42,3 @@ export class AppComponent {
     await loadFull(engine);
   }
 }
-

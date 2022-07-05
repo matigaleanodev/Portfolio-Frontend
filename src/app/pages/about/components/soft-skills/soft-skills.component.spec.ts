@@ -8,9 +8,8 @@ describe('SoftSkillsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SoftSkillsComponent ]
-    })
-    .compileComponents();
+      declarations: [SoftSkillsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SoftSkillsComponent);
     component = fixture.componentInstance;

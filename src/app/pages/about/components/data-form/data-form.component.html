@@ -1,56 +1,72 @@
 <div class="container">
-    <form
-    [formGroup]="form"
-    (ngSubmit)="onSubmit($event)"
-    autocomplete="off"
-    >
+  <form [formGroup]="form" (ngSubmit)="onSubmit($event)" autocomplete="off">
     <div class="input-group mb-1 mb-md-3">
-        <span class="input-group-text">{{formLabels[0]}}</span>
+      <span class="input-group-text">{{ formLabels[0] }}</span>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="institution"
+        id="institution"
+        placeholder="{{ formLabels[0] }}"
+      />
+    </div>
+    <div class="input-group mb-1 mb-md-3">
+      <span for="title" class="input-group-text">{{ formLabels[1] }}</span>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="title"
+        id="title"
+        placeholder="{{ formLabels[1] }}"
+      />
+    </div>
+    <div class="input-group mb-1 mb-md-3">
+      <span class="input-group-text">Fecha Inicio/Fin</span>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="startDate"
+        id="startDate"
+      />
+      <input
+        type="date"
+        class="form-control"
+        formControlName="endDate"
+        id="endDate"
+      />
+      <span for="actual" class="input-group-text">Actual?</span>
+      <div class="input-group-text">
         <input
-            class="form-control"
-            type="text"
-            formControlName="institution"
-            id="institution"
-            placeholder="{{formLabels[0]}}">
-    </div>
-    <div class="input-group mb-1 mb-md-3">
-        <span for="title" class="input-group-text">{{formLabels[1]}}</span>
-        <input
-            class="form-control " 
-            type="text"
-            formControlName="title"
-            id="title"
-            placeholder="{{formLabels[1]}}">
-    </div>
-    <div class="input-group mb-1 mb-md-3">
-        <span class="input-group-text">Fecha Inicio/Fin</span>
-        <input type="date" class="form-control" formControlName="startDate" id="startDate">
-        <input type="date" class="form-control" formControlName="endDate" id="endDate">
-        <span for="actual" class="input-group-text">Actual?</span>
-        <div class="input-group-text">
-            <input class="form-check-input mt-0" type="checkbox" value="" formControlName="actual" id="actual">
-        </div>
-    </div>
-    <div class="input-group mb-1 mb-md-3">
-        <span class="input-group-text">Logo</span>
-          <input
-              (change)="onFileChange($event)"
-              class="form-control"
-              accept="image/png, image/gif, image/jpeg"
-              type="file"
-              formControlName="logo"
-              id="logo"
-              placeholder="logo">
+          class="form-check-input mt-0"
+          type="checkbox"
+          value=""
+          formControlName="actual"
+          id="actual"
+        />
       </div>
-    <div class="input-group mb-1 mb-md-3">
-        <span class="input-group-text">Descripcion</span>
-        <textarea
-            class="form-control"
-            formControlName="description"
-            id="description"
-            placeholder="Descricion">
-        </textarea>
     </div>
-    <input class="btn btn-primary" type="submit" value="Enviar">
-</form>
+    <div class="input-group mb-1 mb-md-3">
+      <span class="input-group-text">Logo</span>
+      <input
+        (change)="onFileChange($event)"
+        class="form-control"
+        accept="image/png, image/gif, image/jpeg"
+        type="file"
+        formControlName="logo"
+        id="logo"
+        placeholder="logo"
+      />
+    </div>
+    <div class="input-group mb-1 mb-md-3">
+      <span class="input-group-text">Descripcion</span>
+      <textarea
+        class="form-control"
+        formControlName="description"
+        id="description"
+        placeholder="Descricion"
+      >
+      </textarea>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Enviar" />
+  </form>
 </div>

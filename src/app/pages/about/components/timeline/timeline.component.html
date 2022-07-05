@@ -1,9 +1,6 @@
-<label class="timeline-date">
-    {{data.startDate | date: 'MMM yyyy'}}
-</label>&nbsp;-&nbsp;
+<label class="timeline-date"> {{ data.startDate | date: "MMM yyyy" }} </label
+>&nbsp;-&nbsp;
 <label class="timeline-date" *ngIf="!data.actual">
-    {{data.endDate | date: 'MMM yyyy'}}
+  {{ data.endDate | date: "MMM yyyy" }}
 </label>
-<label class="timeline-date" *ngIf="data.actual">
-    Actual
-</label>
+<label class="timeline-date" *ngIf="data.actual"> Actual </label>

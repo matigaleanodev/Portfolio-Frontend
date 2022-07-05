@@ -5,19 +5,9 @@ import { HomeComponent } from './home.component';
 import { SubtitleComponent } from './components/subtitle/subtitle.component';
 import { HomeRoutingModule } from './home-routing.module';
 
-
-
 @NgModule({
-  declarations: [
-    HomeComponent,
-    SubtitleComponent,
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule
-  ],
-  exports: [
-    HomeComponent
-  ]
+  declarations: [HomeComponent, SubtitleComponent],
+  imports: [CommonModule, HomeRoutingModule],
+  exports: [HomeComponent],
 })
-export class HomeModule { }
+export class HomeModule {}
