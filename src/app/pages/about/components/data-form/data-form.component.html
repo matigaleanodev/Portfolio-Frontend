@@ -46,27 +46,30 @@
       </div>
     </div>
     <div class="input-group mb-1 mb-md-3">
-      <span class="input-group-text">Logo</span>
-      <input
-        (change)="onFileChange($event)"
-        class="form-control"
-        accept="image/png, image/gif, image/jpeg"
-        type="file"
-        formControlName="logo"
-        id="logo"
-        placeholder="logo"
-      />
-    </div>
-    <div class="input-group mb-1 mb-md-3">
       <span class="input-group-text">Descripcion</span>
       <textarea
-        class="form-control"
-        formControlName="description"
-        id="description"
-        placeholder="Descricion"
+      class="form-control"
+      formControlName="description"
+      id="description"
+      placeholder="Descricion"
       >
-      </textarea>
-    </div>
+    </textarea>
+  </div>
+  <div class="input-group mb-1 mb-md-3">
+    <span class="input-group-text">Image</span>
+    <input
+      (change)="onFileChange($event)"
+      class="form-control"
+      accept="image/png, image/gif, image/jpeg"
+      type="file"
+      formControlName="image"
+      id="image"
+      placeholder="image"
+    />
+  </div>
+  <picture *ngIf="preview" class="form__picture">
+    <img [src]="preview" class="form__preview" />
+  </picture>
     <input class="btn btn-primary" type="submit" value="Enviar" />
   </form>
 </div>

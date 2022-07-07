@@ -4,6 +4,7 @@ import { AboutComponent } from './about.component';
 import { AboutRoutingModule } from './about-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ProfileComponent } from './components/profile/profile.component';
 import { HardSkillsComponent } from './components/hard-skills/hard-skills.component';
@@ -34,6 +35,7 @@ import { DataFormComponent } from './components/data-form/data-form.component';
     AboutRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [AboutComponent],
 })

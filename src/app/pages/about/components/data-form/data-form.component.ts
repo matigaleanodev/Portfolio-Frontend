@@ -11,8 +11,10 @@ import { Work } from 'src/app/models/works.interface';
 })
 export class DataFormComponent implements OnInit {
   @Input() formLabels: string[] = ['institution', 'title'];
-  files: any = [];
+  @Output() dataChange = new EventEmitter<Education | Work>();
+  file: any;
   data!: Work | Education;
+  preview: string = '';
   form!: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -21,8 +23,8 @@ export class DataFormComponent implements OnInit {
       title: ['', Validators.required],
       startDate: [null, Validators.required],
       endDate: [null, Validators.required],
-      actual: [Boolean, Validators.required],
-      logo: [null, Validators.required],
+      actual: [false, Validators.required],
+      image: [this.preview, Validators.required],
       description: ['', Validators.required],
     });
   }
@@ -33,12 +35,38 @@ export class DataFormComponent implements OnInit {
     const target = event.target as HTMLInputElement;
     const file = target.files?.length ? target.files[0] : null;
     if (file) {
-      this.files.push(file);
+      this.getBase64(file).then((base64) => {
+        this.preview = base64;
+      }
+      );
+    } else {
+      this.file = null;
     }
+  }
+  
+  getBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = (error) => reject(error);
+    });
   }
 
   onSubmit(event: Event): void {
-    let logo = this.form.value.logo;
-    console.log(logo);
+    try {
+      event.preventDefault();
+      this.data = this.form.value;
+      console.log(this.data);
+      console.log(this.data.image);
+      this.dataChange.emit(this.data);
+      this.form.reset();
+      this.preview = '';
+    } catch (error) {
+      console.log(error);
+    }
   }
+
+  
 }
+

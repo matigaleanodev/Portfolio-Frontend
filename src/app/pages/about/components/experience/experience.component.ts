@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Work } from 'src/app/models/works.interface';
-import { works } from './experience.data';
 import * as AOS from 'aos';
+import { ExperienceService } from 'src/app/services/experience-service/experience.service';
 
 @Component({
   selector: 'app-experience',
@@ -10,12 +10,18 @@ import * as AOS from 'aos';
   styleUrls: ['./experience.component.scss'],
 })
 export class ExperienceComponent implements OnInit {
-  workData: Work[] = works;
+
+  workData!: Work[];
   addWork: boolean = false;
 
-  constructor() {}
+  constructor(private expService: ExperienceService) {    
+  }
 
   ngOnInit(): void {
+    this.expService.getWorks().subscribe(works => {
+      this.workData = works;
+    }
+    );
     AOS.init();
     window.addEventListener('load', AOS.refresh);
   }
@@ -25,15 +31,19 @@ export class ExperienceComponent implements OnInit {
     return this.addWork;
   }
 
+  onSubmit(work: Work): void {
+    // this.expService.postWork(work).subscribe();
+    // this.addWork = false;
+  }
+
   onEdit(id: number) {
-    console.log(id);
+    // this.expService.getWorkById(id).subscribe(work => {
+    //   this.expService.putWork(work).subscribe();
+    // }
+    // );
   }
 
   onDelete(id: number) {
-    for (let inx = 0; inx < this.workData.length; inx++) {
-      if (this.workData[inx].id === id) {
-        this.workData.splice(inx, 1);
-      }
-    }
+    // this.expService.deleteWork(id).subscribe();
   }
 }

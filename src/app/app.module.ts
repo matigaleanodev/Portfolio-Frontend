@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { NgParticlesModule } from 'ng-particles';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeModule } from './pages/home/home.module';
 import { AboutModule } from './pages/about/about.module';
@@ -31,6 +32,7 @@ import { SocialBoxComponent } from './shared/social-box/social-box.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     NgParticlesModule,
     NgbModule,
     HomeModule,
