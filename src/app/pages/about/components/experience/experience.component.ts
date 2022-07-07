@@ -10,18 +10,15 @@ import { ExperienceService } from 'src/app/services/experience-service/experienc
   styleUrls: ['./experience.component.scss'],
 })
 export class ExperienceComponent implements OnInit {
-
   workData!: Work[];
   addWork: boolean = false;
 
-  constructor(private expService: ExperienceService) {    
-  }
+  constructor(private expService: ExperienceService) {}
 
   ngOnInit(): void {
-    this.expService.getWorks().subscribe(works => {
+    this.expService.getWorks().subscribe((works) => {
       this.workData = works;
-    }
-    );
+    });
     AOS.init();
     window.addEventListener('load', AOS.refresh);
   }
@@ -31,19 +28,24 @@ export class ExperienceComponent implements OnInit {
     return this.addWork;
   }
 
-  onSubmit(work: Work): void {
-    // this.expService.postWork(work).subscribe();
-    // this.addWork = false;
+  onSubmit(data: Work): void {
+    this.expService.postWork(data).subscribe((data) => {
+      this.workData.push(data);
+    });
+    this.addWork = false;
   }
 
   onEdit(id: number) {
-    // this.expService.getWorkById(id).subscribe(work => {
-    //   this.expService.putWork(work).subscribe();
-    // }
-    // );
+    this.expService.getWorkById(id).subscribe((data) => {
+      this.expService.putWork(data).subscribe((data) => {
+        this.workData.push(data);
+      });
+    });
   }
 
   onDelete(id: number) {
-    // this.expService.deleteWork(id).subscribe();
+    this.expService.deleteWork(id).subscribe(() => {
+      this.workData = this.workData.filter((data) => data.id !== id);
+    });
   }
 }

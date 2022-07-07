@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Education } from 'src/app/models/education.interface';
-import { educationData } from './education.data';
 import * as AOS from 'aos';
+import { EducationService } from 'src/app/services/education-service/education.service';
 
 @Component({
   selector: 'app-education',
@@ -10,12 +10,15 @@ import * as AOS from 'aos';
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
-  educationData: Education[] = educationData;
+  educationData!: Education[];
   addEducation: boolean = false;
 
-  constructor() {}
+  constructor(private eduService: EducationService) {}
 
   ngOnInit(): void {
+    this.eduService.getEducation().subscribe((data) => {
+      this.educationData = data;
+    });
     AOS.init();
     window.addEventListener('load', AOS.refresh);
   }
@@ -26,14 +29,17 @@ export class EducationComponent implements OnInit {
   }
 
   onEdit(id: number) {
-    console.log(id);
+    this.eduService.getEducationById(id).subscribe(data => {
+      this.eduService.putEducation(data).subscribe((data)=>{
+        this.educationData.push(data);
+      });
+    }
+    );
   }
 
   onDelete(id: number) {
-    for (let inx = 0; inx < this.educationData.length; inx++) {
-      if (this.educationData[inx].id === id) {
-        this.educationData.splice(inx, 1);
-      }
-    }
+    this.eduService.deleteEducation(id).subscribe(() => {
+      this.educationData = this.educationData.filter((data) => data.id !== id);
+    });
   }
 }
