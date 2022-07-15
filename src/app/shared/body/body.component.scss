@@ -3,6 +3,9 @@
 .body {
   width: calc(100% - 5rem);
   min-height: calc(100vh - 6rem);
+  @media (max-width: 576px){
+    height: -webkit-fill-available;
+  }
   margin-left: 5rem;
   padding: 0 0 3rem 0;
   z-index: 0;

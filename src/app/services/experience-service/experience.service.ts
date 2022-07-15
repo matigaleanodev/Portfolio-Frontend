@@ -19,7 +19,7 @@ export class ExperienceService {
   constructor(private http: HttpClient) {}
 
   getWorks(): Observable<Work[]> {
-    return this.http.get<Work[]>(this.baseUrl, httpOptions);
+    return this.http.get<Work[]>(this.baseUrl, httpOptions);    
   }
 
   getWorkById(id: number): Observable<Work> {

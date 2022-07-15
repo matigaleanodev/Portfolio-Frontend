@@ -16,7 +16,7 @@ export class EducationComponent implements OnInit {
   constructor(private eduService: EducationService) {}
 
   ngOnInit(): void {
-    this.eduService.getEducation().subscribe((data) => {
+    this.eduService.getEducation().subscribe((data: Education[]) => {
       this.educationData = data;
     });
     AOS.init();
@@ -26,6 +26,12 @@ export class EducationComponent implements OnInit {
   onAdd(): boolean {
     this.addEducation = !this.addEducation;
     return this.addEducation;
+  }
+
+  onSubmit(data: Education): void {
+    this.eduService.postEducation(data).subscribe();
+    this.educationData.push(data);
+    this.addEducation = false;
   }
 
   onEdit(id: number) {

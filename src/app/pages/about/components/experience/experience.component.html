@@ -17,7 +17,7 @@
   <div class="row d-flex justify-content-center gap-3">
     <app-data-card
       class="col-12 col-md-5 col-lg-4 col-xl-3"
-      *ngFor="let data of workData.slice().reverse()"
+      *ngFor="let data of workData"
       [data]="data"
       (onEdit)="onEdit($event)"
       (onDelete)="onDelete($event)"

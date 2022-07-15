@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { Education } from 'src/app/models/education.interface';
 import { Work } from 'src/app/models/works.interface';
+import { ImageService } from 'src/app/services/image-service/image.service';
 
 @Component({
   selector: 'app-data-form',
@@ -17,14 +18,13 @@ export class DataFormComponent implements OnInit {
   preview: string = '';
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private imgService: ImageService) {
     this.form = this.fb.group({
       institution: ['', Validators.required],
       title: ['', Validators.required],
       startDate: [null, Validators.required],
       endDate: [null, Validators.required],
       actual: [false, Validators.required],
-      image: [this.preview, Validators.required],
       description: ['', Validators.required],
     });
   }
@@ -35,15 +35,15 @@ export class DataFormComponent implements OnInit {
     const target = event.target as HTMLInputElement;
     const file = target.files?.length ? target.files[0] : null;
     if (file) {
+      this.file = file;
       this.getBase64(file).then((base64) => {
         this.preview = base64;
-      }
-      );
+      });
     } else {
       this.file = null;
     }
   }
-  
+
   getBase64(file: File): Promise<string> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -53,12 +53,18 @@ export class DataFormComponent implements OnInit {
     });
   }
 
+  uploadImage(): void {    
+    const file = new FormData();
+    file.append('file', this.file, this.file.name);
+    this.imgService.postImage(file).subscribe();
+  }
+
   onSubmit(event: Event): void {
     try {
       event.preventDefault();
       this.data = this.form.value;
-      console.log(this.data);
-      console.log(this.data.image);
+      this.data.image = this.file.name;
+      this.uploadImage();
       this.dataChange.emit(this.data);
       this.form.reset();
       this.preview = '';
@@ -66,7 +72,4 @@ export class DataFormComponent implements OnInit {
       console.log(error);
     }
   }
-
-  
 }
-
