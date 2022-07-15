@@ -16,8 +16,9 @@ export class ExperienceComponent implements OnInit {
   constructor(private expService: ExperienceService) {}
 
   ngOnInit(): void {
-    this.expService.getWorks().subscribe((works) => {
+    this.expService.getWorks().subscribe((works: Work[]) => {
       this.workData = works;
+      console.log(works);
     });
     AOS.init();
     window.addEventListener('load', AOS.refresh);
@@ -29,9 +30,8 @@ export class ExperienceComponent implements OnInit {
   }
 
   onSubmit(data: Work): void {
-    this.expService.postWork(data).subscribe((data) => {
-      this.workData.push(data);
-    });
+    this.expService.postWork(data).subscribe();
+    this.workData.push(data);
     this.addWork = false;
   }
 

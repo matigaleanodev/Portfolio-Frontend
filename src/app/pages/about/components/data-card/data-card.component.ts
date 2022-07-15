@@ -15,6 +15,7 @@ export class DataCardComponent implements OnInit {
   @Output() onEdit = new EventEmitter<number>();
   @Output() onDelete = new EventEmitter<number>();
 
+
   constructor() {}
 
   ngOnInit(): void {

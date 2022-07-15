@@ -1,4 +1,15 @@
 <div class="container">
+  <div class="input-group mb-1 mb-md-3">
+    <span class="input-group-text">Image</span>
+    <input
+      (change)="onFileChange($event)"
+      class="form-control"
+      accept="image/png, image/jpeg"
+      type="file"
+      id="image"
+      placeholder="image"
+    />
+  </div>
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)" autocomplete="off">
     <div class="input-group mb-1 mb-md-3">
       <span class="input-group-text">{{ formLabels[0] }}</span>
@@ -48,28 +59,16 @@
     <div class="input-group mb-1 mb-md-3">
       <span class="input-group-text">Descripcion</span>
       <textarea
-      class="form-control"
-      formControlName="description"
-      id="description"
-      placeholder="Descricion"
+        class="form-control"
+        formControlName="description"
+        id="description"
+        placeholder="Descricion"
       >
-    </textarea>
-  </div>
-  <div class="input-group mb-1 mb-md-3">
-    <span class="input-group-text">Image</span>
-    <input
-      (change)="onFileChange($event)"
-      class="form-control"
-      accept="image/png, image/gif, image/jpeg"
-      type="file"
-      formControlName="image"
-      id="image"
-      placeholder="image"
-    />
-  </div>
+      </textarea>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Enviar" />
+  </form>
   <picture *ngIf="preview" class="form__picture">
     <img [src]="preview" class="form__preview" />
   </picture>
-    <input class="btn btn-primary" type="submit" value="Enviar" />
-  </form>
 </div>

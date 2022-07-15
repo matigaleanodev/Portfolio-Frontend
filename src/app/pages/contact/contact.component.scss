@@ -1,6 +1,9 @@
 @import "variables";
 
-.contact {
-  height: calc(100vh - 6rem);
+.contact {  
+  height: calc(100vh - 6rem);  
   min-width: calc(100vw - 15rem);
+  @media (max-width: 576px){
+    height: -webkit-fill-available;
+  }
 }

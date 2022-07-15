@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HardSkillsComponent } from './components/hard-skills/hard-skills.component';
 import { SoftSkillsComponent } from './components/soft-skills/soft-skills.component';
-import { TimelineComponent } from './components/timeline/timeline.component';
 import { AboutTitlesComponent } from './components/about-titles/about-titles.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
@@ -22,7 +21,6 @@ import { DataFormComponent } from './components/data-form/data-form.component';
     ProfileComponent,
     HardSkillsComponent,
     SoftSkillsComponent,
-    TimelineComponent,
     AboutTitlesComponent,
     ExperienceComponent,
     EducationComponent,

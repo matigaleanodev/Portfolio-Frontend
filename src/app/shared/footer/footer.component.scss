@@ -3,6 +3,7 @@
 .footer {
   z-index: 1;
   padding: 0.5rem 0;
-  height: 3rem;
+  margin-top: auto;
+  max-height: 3rem;
   border-top: 1px solid $color-light;
 }
