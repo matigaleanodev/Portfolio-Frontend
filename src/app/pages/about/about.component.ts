@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as AOS from 'aos';
+import { Profile } from 'src/app/models/profile.interface';
+import { ProfileService } from 'src/app/services/profile-service/profile.service';
 
 @Component({
   selector: 'app-about',
@@ -8,9 +10,13 @@ import * as AOS from 'aos';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  constructor() {}
+  profile!: Profile;
+  constructor(
+    private profServ: ProfileService
+  ) {}
 
   ngOnInit(): void {
+    this.profServ.getProfile().subscribe(data => { this.profile = data[0]; console.log(this.profile) });
     AOS.init();
     window.addEventListener('load', AOS.refresh);
   }
