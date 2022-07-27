@@ -18,7 +18,6 @@ export class ExperienceComponent implements OnInit {
   ngOnInit(): void {
     this.expService.getWorks().subscribe((works: Work[]) => {
       this.workData = works;
-      console.log(works);
     });
     AOS.init();
     window.addEventListener('load', AOS.refresh);

@@ -14,6 +14,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { EducationComponent } from './components/education/education.component';
 import { DataCardComponent } from './components/data-card/data-card.component';
 import { DataFormComponent } from './components/data-form/data-form.component';
+import { idGenerator } from 'src/app/services/id-generator/idGenerator';
 
 @NgModule({
   declarations: [
@@ -36,5 +37,6 @@ import { DataFormComponent } from './components/data-form/data-form.component';
     HttpClientModule
   ],
   exports: [AboutComponent],
+  providers: [idGenerator],
 })
 export class AboutModule {}

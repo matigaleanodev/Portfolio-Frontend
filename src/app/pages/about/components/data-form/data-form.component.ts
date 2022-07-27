@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Education } from 'src/app/models/education.interface';
 import { Work } from 'src/app/models/works.interface';
 import { ImageService } from 'src/app/services/image-service/image.service';
+import { idGenerator } from 'src/app/services/id-generator/idGenerator';
 
 @Component({
   selector: 'app-data-form',
@@ -11,14 +12,18 @@ import { ImageService } from 'src/app/services/image-service/image.service';
   styleUrls: ['./data-form.component.scss'],
 })
 export class DataFormComponent implements OnInit {
-  @Input() formLabels: string[] = ['institution', 'title'];
   @Output() dataChange = new EventEmitter<Education | Work>();
+  @Input() formLabels: string[] = ['institution', 'title'];
+  @Input() data!: Work | Education;
   file: any;
-  data!: Work | Education;
   preview: string = '';
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder, private imgService: ImageService) {
+  constructor(
+    private fb: FormBuilder,
+    private imgService: ImageService,
+    private idGen: idGenerator
+  ) {
     this.form = this.fb.group({
       institution: ['', Validators.required],
       title: ['', Validators.required],
@@ -53,7 +58,7 @@ export class DataFormComponent implements OnInit {
     });
   }
 
-  uploadImage(): void {    
+  uploadImage(): void {
     const file = new FormData();
     file.append('file', this.file, this.file.name);
     this.imgService.postImage(file).subscribe();
@@ -63,7 +68,9 @@ export class DataFormComponent implements OnInit {
     try {
       event.preventDefault();
       this.data = this.form.value;
+      this.data.id = this.idGen.generateId();
       this.data.image = this.file.name;
+      console.log(this.data);
       this.uploadImage();
       this.dataChange.emit(this.data);
       this.form.reset();
