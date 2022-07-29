@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { BYPASS_JW_TOKEN } from '../authentication/interceptor.service';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Access-Control-Allow-Origin': '*'
-  }),
-};
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +15,13 @@ export class ImageService {
 
 
   getImage(name: String): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${name}`, { headers: httpOptions.headers });
+    return this.http.get(`${this.baseUrl}/${name}`, {
+      context: new HttpContext().set(BYPASS_JW_TOKEN, true),
+    });
   }
 
   postImage(data: FormData): Observable<any> {
-    return this.http.post(this.baseUrl, data, { headers: httpOptions.headers });
+    return this.http.post(this.baseUrl, data);
   }
 
   deleteImage(name: String): Observable<any> {
