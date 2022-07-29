@@ -15,7 +15,7 @@ export class DataCardComponent implements OnInit {
   @Input() data!: Work | Education;
   @Output() onEdit = new EventEmitter<number>();
   @Output() onDelete = new EventEmitter<number>();
-  imgSrc: string = `${environment.API_URL}/api/image/${this.data.image}`
+  API_URL = environment.API_URL;
 
 
   constructor() {}

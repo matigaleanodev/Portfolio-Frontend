@@ -12,7 +12,7 @@
   <div class="card-body d-flex row justify-content-center">
     <picture class="article-picture">
       <img
-        src="{{ imgSrc }}"
+        src="{{API_URL + '/api/image/' + data.image}}"
         alt="{{ data.institution }}"
         class="article-img"
       />

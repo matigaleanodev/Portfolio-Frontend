@@ -3,6 +3,7 @@
   <span class="login-text" @fadeInOut *ngIf="collapsed"> Login </span>
 </a>
 <div
+  #loginModal
   class="modal fade"
   id="loginModal"
   tabindex="-1"
@@ -13,7 +14,11 @@
 >
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark">
-      <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="login($event)"
+        autocomplete="off"
+      >
         <div class="modal-header">
           <h5 class="modal-title" id="loginModalLabel">Login</h5>
           <button
@@ -26,7 +31,7 @@
         <div class="modal-body bg-dark text-dark">
           <div class="form-floating mb-3">
             <input
-              type="text"
+              type="email"
               class="form-control"
               id="username"
               formControlName="username"
@@ -44,21 +49,10 @@
             />
             <label for="password">Password</label>
           </div>
-          <div class="mb-3">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              formControlName="reminder"
-              id="reminder"
-            />
-            <label class="ms-3 form-check-label text-white" for="reminder"
-              >Remember Me</label
-            >
-          </div>
         </div>
         <div class="modal-footer">
           <button
+            #closeModal
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"

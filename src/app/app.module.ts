@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { NgParticlesModule } from 'ng-particles';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { HomeModule } from './pages/home/home.module';
 import { AboutModule } from './pages/about/about.module';
@@ -18,6 +18,7 @@ import { BodyComponent } from './shared/body/body.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SocialBoxComponent } from './shared/social-box/social-box.component';
+import { InterceptorService } from './services/authentication/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { SocialBoxComponent } from './shared/social-box/social-box.component';
     ContactModule,
     LoginModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

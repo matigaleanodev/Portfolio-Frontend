@@ -33,6 +33,12 @@ const routes: Routes = [
       import('./pages/contact/contact.module').then((m) => m.ContactModule),
     data: { state: 'contact' },
   },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./pages/dashboard/dashboard.module').then((m) => m.DashboardModule),
+    data: { state: 'dashboard' },
+  },
 ];
 
 @NgModule({
