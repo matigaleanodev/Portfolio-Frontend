@@ -1,17 +1,13 @@
 @import "variables";
 
 .form {
-  &__picture {
-    width: 7rem;
-    max-width: 7rem;
-    height: 7rem;
-    margin: auto;
-    padding: auto;
+  &__image{
+    height: 10rem;
   }
   &__preview {
-    width: 100%;
+    background-color: #DAD5DF;
+    width: 10rem;
     height: auto;
-    border-radius: 100%;
     object-fit: cover;
   }
 }

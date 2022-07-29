@@ -1,7 +1,7 @@
-<article class="card bg-light bg-opacity-25 border border-primary article">
+<article class="card mb-3 bg-light bg-opacity-25 border border-primary article">
   <div class="d-flex justify-content-end gap-3 text-primary card-header">
     <i
-      class="fa-solid fa-pencil article-icon"
+      class="fa-solid fa-pencil article-icon me-2"
       (click)="onEdit.emit(data.id)"
     ></i>
     <i
@@ -9,22 +9,35 @@
       (click)="onDelete.emit(data.id)"
     ></i>
   </div>
-  <div class="card-body d-flex row justify-content-center">
-    <picture class="article-picture">
+  <div class="row g-0">
+    <picture class="d-flex col-md-4 m-auto justify-content-center align-items-center article-picture">
       <img
-        src="{{API_URL + '/api/image/' + data.image}}"
+        src="{{ API_URL + '/api/image/' + data.image }}"
         alt="{{ data.institution }}"
-        class="article-img"
+        class="img-fluid rounded-circle p-2"
       />
     </picture>
-    <h5 class="text-center fs-4 fw-bold text-primary article-title">
-      {{ data.title }}
-    </h5>
-    <p class="text-light fs-5 article-text">{{ data.description }}</p>
-    <time class="text-center article-footer-desig">
-      {{ data.startDate | date: "MMM yyyy" }} -
-      <span *ngIf="!data.actual">{{ data.endDate | date: "MMM yyyy" }}</span>
-      <span *ngIf="data.actual">Actual</span>
-    </time>
+    <div class="col-md-8 m-auto">
+      <h5
+        class="text-center fs-4 fw-bold text-primary justify-center article-title"
+      >
+        {{ data.title }}
+      </h5>
+      <h4
+      class="text-center fs-5 fw-bold text-primary justify-center article-title"
+      >
+        {{ data.institution }}
+      </h4>
+      <div class="card-body">
+        <p class="text-light fs-5 article-text">{{ data.description }}</p>
+        <time class="text-center article-footer-desig">
+          {{ data.startDate | date: "MMM yyyy" }} -
+          <span *ngIf="!data.actual">{{
+            data.endDate | date: "MMM yyyy"
+          }}</span>
+          <span *ngIf="data.actual">Actual</span>
+        </time>
+      </div>
+    </div>
   </div>
 </article>

@@ -1,12 +1,16 @@
-<a class="login" data-bs-toggle="modal" data-bs-target="#loginModal">
+<a class="login" data-bs-toggle="modal" data-bs-target="#loginModal" *ngIf="!onLogin">
   <i class="fa-solid fa-power-off login-icon"></i>
   <span class="login-text" @fadeInOut *ngIf="collapsed"> Login </span>
+</a>
+<a class="login pointer-event" *ngIf="onLogin" (click)="logout()">
+  <i class="fa-solid fa-power-off login-icon"></i>
+  <span class="login-text" @fadeInOut *ngIf="collapsed"> Loguot </span>
 </a>
 <div
   #loginModal
   class="modal fade"
-  id="loginModal"
   tabindex="-1"
+  id="loginModal"
   aria-labelledby="loginModalLabel"
   aria-hidden="true"
   data-bs-backdrop="static"

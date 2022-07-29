@@ -29,14 +29,19 @@ export class ExperienceComponent implements OnInit {
   }
 
   onSubmit(data: Work): void {
-    this.expService.postWork(data).subscribe();
-    this.workData.push(data);
+    this.expService.postWork(data).subscribe(
+      (res: any) => {
+        console.log(res)
+        this.workData.push(data);
+  });
     this.addWork = false;
   }
 
   onEdit(id: number) {
     this.expService.getWorkById(id).subscribe((data) => {
+      (res: any) => console.log(res);
       this.expService.putWork(data).subscribe((data) => {
+        (res: any) => console.log(res);
         this.workData.push(data);
       });
     });
@@ -44,6 +49,7 @@ export class ExperienceComponent implements OnInit {
 
   onDelete(id: number) {
     this.expService.deleteWork(id).subscribe(() => {
+      (res: any) => console.log(res);
       this.workData = this.workData.filter((data) => data.id !== id);
     });
   }

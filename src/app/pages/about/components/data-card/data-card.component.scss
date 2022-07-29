@@ -1,7 +1,8 @@
 @import "variables";
 
 .article {
-  min-height: 400px;
+  min-height: 300px;
+  max-width: 900px;
   box-shadow: 5px 5px 10px 3px $color-shadow;
   transition: all 0.5s ease;
   &:hover {
@@ -20,8 +21,8 @@
     }
   }
   &-picture {
-    width: 7rem;
-    height: 7rem;
+    width: 15rem;
+    height: 15rem;
     padding: auto;
   }
   &-img {

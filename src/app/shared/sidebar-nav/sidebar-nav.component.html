@@ -33,6 +33,19 @@
         }}</span>
       </a>
     </li>
+    <li class="sidenav-bar-item" *ngIf="onLogin">
+      <a
+        class="sidenav-bar-link"
+        [routerLink]="'dashboard'"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <i class="fa-solid fa-tachometer-alt sidenav-bar-icon"></i>
+        <span class="sidenav-bar-text" @fadeInOut *ngIf="collapsed">
+          Dashboard
+        </span>
+      </a>
+    </li>
     <li class="mt-auto mb-0 sidenav-bar-item">
       <app-login [collapsed]="collapsed"></app-login>
     </li>

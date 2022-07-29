@@ -19,9 +19,9 @@ export const navData = [
     icon: 'fa-solid fa-envelope',
     routerLink: 'contact',
   },
-  {
-    label: 'Dashboard',
-    icon: 'fa-solid fa-tachometer-alt',
-    routerLink: 'dashboard',
-  }
+  // {
+  //   label: 'Dashboard',
+  //   icon: 'fa-solid fa-tachometer-alt',
+  //   routerLink: 'dashboard',
+  // }
 ];

@@ -2,13 +2,14 @@
   <div class="input-group mb-1 mb-md-3">
     <span class="input-group-text">Image</span>
     <input
-      (change)="onFileChange($event)"
-      class="form-control"
-      accept="image/png, image/jpeg"
-      type="file"
-      id="image"
-      placeholder="image"
+    (change)="onFileChange($event)"
+    class="form-control"
+    accept="image/png, image/jpeg"
+    type="file"
+    id="image"
+    placeholder="image"
     />
+    <img [src]="preview" class="form__preview" />
   </div>
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)" autocomplete="off">
     <div class="input-group mb-1 mb-md-3">
@@ -68,7 +69,4 @@
     </div>
     <input class="btn btn-primary" type="submit" value="Enviar" />
   </form>
-  <picture *ngIf="preview" class="form__picture">
-    <img [src]="preview" class="form__preview" />
-  </picture>
 </div>

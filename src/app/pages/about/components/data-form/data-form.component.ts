@@ -4,7 +4,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Education } from 'src/app/models/education.interface';
 import { Work } from 'src/app/models/works.interface';
 import { ImageService } from 'src/app/services/image-service/image.service';
-import { idGenerator } from 'src/app/services/id-generator/idGenerator';
 
 @Component({
   selector: 'app-data-form',
@@ -19,11 +18,7 @@ export class DataFormComponent implements OnInit {
   preview: string = '';
   form!: FormGroup;
 
-  constructor(
-    private fb: FormBuilder,
-    private imgService: ImageService,
-    private idGen: idGenerator
-  ) {
+  constructor(private fb: FormBuilder, private imgService: ImageService) {
     this.form = this.fb.group({
       institution: ['', Validators.required],
       title: ['', Validators.required],
@@ -61,18 +56,20 @@ export class DataFormComponent implements OnInit {
   uploadImage(): void {
     const file = new FormData();
     file.append('file', this.file, this.file.name);
-    this.imgService.postImage(file).subscribe();
+    this.imgService.postImage(file).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
   }
 
   onSubmit(event: Event): void {
     try {
       event.preventDefault();
       this.data = this.form.value;
-      this.data.id = this.idGen.generateId();
       this.data.image = this.file.name;
-      console.log(this.data);
-      this.uploadImage();
       this.dataChange.emit(this.data);
+      this.uploadImage();
       this.form.reset();
       this.preview = '';
     } catch (error) {

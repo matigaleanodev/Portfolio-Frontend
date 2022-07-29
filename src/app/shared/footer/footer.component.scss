@@ -1,9 +1,13 @@
 @import "variables";
 
 .footer {
-  z-index: 1;
-  padding: 0.5rem 0;
-  margin-top: auto;
-  max-height: 3rem;
+  height: 2rem;
+  max-height: 2rem;
   border-top: 1px solid $color-light;
+  &__text{
+    height: 2rem;
+    max-height: 2rem;
+    padding: 0.5rem 0;
+    margin: 0 1rem;
+  }
 }

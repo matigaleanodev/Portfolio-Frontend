@@ -2,10 +2,10 @@
 
 .app {
   min-height: 100vh;
-  min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
-  &-footer {
+  height: -webkit-fill-available;
+  &__footer {
     z-index: 0;
   }
 }

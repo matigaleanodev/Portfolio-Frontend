@@ -17,7 +17,7 @@ export class EducationComponent implements OnInit {
 
   ngOnInit(): void {
     this.eduService.getEducation().subscribe((data: Education[]) => {
-      this.educationData = data;
+      this.educationData = data.slice().reverse();
     });
     AOS.init();
     window.addEventListener('load', AOS.refresh);
@@ -29,22 +29,27 @@ export class EducationComponent implements OnInit {
   }
 
   onSubmit(data: Education): void {
-    this.eduService.postEducation(data).subscribe();
-    this.educationData.push(data);
-    this.addEducation = false;
+    this.eduService.postEducation(data).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.educationData.push(data);
+      });
+      this.addEducation = false;
   }
 
   onEdit(id: number) {
-    this.eduService.getEducationById(id).subscribe(data => {
-      this.eduService.putEducation(data).subscribe((data)=>{
+    this.eduService.getEducationById(id).subscribe((data) => {
+      (res: any) => console.log(res);
+      this.eduService.putEducation(data).subscribe((data) => {
+        (res: any) => console.log(res);
         this.educationData.push(data);
       });
-    }
-    );
+    });
   }
 
   onDelete(id: number) {
     this.eduService.deleteEducation(id).subscribe(() => {
+      (res: any) => console.log(res);
       this.educationData = this.educationData.filter((data) => data.id !== id);
     });
   }

@@ -22,8 +22,8 @@ export class GuardGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    let currentUser = this.authService.CurrentUser;
-    if (currentUser && currentUser.includes('Bearer')) {
+    let token = this.authService.Token;
+    if (token && token.includes('Bearer')) {
       return true;
     } else {
       this.router.navigate(['/']);

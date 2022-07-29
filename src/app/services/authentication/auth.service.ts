@@ -9,11 +9,13 @@ import { BYPASS_JW_TOKEN } from './interceptor.service';
 })
 export class AuthService {
   baseUrl = `${environment.API_URL}/auth`;
-  currentUserSubject: BehaviorSubject<any>;
+  tokenSubject: BehaviorSubject<any>;
+  loged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {
     console.log('Authentication Service Initialized...');
-    this.currentUserSubject = new BehaviorSubject<any>(sessionStorage.getItem('currentUser') || '{}');
+    this.tokenSubject = new BehaviorSubject<any>(sessionStorage.getItem('token') || '{}');
+    sessionStorage.getItem('token') && sessionStorage.getItem('token') !== '{}' ? this.loged.next(true) : this.loged.next(false);
   }
 
   login(data: any): Observable<any> {
@@ -22,14 +24,27 @@ export class AuthService {
       responseType: 'text' as 'json',
     }).pipe(
       map(res => {
-        sessionStorage.setItem('currentUser', res);
-        this.currentUserSubject.next(res);
+        sessionStorage.setItem('token', res);
+        this.tokenSubject.next(res);
+        sessionStorage.getItem('token') && sessionStorage.getItem('token') !== '{}' ? this.loged.next(true) : this.loged.next(false);
       })
     );
   }
 
-  get CurrentUser() {
-    return this.currentUserSubject.value;
+  logout() {
+    sessionStorage.removeItem('token');
+    sessionStorage.clear();
+    this.tokenSubject.next('{}');
+    this.loged.next(false);
+    console.log('Logout', this.tokenSubject.value);
+  }
+
+  isLoggedIn(): Observable<boolean> {
+    return this.loged.asObservable();
+  }
+
+  get Token() {
+    return this.tokenSubject.value;
   }
 }
 

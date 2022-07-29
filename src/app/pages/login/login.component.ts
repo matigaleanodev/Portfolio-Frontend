@@ -12,15 +12,21 @@ import { AuthService } from 'src/app/services/authentication/auth.service';
 })
 export class LoginComponent {
   @Input() collapsed: boolean = false;
-  loginForm!: FormGroup;
-  myModal: any = document.getElementById('loginModal');
+  @ViewChild('loginModal') myModal: any;
   @ViewChild('closeModal') closeModal: any;
+  loginForm!: FormGroup;
+  onLogin: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router
   ) {
+    this.authService.isLoggedIn().subscribe(res => {
+    this.onLogin = res;
+    console.log(res);
+  }
+  );
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -40,12 +46,18 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       let cred = JSON.stringify(this.loginForm.value);
       this.authService.login(cred).subscribe((data: any) => {
+        console.log(data);
         this.closeModal.nativeElement.click();
-        this.router.navigate(['/about']);
+        this.router.navigate(['/dashboard']);
       });
     } else {
       alert('Complete todos los campos');
       console.log('Form is not valid');
     }
+  }
+
+  logout() {
+    this.router.navigate(['/home']);
+    this.authService.logout();
   }
 }

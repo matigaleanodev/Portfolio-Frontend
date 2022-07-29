@@ -19,7 +19,7 @@ export class InterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const token = this.authService.CurrentUser;
+    const token = this.authService.Token;
     if (req.context.get(BYPASS_JW_TOKEN) === false && token.includes('Bearer')) {
       req = req.clone({
         setHeaders: {

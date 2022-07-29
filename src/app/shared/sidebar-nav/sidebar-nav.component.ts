@@ -6,6 +6,7 @@ import {
   HostListener,
 } from '@angular/core';
 import { SidebarAnimation } from 'src/app/animations/sidebar.animations';
+import { AuthService } from 'src/app/services/authentication/auth.service';
 import { navData } from './nav-data';
 
 interface SideNavToggle {
@@ -24,6 +25,7 @@ export class SidebarNavComponent implements OnInit {
   collapsed: boolean = false;
   screenWidth: number = 0;
   navData = navData;
+  onLogin: boolean = false;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -37,7 +39,12 @@ export class SidebarNavComponent implements OnInit {
     }
   }
 
-  constructor() {}
+  constructor(private authService: AuthService) {
+    this.authService.isLoggedIn().subscribe((res) => {
+      this.onLogin = res;
+      console.log(res);
+    });
+  }
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
