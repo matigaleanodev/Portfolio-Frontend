@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { Education } from 'src/app/models/education.interface';
 import { Work } from 'src/app/models/works.interface';
-import { ImageService } from 'src/app/services/image-service/image.service';
+import { ImageService } from 'src/app/services/data-services/image.service';
 
 @Component({
   selector: 'app-data-form',
@@ -70,6 +70,7 @@ export class DataFormComponent implements OnInit {
       this.data.image = this.file.name;
       this.dataChange.emit(this.data);
       this.uploadImage();
+      window.location.reload();
       this.form.reset();
       this.preview = '';
     } catch (error) {

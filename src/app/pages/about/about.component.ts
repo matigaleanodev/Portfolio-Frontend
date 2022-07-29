@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import * as AOS from 'aos';
 import { Profile } from 'src/app/models/profile.interface';
-import { ProfileService } from 'src/app/services/profile-service/profile.service';
+import { ProfileService } from 'src/app/services/data-services/profile.service';
 
 @Component({
   selector: 'app-about',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Education } from 'src/app/models/education.interface';
 import * as AOS from 'aos';
-import { EducationService } from 'src/app/services/education-service/education.service';
+import { EducationService } from 'src/app/services/data-services/education.service';
 
 @Component({
   selector: 'app-education',

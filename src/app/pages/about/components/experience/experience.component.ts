@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Work } from 'src/app/models/works.interface';
 import * as AOS from 'aos';
-import { ExperienceService } from 'src/app/services/experience-service/experience.service';
+import { ExperienceService } from 'src/app/services/data-services/experience.service';
 
 @Component({
   selector: 'app-experience',
