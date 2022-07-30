@@ -44,8 +44,8 @@ export class EducationComponent implements OnInit {
       this.addEducation = false;
   }
 
-  onEdit(id: number) {
-    this.eduService.getEducationById(id).subscribe((res) => {
+  onEdit(data: Education) {
+    this.eduService.putEducation(data).subscribe((res) => {
       console.log(res);
   });
   }

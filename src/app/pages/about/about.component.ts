@@ -16,7 +16,7 @@ export class AboutComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.profServ.getProfile().subscribe(data => { this.profile = data[0]; console.log(this.profile) });
+    this.profServ.getProfile().subscribe(data => { this.profile = data[0] });
     AOS.init();
     window.addEventListener('load', AOS.refresh);
   }

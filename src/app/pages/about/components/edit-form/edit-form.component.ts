@@ -1,22 +1,33 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { Education } from 'src/app/models/education.interface';
 import { Work } from 'src/app/models/works.interface';
 import { ImageService } from 'src/app/services/data-services/image.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-data-form',
-  templateUrl: './data-form.component.html',
-  styleUrls: ['./data-form.component.scss'],
+  selector: 'app-edit-form',
+  templateUrl: './edit-form.component.html',
+  styleUrls: ['./edit-form.component.scss']
 })
-export class DataFormComponent implements OnInit {
+export class EditFormComponent implements OnInit {
   @Output() dataChange = new EventEmitter<Education | Work>();
   @Input() formLabels: string[] = ['institution', 'title'];
-  data!: Work | Education;
+  @Input() data: Work | Education = {
+    id: 0,
+    institution: '',
+    title: '',
+    startDate: new Date(),
+    endDate: new Date(),
+    actual: false,
+    description: '',
+    image: '',
+  };
   file: any;
   preview: string = '';
   form!: FormGroup;
+  API_URL = environment.API_URL;
 
   constructor(private fb: FormBuilder, private imgService: ImageService) {
     this.form = this.fb.group({
@@ -29,7 +40,8 @@ export class DataFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   onFileChange(event: Event): any {
     const target = event.target as HTMLInputElement;
@@ -66,7 +78,6 @@ export class DataFormComponent implements OnInit {
       event.preventDefault();      
       this.data = this.form.value;      
       this.data.image = this.file.name;
-      console.log(this.data);
       this.dataChange.emit(this.data);
       this.uploadImage();
       this.form.reset();
@@ -75,4 +86,5 @@ export class DataFormComponent implements OnInit {
       console.log(error);
     }
   }
+
 }

@@ -1,4 +1,9 @@
-<a class="login" data-bs-toggle="modal" data-bs-target="#loginModal" *ngIf="!onLogin">
+<a
+  class="login"
+  data-bs-toggle="modal"
+  data-bs-target="#loginModal"
+  *ngIf="!onLogin"
+>
   <i class="fa-solid fa-power-off login-icon"></i>
   <span class="login-text" @fadeInOut *ngIf="collapsed"> Login </span>
 </a>
@@ -55,6 +60,7 @@
           </div>
         </div>
         <div class="modal-footer">
+          <input type="submit" class="btn btn-primary" value="Login" />
           <button
             #closeModal
             type="button"
@@ -63,7 +69,6 @@
           >
             Close
           </button>
-          <input type="submit" class="btn btn-primary" value="Login" />
         </div>
       </form>
     </div>

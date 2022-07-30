@@ -24,7 +24,6 @@ export class LoginComponent {
   ) {
     this.authService.isLoggedIn().subscribe(res => {
     this.onLogin = res;
-    console.log(res);
   }
   );
     this.loginForm = this.fb.group({

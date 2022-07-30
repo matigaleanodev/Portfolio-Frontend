@@ -42,8 +42,8 @@ export class ExperienceComponent implements OnInit {
     this.addWork = false;
   }
 
-  onEdit(id: number) {
-    this.expService.getWorkById(id).subscribe((res) => {
+  onEdit(data: Work) {
+    this.expService.putWork(data).subscribe((res) => {
       console.log(res);
     });
   }

@@ -5,6 +5,7 @@ import { Work } from 'src/app/models/works.interface';
 import { environment } from 'src/environments/environment';
 
 import * as AOS from 'aos';
+import { AuthService } from 'src/app/services/authentication/auth.service';
 
 @Component({
   selector: 'app-data-card',
@@ -13,15 +14,32 @@ import * as AOS from 'aos';
 })
 export class DataCardComponent implements OnInit {
   @Input() data!: Work | Education;
-  @Output() onEdit = new EventEmitter<number>();
   @Output() onDelete = new EventEmitter<number>();
+  @Output() onEdit = new EventEmitter<Work | Education>();
   API_URL = environment.API_URL;
+  onLogin: boolean = false;
+  editMode: boolean = false;
 
 
-  constructor() {}
+  constructor(private authService: AuthService) {
+    this.authService.isLoggedIn().subscribe(res => {
+      this.onLogin = res;
+    }
+    );
+  }
 
   ngOnInit(): void {
     AOS.init();
     window.addEventListener('load', AOS.refresh);
+  }
+
+  onEditMode(): void {
+    this.editMode = !this.editMode;
+  }
+
+  onSubmit(data: Work | Education): void {
+    data.id = this.data.id;
+    this.onEdit.emit(data);
+    this.editMode = false;
   }
 }

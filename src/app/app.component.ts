@@ -30,11 +30,10 @@ export class AppComponent {
   particlesOptions = particles;
 
   particlesLoaded(container: Container): void {
-    console.log(container);
+    console.log('Particles loaded');
   }
 
   async particlesInit(engine: Engine): Promise<void> {
-    console.log(engine);
     await loadFull(engine);
   }
 }

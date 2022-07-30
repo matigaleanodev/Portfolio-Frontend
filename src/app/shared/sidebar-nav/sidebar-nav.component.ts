@@ -29,6 +29,7 @@ export class SidebarNavComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
+    event.target.innerWidth;
     this.screenWidth = window.innerWidth;
     if (this.screenWidth <= 768) {
       this.collapsed = false;
@@ -42,7 +43,6 @@ export class SidebarNavComponent implements OnInit {
   constructor(private authService: AuthService) {
     this.authService.isLoggedIn().subscribe((res) => {
       this.onLogin = res;
-      console.log(res);
     });
   }
 

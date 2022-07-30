@@ -1,0 +1,13 @@
+@import "variables";
+
+.form {
+  &__image{
+    height: 10rem;
+  }
+  &__preview {
+    background-color: #DAD5DF;
+    width: 10rem;
+    height: auto;
+    object-fit: cover;
+  }
+}

@@ -1,16 +1,23 @@
+
+<app-edit-form [data]="data" *ngIf="editMode" (dataChange)="onSubmit($event)"></app-edit-form>
 <article class="card mb-3 bg-light bg-opacity-25 border border-primary article">
-  <div class="d-flex justify-content-end gap-3 text-primary card-header">
+  <div
+    *ngIf="onLogin"
+    class="d-flex justify-content-end gap-3 text-primary card-header"
+  >
     <i
       class="fa-solid fa-pencil article-icon me-2"
-      (click)="onEdit.emit(data.id)"
+      (click)="onEditMode()"
     ></i>
     <i
       class="fa-solid fa-trash article-icon"
       (click)="onDelete.emit(data.id)"
     ></i>
   </div>
-  <div class="row g-0">
-    <picture class="d-flex col-md-4 m-auto justify-content-center align-items-center article-picture">
+  <div class="row g-0 m-auto">
+    <picture
+      class="d-flex col-md-4 justify-content-center align-items-center m-auto article-picture"
+    >
       <img
         src="{{ API_URL + '/api/image/' + data.image }}"
         alt="{{ data.institution }}"
@@ -24,7 +31,7 @@
         {{ data.title }}
       </h4>
       <h5
-      class="text-center fs-5 fw-bold text-primary justify-center article-title"
+        class="text-center fs-5 fw-bold text-primary justify-center article-title"
       >
         {{ data.institution }}
       </h5>

@@ -37,7 +37,6 @@ export class AboutTitlesComponent {
   constructor(private viewportScroller: ViewportScroller, private authService: AuthService) {
     this.authService.isLoggedIn().subscribe(res => {
       this.onLogin = res;
-      console.log(res);
     }
     );
   }
