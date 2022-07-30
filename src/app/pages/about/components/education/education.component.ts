@@ -16,11 +16,19 @@ export class EducationComponent implements OnInit {
   constructor(private eduService: EducationService) {}
 
   ngOnInit(): void {
+    this.getData();
+    this.eduService.Refreshrequired.subscribe(() => {
+      this.getData();
+    }
+    );
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
+  }
+
+  getData(): void {
     this.eduService.getEducation().subscribe((data: Education[]) => {
       this.educationData = data.slice().reverse();
     });
-    AOS.init();
-    window.addEventListener('load', AOS.refresh);
   }
 
   onAdd(): boolean {
@@ -30,27 +38,21 @@ export class EducationComponent implements OnInit {
 
   onSubmit(data: Education): void {
     this.eduService.postEducation(data).subscribe(
-      (res: any) => {
+      (res) => {
         console.log(res);
-        this.educationData.push(data);
       });
       this.addEducation = false;
   }
 
   onEdit(id: number) {
-    this.eduService.getEducationById(id).subscribe((data) => {
-      (res: any) => console.log(res);
-      this.eduService.putEducation(data).subscribe((data) => {
-        (res: any) => console.log(res);
-        this.educationData.push(data);
-      });
-    });
+    this.eduService.getEducationById(id).subscribe((res) => {
+      console.log(res);
+  });
   }
 
   onDelete(id: number) {
-    this.eduService.deleteEducation(id).subscribe(() => {
-      (res: any) => console.log(res);
-      this.educationData = this.educationData.filter((data) => data.id !== id);
+    this.eduService.deleteEducation(id).subscribe(res => {
+      console.log(res);
     });
   }
 }

@@ -16,11 +16,18 @@ export class ExperienceComponent implements OnInit {
   constructor(private expService: ExperienceService) {}
 
   ngOnInit(): void {
-    this.expService.getWorks().subscribe((works: Work[]) => {
-      this.workData = works;
+    this.getData();
+    this.expService.Refreshrequired.subscribe(() => {
+      this.getData();
     });
     AOS.init();
     window.addEventListener('load', AOS.refresh);
+  }
+
+  getData(): void {
+    this.expService.getWorks().subscribe((works: Work[]) => {
+      this.workData = works;
+    });
   }
 
   onAdd(): boolean {
@@ -29,28 +36,21 @@ export class ExperienceComponent implements OnInit {
   }
 
   onSubmit(data: Work): void {
-    this.expService.postWork(data).subscribe(
-      (res: any) => {
-        console.log(res)
-        this.workData.push(data);
-  });
+    this.expService.postWork(data).subscribe((res) => {
+      console.log(res);
+    });
     this.addWork = false;
   }
 
   onEdit(id: number) {
-    this.expService.getWorkById(id).subscribe((data) => {
-      (res: any) => console.log(res);
-      this.expService.putWork(data).subscribe((data) => {
-        (res: any) => console.log(res);
-        this.workData.push(data);
-      });
+    this.expService.getWorkById(id).subscribe((res) => {
+      console.log(res);
     });
   }
 
   onDelete(id: number) {
-    this.expService.deleteWork(id).subscribe(() => {
-      (res: any) => console.log(res);
-      this.workData = this.workData.filter((data) => data.id !== id);
+    this.expService.deleteWork(id).subscribe((res) => {
+      console.log(res);
     });
   }
 }

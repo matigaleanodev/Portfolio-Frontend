@@ -56,11 +56,9 @@ export class DataFormComponent implements OnInit {
   uploadImage(): void {
     const file = new FormData();
     file.append('file', this.file, this.file.name);
-    this.imgService.postImage(file).subscribe(
-      res => {
-        console.log(res);
-      }
-    );
+    this.imgService.postImage(file).subscribe((res: any) => {
+      console.log(res);
+    });
   }
 
   onSubmit(event: Event): void {
@@ -70,7 +68,6 @@ export class DataFormComponent implements OnInit {
       this.data.image = this.file.name;
       this.dataChange.emit(this.data);
       this.uploadImage();
-      window.location.reload();
       this.form.reset();
       this.preview = '';
     } catch (error) {
