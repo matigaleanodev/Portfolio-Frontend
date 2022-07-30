@@ -1,0 +1,10 @@
+@import "variables";
+
+.dashboard {
+  min-height: calc(100vh - 6rem);
+  min-width: calc(100vw - 15rem);
+  padding: 3rem 0.5rem;
+  @media (max-width: 576px) {
+    height: -webkit-fill-available;
+  }
+}

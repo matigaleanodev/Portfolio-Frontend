@@ -1,0 +1,14 @@
+<article class="card bg-light bg-opacity-25 border border-primary article">
+    <div class="d-flex justify-content-between gap-3 text-primary card-header">
+        <div>
+            <h3 class="card-title">{{ contact.name }}</h3>
+            <h4 class="card-subtitle">{{ contact.mail }}</h4>
+        </div>
+        <div>
+            <i class="fa-solid fa-trash article-icon"(click)="onDelete()"></i>
+        </div>
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{ contact.message }}</p>
+    </div>
+</article>

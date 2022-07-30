@@ -10,7 +10,7 @@ import { ContactService } from 'src/app/services/data-services/contact.service';
   styleUrls: ['./contact-form.component.scss'],
 })
 export class ContactFormComponent implements OnInit {
-  contact!: FormGroup;
+  contact: FormGroup;
 
   constructor(private fb: FormBuilder, private contactService: ContactService) {
     this.contact = this.fb.group({

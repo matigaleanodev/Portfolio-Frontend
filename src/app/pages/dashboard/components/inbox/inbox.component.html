@@ -1,0 +1,11 @@
+<section class="container">
+    <h3 class="text-primary fw-bolder fs-4 pt-2 mb-3">Bandeja de entrada</h3>
+    <div class="row">
+        <app-contact-card
+            class="mx-auto col-md-8 mb-2"
+            *ngFor="let data of contact"
+            [contact]="data"
+            (delete)="onDelete($event)"
+        ></app-contact-card>
+    </div>
+</section>

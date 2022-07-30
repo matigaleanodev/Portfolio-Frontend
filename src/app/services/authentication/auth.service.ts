@@ -39,6 +39,10 @@ export class AuthService {
     console.log('Logout', this.tokenSubject.value);
   }
 
+  register(data: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/signup`, data);
+  }
+
   isLoggedIn(): Observable<boolean> {
     return this.loged.asObservable();
   }

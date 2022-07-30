@@ -2,11 +2,9 @@
 
 .body {
   width: calc(100% - 5rem);
-  min-height: 100vh;
-  margin-top: -3rem;
+  min-height: calc(100vh - 7rem);
   padding-top: 3rem;
   margin-bottom: 0;
-  height: -webkit-fill-available;
   margin-left: 5rem;
   padding: 0 0 3rem 0;
   z-index: 0;

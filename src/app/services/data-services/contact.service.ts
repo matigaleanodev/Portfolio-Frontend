@@ -24,8 +24,6 @@ export class ContactService {
   }
 
   deleteContact(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, {
-      context: new HttpContext().set(BYPASS_JW_TOKEN, true),
-    });
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }
