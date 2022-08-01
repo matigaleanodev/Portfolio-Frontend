@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Project } from 'src/app/models/projects.interface';
+import { ProjectsService } from 'src/app/services/data-services/projects.service';
 import { projectsData } from './projects.data';
 
 @Component({
@@ -11,9 +12,22 @@ import { projectsData } from './projects.data';
 export class ProjectsComponent implements OnInit {
   projects: Project[] = projectsData;
 
-  constructor() {}
+  constructor(private projectService: ProjectsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getData();
+    this.projectService.Refreshrequired.subscribe(() => {
+      this.getData();
+      console.log(this.projects);
+    });
+  }
+
+  getData(): void {
+    this.projectService.getProjects().subscribe((data: Project[]) => {
+      console.log('prjectos: '+data);
+      this.projects = data;
+    });
+  }
 
   onEdit(id: number) {
     console.log(id);

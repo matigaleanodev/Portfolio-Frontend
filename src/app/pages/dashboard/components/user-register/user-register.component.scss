@@ -1,0 +1,6 @@
+@import "variables";
+
+.form-control::placeholder {
+    opacity: 1;
+    font-weight: bold;
+}

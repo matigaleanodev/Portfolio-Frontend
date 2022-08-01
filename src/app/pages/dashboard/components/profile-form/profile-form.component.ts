@@ -1,26 +1,22 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
-import { Education } from 'src/app/models/education.interface';
-import { Work } from 'src/app/models/works.interface';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Profile } from 'src/app/models/profile.interface';
 import { ImageService } from 'src/app/services/data-services/image.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-data-form',
-  templateUrl: './data-form.component.html',
-  styleUrls: ['./data-form.component.scss'],
+  selector: 'app-profile-form',
+  templateUrl: './profile-form.component.html',
+  styleUrls: ['./profile-form.component.scss'],
 })
-export class DataFormComponent implements OnInit {
-  @Output() dataChange = new EventEmitter<Education | Work>();
-  @Input() formLabels: string[] = ['institution', 'title'];
-  @Input() data: Work | Education = {
+export class ProfileFormComponent implements OnInit {
+  @ViewChild('imgInput') imgInput!: HTMLInputElement;
+  @Output() dataChange = new EventEmitter<Profile>();
+  @Input() data: Profile = {
     id: 0,
-    institution: '',
-    title: '',
-    startDate: new Date(),
-    endDate: new Date(),
-    actual: false,
+    name: '',
+    subtitle: '',
+    adress: '',
     description: '',
     image: '',
   };
@@ -28,19 +24,16 @@ export class DataFormComponent implements OnInit {
   preview: string = '';
   form!: FormGroup;
   API_URL = environment.API_URL;
-
   constructor(private fb: FormBuilder, private imgService: ImageService) {
     this.form = this.fb.group({
-      institution: ['', Validators.required],
-      title: ['', Validators.required],
-      startDate: [null, Validators.required],
-      endDate: [null, Validators.required],
-      actual: [false, Validators.required],
+      name: ['', Validators.required],
+      subtitle: ['', Validators.required],
+      adress: ['', Validators.required],
       description: ['', Validators.required],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {}  
 
   onFileChange(event: Event): any {
     const target = event.target as HTMLInputElement;
@@ -69,6 +62,7 @@ export class DataFormComponent implements OnInit {
       this.data = this.form.value;      
       this.data.image = this.file.name;
       this.dataChange.emit(this.data);
+      console.log(this.data);
       this.uploadImage();
       this.form.reset();
       this.preview = '';

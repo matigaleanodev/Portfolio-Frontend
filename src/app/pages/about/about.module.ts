@@ -14,7 +14,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { EducationComponent } from './components/education/education.component';
 import { DataCardComponent } from './components/data-card/data-card.component';
 import { DataFormComponent } from './components/data-form/data-form.component';
-import { EditFormComponent } from './components/edit-form/edit-form.component';
+import { SkillFormComponent } from './components/soft-skills/skill-form/skill-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { EditFormComponent } from './components/edit-form/edit-form.component';
     EducationComponent,
     DataCardComponent,
     DataFormComponent,
-    EditFormComponent,
+    SkillFormComponent,
   ],
   imports: [
     NgbModule,

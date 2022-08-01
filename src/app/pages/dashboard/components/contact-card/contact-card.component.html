@@ -1,11 +1,11 @@
-<article class="card bg-light bg-opacity-25 border border-primary article">
+<article class="container-fluid card bg-light bg-opacity-25 border border-primary article">
     <div class="d-flex justify-content-between gap-3 text-primary card-header">
         <div>
-            <h3 class="card-title">{{ contact.name }}</h3>
-            <h4 class="card-subtitle">{{ contact.mail }}</h4>
+            <h3 class="fw-bold text-info article__title">{{ contact.name }}</h3>
+            <h4 class="fw-bold text-info article__subtitle">{{ contact.mail }}</h4>
         </div>
         <div>
-            <i class="fa-solid fa-trash article-icon"(click)="onDelete()"></i>
+            <i class="fa-solid fa-trash article__icon"(click)="onDelete()"></i>
         </div>
     </div>
     <div class="card-body">

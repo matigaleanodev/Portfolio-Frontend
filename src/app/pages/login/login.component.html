@@ -4,12 +4,12 @@
   data-bs-target="#loginModal"
   *ngIf="!onLogin"
 >
-  <i class="fa-solid fa-power-off login-icon"></i>
-  <span class="login-text" @fadeInOut *ngIf="collapsed"> Login </span>
+  <i class="fa-solid fa-power-off login__icon"></i>
+  <span class="login__text" @fadeInOut *ngIf="collapsed"> Login </span>
 </a>
 <a class="login pointer-event" *ngIf="onLogin" (click)="logout()">
-  <i class="fa-solid fa-power-off login-icon"></i>
-  <span class="login-text" @fadeInOut *ngIf="collapsed"> Loguot </span>
+  <i class="fa-solid fa-power-off login__icon"></i>
+  <span class="login__text" @fadeInOut *ngIf="collapsed"> Loguot </span>
 </a>
 <div
   #loginModal
@@ -22,17 +22,18 @@
   data-bs-keyboard="false"
 >
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark">
+    <div class="modal-content bg-dark bg-opacity-75">
       <form
         [formGroup]="loginForm"
         (ngSubmit)="login($event)"
         autocomplete="off"
       >
         <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <h5 class="modal-title fw-bold fs-4 offset-4" id="loginModalLabel">Inicio Sesión</h5>
           <button
+            #closeModal
             type="button"
-            class="btn-close"
+            class="btn-close btn-close-white"
             data-bs-dismiss="modal"
             aria-label="Close"
           ></button>
@@ -41,7 +42,7 @@
           <div class="form-floating mb-3">
             <input
               type="email"
-              class="form-control"
+              class="form-control bg-light bg-opacity-25 text-light"
               id="username"
               formControlName="username"
               placeholder="Username"
@@ -51,7 +52,7 @@
           <div class="form-floating mb-3">
             <input
               type="password"
-              class="form-control"
+              class="form-control bg-light bg-opacity-25 text-light"
               id="password"
               formControlName="password"
               placeholder="Password"
@@ -60,15 +61,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <input type="submit" class="btn btn-primary" value="Login" />
-          <button
-            #closeModal
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
+          <input type="submit" class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12 login__button" value="Login" />          
         </div>
       </form>
     </div>

@@ -9,5 +9,12 @@
     width: 10rem;
     height: auto;
     object-fit: cover;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__textarea{
+    height: 15rem;
   }
 }

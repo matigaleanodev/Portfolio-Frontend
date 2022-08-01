@@ -1,70 +1,136 @@
 <div class="container">
-  <div class="input-group mb-1 mb-md-3">
-    <span class="input-group-text">Image</span>
-    <input
-    (change)="onFileChange($event)"
-    class="form-control"
-    accept="image/png, image/jpeg"
-    type="file"
-    id="image"
-    placeholder="image"
-    name="image"
-    />
-    <img [src]="preview" class="form__preview" />
-  </div>
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)" autocomplete="off">
-    <div class="input-group mb-1 mb-md-3">
-      <span class="input-group-text">{{ formLabels[0] }}</span>
-      <input
-        class="form-control"
-        type="text"
-        formControlName="institution"
-        id="institution"
-        placeholder="{{ formLabels[0] }}"
-      />
-    </div>
-    <div class="input-group mb-1 mb-md-3">
-      <span for="title" class="input-group-text">{{ formLabels[1] }}</span>
-      <input
-        class="form-control"
-        type="text"
-        formControlName="title"
-        id="title"
-        placeholder="{{ formLabels[1] }}"
-      />
-    </div>
-    <div class="input-group mb-1 mb-md-3">
-      <span class="input-group-text">Fecha Inicio/Fin</span>
-      <input
-        type="date"
-        class="form-control"
-        formControlName="startDate"
-        id="startDate"
-      />
-      <input
-        type="date"
-        class="form-control"
-        formControlName="endDate"
-        id="endDate"
-      />
-      <span for="actual" class="input-group-text">Actual?</span>
-      <div class="input-group-text">
+    <div class="row">
+      <div
+        class="d-flex justify-content-center col-md input-group mb-3 rounded-circle"
+      >
         <input
-          class="form-check-input mt-0"
-          type="checkbox"
-          value=""
-          formControlName="actual"
-          id="actual"
+          #imgInput
+          (change)="onFileChange($event)"
+          class="d-none"
+          accept="image/png, image/jpeg"
+          type="file"
+          id="image"
+          name="image"
         />
+        <img
+          (click)="imgInput.click()"
+          src="/assets/images/addimg.png"
+          *ngIf="preview === '' && data.image === ''"
+          class="form__preview bg-opacity-25 bg-light rounded-circle"
+        />
+        <img
+          (click)="imgInput.click()"
+          src="{{ API_URL + '/api/image/' + data.image }}"
+          *ngIf="preview === '' && data.image !== ''"
+          class="form__preview bg-opacity-25 bg-light rounded-circle"
+        />
+        <img
+          (click)="imgInput.click()"
+          [src]="preview"
+          *ngIf="preview !== ''"
+          class="form__preview bg-opacity-25 bg-light rounded-circle"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="input-group mb-1 mb-md-3">
+          <span
+            class="col-3 input-group-text bg-light bg-opacity-50 text-secundary fw-bold"
+            >{{ formLabels[0] }}</span
+          >
+          <input
+            class="form-control bg-secondary bg-opacity-25 text-light"
+            type="text"
+            formControlName="institution"
+            id="institution"
+            placeholder="{{ formLabels[0] }}"
+            [(ngModel)]="data.institution"
+          />
+        </div>
+        <div class="input-group mb-1 mb-md-3">
+          <span
+            for="title"
+            class="col-3 input-group-text bg-light bg-opacity-50 text-secundary fw-bold"
+            >{{ formLabels[1] }}</span
+          >
+          <input
+            class="form-control bg-secondary bg-opacity-25 text-light"
+            type="text"
+            formControlName="title"
+            id="title"
+            placeholder="{{ formLabels[1] }}"
+            [(ngModel)]="data.title"
+          />
+        </div>
+        <div class="input-group mb-1 mb-md-3">
+          <span
+            class="col-3 input-group-text bg-light bg-opacity-50 text-secundary fw-bold"
+            >Fechas</span
+          >
+          <input
+            type="date"
+            class="form-control bg-secondary bg-opacity-25 text-light"
+            formControlName="startDate"
+            id="startDate"
+            [(ngModel)]="data.startDate"
+          />
+          <input
+            type="date"
+            class="form-control bg-secondary bg-opacity-25 text-light"
+            formControlName="endDate"
+            id="endDate"
+            [(ngModel)]="data.endDate"
+          />
+          <span
+            for="actual"
+            class="d-none d-md-block col-1 input-group-text bg-light bg-opacity-50 text-secundary fw-bold"
+            >Actual?</span
+          >
+          <div
+            class="d-none d-md-block input-group-text bg-light bg-opacity-50 text-secundary fw-bold"
+          >
+            <input
+              class="form-check-input mt-0"
+              type="checkbox"
+              value=""
+              formControlName="actual"
+              id="actual"
+              [(ngModel)]="data.actual"
+            />
+          </div>
+        </div>
+        <div class="d-md-none input-group mb-1 mb-md-3">
+          <span
+            for="actual"
+            class="col-3 input-group-text bg-light bg-opacity-50 text-secundary fw-bold"
+            >Actual?</span
+          >
+          <div
+            class="input-group-text bg-light bg-opacity-50 text-secundary fw-bold"
+          >
+            <input
+              class="form-check-input mt-0"
+              type="checkbox"
+              value=""
+              formControlName="actual"
+              id="actual"
+              [(ngModel)]="data.actual"
+            />
+          </div>
+        </div>
       </div>
     </div>
     <div class="input-group mb-1 mb-md-3">
-      <span class="input-group-text">Descripcion</span>
+      <span
+        class="col-3 col-md-2 input-group-text bg-light bg-opacity-50 text-secundary fw-bold"
+        >Descripcion</span
+      >
       <textarea
-        class="form-control"
+        class="form-control bg-secondary bg-opacity-25 text-light form__textarea"
         formControlName="description"
         id="description"
         placeholder="Descricion"
+        [(ngModel)]="data.description"
       >
       </textarea>
     </div>

@@ -5,9 +5,17 @@
     height: 10rem;
   }
   &__preview {
-    background-color: #DAD5DF;
     width: 10rem;
     height: auto;
     object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+      lighting-color: #DAD5DF;
+    }
+  }
+  &__textarea{
+    height: 10rem;
   }
 }

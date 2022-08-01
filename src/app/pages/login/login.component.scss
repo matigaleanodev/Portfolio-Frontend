@@ -18,15 +18,24 @@
     box-shadow: 0 5px 30px rgba(221, 194, 253, 0.75);
     color: $color-dark;
   }
-  &-icon {
+  &__icon {
     font-size: 22px;
     width: 2rem;
     min-width: 2rem;
     margin: 0 0.5rem;
     text-align: center;
   }
-  &-text {
+  &__text {
     margin-left: 5rem;
+  }
+  &__button{
+    transition: all 0.5s ease;
+    &:hover {
+      transform: scale(1.02);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
   }
 }
 .active {

@@ -19,8 +19,7 @@ export class EducationComponent implements OnInit {
     this.getData();
     this.eduService.Refreshrequired.subscribe(() => {
       this.getData();
-    }
-    );
+    });
     AOS.init();
     window.addEventListener('load', AOS.refresh);
   }
@@ -37,21 +36,20 @@ export class EducationComponent implements OnInit {
   }
 
   onSubmit(data: Education): void {
-    this.eduService.postEducation(data).subscribe(
-      (res) => {
-        console.log(res);
-      });
-      this.addEducation = false;
+    this.eduService.postEducation(data).subscribe((res) => {
+      console.log(res);
+    });
+    this.addEducation = false;
   }
 
   onEdit(data: Education) {
     this.eduService.putEducation(data).subscribe((res) => {
       console.log(res);
-  });
+    });
   }
 
   onDelete(id: number) {
-    this.eduService.deleteEducation(id).subscribe(res => {
+    this.eduService.deleteEducation(id).subscribe((res) => {
       console.log(res);
     });
   }
