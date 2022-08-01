@@ -18,7 +18,8 @@ const httpOptions = {
 export class ProfileService {
   baseUrl = `${environment.API_URL}/api/profile`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
   
   private _refreshrequired = new Subject<void>();
 
@@ -38,7 +39,6 @@ export class ProfileService {
   }
 
   putProfile(data: Profile): Observable<Profile> {
-    console.log(data);
     return this.http.put<Profile>(this.baseUrl, data)
     .pipe(tap(() => this.Refreshrequired.next()));;
   }

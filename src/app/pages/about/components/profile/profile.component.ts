@@ -29,7 +29,6 @@ export class ProfileComponent implements OnInit {
     this.getData();
     this.profService.Refreshrequired.subscribe(() => {
       this.getData();
-      console.log(this.profile);
     });
   }
 

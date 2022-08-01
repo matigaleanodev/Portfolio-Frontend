@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Profile } from 'src/app/models/profile.interface';
-import { ProfileService } from 'src/app/services/data-services/profile.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-profile-panel',
@@ -8,36 +8,32 @@ import { ProfileService } from 'src/app/services/data-services/profile.service';
   styleUrls: ['./profile-panel.component.scss'],
 })
 export class ProfilePanelComponent implements OnInit {
-  profile!: Profile;  
-  editProfile: boolean = true;
+  @Input() data!: Profile;
+  @Output() onEditProfile = new EventEmitter<Profile>();
+  editProfile: boolean = false;
+  API_URL = environment.API_URL;
+  img: string = this.API_URL + '/api/image/profilePicture.jpg';
 
-  constructor(private profService: ProfileService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.getData();
-    this.profService.Refreshrequired.subscribe(() => {
-      this.getData();
-      console.log(this.profile);
-    });
-  }  
+  ngOnInit(): void {}
 
   onEdit(): boolean {
     this.editProfile = !this.editProfile;
     return this.editProfile;
   }
 
-  getData(): void {
-    this.profService.getProfile().subscribe((data: Profile[]) => {
-      console.log(data);
-      this.profile = data[0];
-    });
-  }
-
   onSubmit(data: Profile): void {
-    console.log(data);
-    this.profService.putProfile(data).subscribe((res) => {
-      console.log(res);
-    });
-    this.editProfile = false;
+    if (data !== undefined) {
+      data.id = this.data.id;
+      data.image === undefined || 'undefined'
+        ? (data.image = this.data.image)
+        : data.image;
+        console.log(data);
+      this.onEditProfile.emit(data);
+      this.editProfile = false;
+    } else {
+      this.editProfile = false;
+    }
   }
 }

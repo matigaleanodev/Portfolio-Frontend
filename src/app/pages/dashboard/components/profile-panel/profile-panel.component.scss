@@ -1,0 +1,41 @@
+@import "variables";
+
+.article {
+  min-height: 300px;
+  max-width: 900px;
+  box-shadow: 5px 5px 10px 3px $color-shadow;
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 20px 3px $color-shadow;
+  }
+  &-icon {
+    transition: all 0.5s ease;
+    &:hover {
+      color: $color-light;
+      transform: scale(1.25);
+    }
+    &:active {
+      color: $color-light;
+      transform: scale(0.75);
+    }
+  }
+  &-picture {
+    width: 15rem;
+    height: 15rem;
+    padding: auto;
+  }
+  &-img {
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+  &-text {
+    padding: 0.5rem;
+    text-justify: distribute-all-lines;
+  }
+  &-footer {
+    height: 6rem;
+  }
+}

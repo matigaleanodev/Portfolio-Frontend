@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Profile } from 'src/app/models/profile.interface';
 import { ImageService } from 'src/app/services/data-services/image.service';
@@ -12,18 +19,13 @@ import { environment } from 'src/environments/environment';
 export class ProfileFormComponent implements OnInit {
   @ViewChild('imgInput') imgInput!: HTMLInputElement;
   @Output() dataChange = new EventEmitter<Profile>();
-  @Input() data: Profile = {
-    id: 0,
-    name: '',
-    subtitle: '',
-    adress: '',
-    description: '',
-    image: '',
-  };
+  @Input() data!: Profile;
   file: any;
   preview: string = '';
-  form!: FormGroup;
+  form: FormGroup;
+  imgName!: string;
   API_URL = environment.API_URL;
+
   constructor(private fb: FormBuilder, private imgService: ImageService) {
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -33,7 +35,9 @@ export class ProfileFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}  
+  ngOnInit(): void {
+    this.imgName = this.data.image;
+  }
 
   onFileChange(event: Event): any {
     const target = event.target as HTMLInputElement;
@@ -46,7 +50,7 @@ export class ProfileFormComponent implements OnInit {
     } else {
       this.file = null;
     }
-  }  
+  }
 
   uploadImage(): void {
     const file = new FormData();
@@ -58,12 +62,14 @@ export class ProfileFormComponent implements OnInit {
 
   onSubmit(event: Event): void {
     try {
-      event.preventDefault();      
-      this.data = this.form.value;      
-      this.data.image = this.file.name;
-      this.dataChange.emit(this.data);
+      event.preventDefault();
+      console.log(this.form.value);
       console.log(this.data);
-      this.uploadImage();
+      this.data = this.form.value;
+      this.file !== null || undefined
+        ? (this.data.image = this.imgName)
+        : (this.data.image = this.file.name) && this.uploadImage();
+      this.dataChange.emit(this.data);
       this.form.reset();
       this.preview = '';
     } catch (error) {

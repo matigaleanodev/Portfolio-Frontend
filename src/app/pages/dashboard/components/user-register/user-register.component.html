@@ -3,7 +3,7 @@
   [formGroup]="newUser"
   (ngSubmit)="onSubmit($event)"
   autocomplete="new-password"
-  autocomplete=off
+  autocomplete="off"
 >
   <div class="form-floating mb-1 mb-md-3">
     <input
@@ -14,7 +14,7 @@
       formControlName="username"
       required
     />
-    <label for="username" class="text-dark mb-1">Email</label>
+    <label for="username" class="text-dark fw-bold">Email</label>
   </div>
   <div class="form-floating mb-1 mb-md-3">
     <input
@@ -25,7 +25,7 @@
       formControlName="password"
       required
     />
-    <label for="password" class="text-dark mb-1">Password</label>
+    <label for="password" class="text-dark fw-bold">Password</label>
   </div>
   <div class="form-floating mb-1 mb-md-3">
     <input
@@ -36,7 +36,9 @@
       formControlName="confirmPassword"
       required
     />
-    <label for="confirmPassword" class="text-dark mb-1">Confirm Password</label>
+    <label for="confirmPassword" class="text-dark fw-bold"
+      >Confirm Password</label
+    >
   </div>
-  <input type="submit" value="Enviar" class="btn btn-primary mb-1 mb-md-3" />
+  <input type="submit" value="Enviar" class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12" />
 </form>

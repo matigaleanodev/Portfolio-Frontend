@@ -1,18 +1,18 @@
 <div class="container">
-  <div class="input-group mb-1 mb-md-3">
-    <input
-      #imgInput
-      (change)="onFileChange($event)"
-      class="d-none"
-      accept="image/png, image/jpeg"
-      type="file"
-      id="image"
-      name="image"
-    />
-  </div>
+  <input
+    #imgInput
+    (change)="onFileChange($event)"
+    class="d-none"
+    accept="image/png, image/jpeg"
+    type="file"
+    id="image"
+    name="image"
+  />
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)" autocomplete="off">
     <div class="row mb-3">
-      <div class="d-flex justify-content-center align-items-center col-lg-2 mb-3 my-0 py-0">
+      <div
+        class="d-flex justify-content-center align-items-center col-lg-2 mb-3 my-0 py-0"
+      >
         <img
           (click)="imgInput.click()"
           src="{{ API_URL + '/api/image/' + data.image }}"
@@ -26,47 +26,45 @@
           class="form__preview"
         />
       </div>
-      <div class="d-flex flex-column justify-content-start gap-3 col col-lg-10 my-0 py-0">
-        <div class="input-group mb-1 mb-md-3">
-          <span class="col-3 col-lg-2 input-group-text bg-light bg-opacity-50 text-secundary fw-bold">Nombre</span>
+      <div
+        class="d-flex flex-column justify-content-start gap-3 col col-lg-10 my-0 py-0"
+      >
+        <div class="form-floating mb-1 mb-md-3">
           <input
-          class="col form-control bg-secondary bg-opacity-25 text-light"
-          type="text"
-          formControlName="name"
-          id="name"
-          placeholder="Nombre"
-          [(ngModel)]="data.name"
-        />
-      </div>
-      <div class="input-group mb-1 mb-md-3">
-        <span class="col-3 col-lg-2 input-group-text bg-light bg-opacity-50 text-secundary fw-bold">Titulo</span>
-        <input
-          class="col form-control bg-secondary bg-opacity-25 text-light"
-          type="text"
-          formControlName="subtitle"
-          id="subtitle"
-          placeholder="Subitulo"
-          [(ngModel)]="data.subtitle"
-        />
-      </div>
-      <div class="input-group mb-1 mb-md-3">
-        <span class="col-3 col-lg-2 input-group-text bg-light bg-opacity-50 text-secundary fw-bold">Dirección</span>
-        <input
-          class="col form-control bg-secondary bg-opacity-25 text-light"
-          type="text"
-          formControlName="adress"
-          id="adress"
-          placeholder="Dirección"
-          [(ngModel)]="data.adress"
-        />
-      </div>
+            class="col form-control bg-secondary bg-opacity-25 text-light"
+            type="text"
+            formControlName="name"
+            id="name"
+            placeholder="Nombre"
+            [(ngModel)]="data.name"
+          />
+          <label class="text-light fw-bold">Nombre</label>
+        </div>
+        <div class="form-floating mb-1 mb-md-3">
+          <input
+            class="col form-control bg-secondary bg-opacity-25 text-light"
+            type="text"
+            formControlName="subtitle"
+            id="subtitle"
+            placeholder="Subitulo"
+            [(ngModel)]="data.subtitle"
+          />
+          <label class="text-light fw-bold">Titulo</label>
+        </div>
+        <div class="form-floating mb-1 mb-md-3">
+          <input
+            class="col form-control bg-secondary bg-opacity-25 text-light"
+            type="text"
+            formControlName="adress"
+            id="adress"
+            placeholder="Dirección"
+            [(ngModel)]="data.adress"
+          />
+          <label class="text-light fw-bold">Dirección</label>
+        </div>
       </div>
     </div>
-    <div class="input-group mb-1 mb-md-3">
-      <span
-        class="col-3 col-lg-2 input-group-text bg-light bg-opacity-50 text-secundary fw-bold"
-        >Descripción</span
-      >
+    <div class="form-floating mb-1 mb-md-3">
       <textarea
         class="col form-control bg-secondary bg-opacity-25 text-light form__textarea"
         formControlName="description"
@@ -74,7 +72,12 @@
         placeholder="Descripción"
         [(ngModel)]="data.description"
       ></textarea>
+      <label class="text-light fw-bold">Descripción</label>
     </div>
-    <input class="btn btn-primary" type="submit" value="Enviar" />
+    <input
+      class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+      type="submit"
+      value="Enviar"
+    />
   </form>
 </div>

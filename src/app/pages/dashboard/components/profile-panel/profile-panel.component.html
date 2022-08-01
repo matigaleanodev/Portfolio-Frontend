@@ -1,6 +1,40 @@
+<article
+  *ngIf="!editProfile"
+  class="card mb-3 bg-light bg-opacity-25 border border-primary article"
+>
+  <div class="d-flex justify-content-end gap-3 text-primary card-header">
+    <i class="fa-solid fa-pencil article-icon me-2" (click)="onEdit()"></i>
+  </div>
+  <div class="row g-0 m-auto">
+    <picture
+      class="d-flex col-md-4 justify-content-center align-items-center m-auto rounded-4 article-picture"
+    >
+      <img
+        src="{{img}}"
+        alt="{{ data.name }}"
+        class="img-fluid rounded-4 p-2"
+      />
+    </picture>
+    <div class="col-md-8 m-auto">
+      <h4
+        class="ps-3 pt-2 text-start fs-4 fw-bold text-primary justify-center article-title"
+      >
+        {{ data.name }}
+      </h4>
+      <h5
+        class="ps-3 text-start fs-5 fw-bold text-primary justify-center article-title"
+      >
+        {{ data.subtitle }}
+      </h5>
+      <div class="card-body">
+        <p class="text-light fs-5 article-text">{{ data.description }}</p>
+      </div>
+    </div>
+  </div>
+</article>
 <app-profile-form
   class="col-11 col-sm-10 col-md-8 col-lg-8 mb-4"
   (dataChange)="onSubmit($event)"
-  [data]="profile"
+  [data]="data"
   *ngIf="editProfile"
 ></app-profile-form>

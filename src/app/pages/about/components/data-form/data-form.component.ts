@@ -14,33 +14,27 @@ import { environment } from 'src/environments/environment';
 export class DataFormComponent implements OnInit {
   @Output() dataChange = new EventEmitter<Education | Work>();
   @Input() formLabels: string[] = ['institution', 'title'];
-  @Input() data: Work | Education = {
-    id: 0,
-    institution: '',
-    title: '',
-    startDate: new Date(),
-    endDate: new Date(),
-    actual: false,
-    description: '',
-    image: '',
-  };
+  @Input() data!: Work | Education;
   file: any;
   preview: string = '';
   form!: FormGroup;
+  imgName!: string;
   API_URL = environment.API_URL;
 
   constructor(private fb: FormBuilder, private imgService: ImageService) {
     this.form = this.fb.group({
       institution: ['', Validators.required],
       title: ['', Validators.required],
-      startDate: [null, Validators.required],
-      endDate: [null, Validators.required],
+      startDate: [new Date(), Validators.required],
+      endDate: [new Date(), Validators.required],
       actual: [false, Validators.required],
       description: ['', Validators.required],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.imgName = this.data.image;
+  }
 
   onFileChange(event: Event): any {
     const target = event.target as HTMLInputElement;
@@ -53,7 +47,7 @@ export class DataFormComponent implements OnInit {
     } else {
       this.file = null;
     }
-  }  
+  }
 
   uploadImage(): void {
     const file = new FormData();
@@ -65,11 +59,12 @@ export class DataFormComponent implements OnInit {
 
   onSubmit(event: Event): void {
     try {
-      event.preventDefault();      
-      this.data = this.form.value;      
-      this.data.image = this.file.name;
+      event.preventDefault();
+      this.data = this.form.value;
+      this.file !== null || undefined
+        ? (this.data.image = this.imgName)
+        : (this.data.image = this.file.name) && this.uploadImage();
       this.dataChange.emit(this.data);
-      this.uploadImage();
       this.form.reset();
       this.preview = '';
     } catch (error) {

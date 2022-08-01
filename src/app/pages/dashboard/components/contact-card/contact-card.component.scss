@@ -9,18 +9,6 @@
     transform: scale(1.05);
     box-shadow: 10px 10px 20px 3px $color-shadow;
   }
-  &__title::before{
-    content: "De:";
-    display: inline-block;
-    margin-right: 10px;
-    color: $color-shadow-light;
-  }
-  &__subtitle::before{
-    content: "Mail:";
-    display: inline-block;
-    margin-right: 10px;
-    color: $color-shadow-light;
-  }
   &__icon {
     cursor: pointer;
     transition: all 0.5s ease;

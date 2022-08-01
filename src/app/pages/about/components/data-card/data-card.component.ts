@@ -20,12 +20,10 @@ export class DataCardComponent implements OnInit {
   onLogin: boolean = false;
   editMode: boolean = false;
 
-
   constructor(private authService: AuthService) {
-    this.authService.isLoggedIn().subscribe(res => {
+    this.authService.isLoggedIn().subscribe((res) => {
       this.onLogin = res;
-    }
-    );
+    });
   }
 
   ngOnInit(): void {
@@ -38,8 +36,15 @@ export class DataCardComponent implements OnInit {
   }
 
   onSubmit(data: Work | Education): void {
-    data.id = this.data.id;
-    this.onEdit.emit(data);
-    this.editMode = false;
+    if (data !== undefined) {
+      data.id = this.data.id;
+      data.image === undefined || 'undefined'
+        ? (data.image = this.data.image)
+        : data.image;
+      this.onEdit.emit(data);
+      this.editMode = false;
+    } else {
+      this.editMode = false;
+    }
   }
 }

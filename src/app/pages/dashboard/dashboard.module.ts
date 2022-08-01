@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
@@ -19,6 +19,11 @@ import { ProfileFormComponent } from './components/profile-form/profile-form.com
     ProfilePanelComponent,
     ProfileFormComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, DashboardRoutingModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    DashboardRoutingModule,
+  ],
 })
 export class DashboardModule {}
