@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
@@ -23,6 +24,7 @@ import { ProfileFormComponent } from './components/profile-form/profile-form.com
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     DashboardRoutingModule,
   ],
 })

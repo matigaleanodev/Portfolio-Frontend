@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './about.component';
-import { AboutRoutingModule } from './about-routing.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { AboutRoutingModule } from './about-routing.module';
+import { AboutComponent } from './about.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HardSkillsComponent } from './components/hard-skills/hard-skills.component';
 import { SoftSkillsComponent } from './components/soft-skills/soft-skills.component';
@@ -30,9 +30,9 @@ import { SkillFormComponent } from './components/soft-skills/skill-form/skill-fo
     SkillFormComponent,
   ],
   imports: [
-    NgbModule,
     CommonModule,
     AboutRoutingModule,
+    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule

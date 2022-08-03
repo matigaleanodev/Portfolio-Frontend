@@ -9,6 +9,8 @@ import { ProfileService } from 'src/app/services/data-services/profile.service';
 })
 export class DashboardComponent implements OnInit {
   profile!: Profile;
+  showRegister: boolean = false;
+  showProfile: boolean = false;
   constructor(private profService: ProfileService) {}
 
   ngOnInit(): void {
@@ -18,16 +20,23 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  onRegister(){
+    return this.showRegister = !this.showRegister;
+  }
+
+  onProfile(){
+    return this.showProfile = !this.showProfile;
+  }
+
   getData(): void {
     this.profService.getProfile().subscribe((data: Profile[]) => {
       this.profile = data[0];
     });
   }
 
-  onEditProfile(data: Profile): void {
-    console.log(data);
-    // this.profService.putProfile(data).subscribe((res) => {
-    //   console.log(res);
-    // });
+  onEditProfile(data: FormData): void {
+    this.profService.putProfile(data).subscribe((res) => {
+      console.log(res);
+    });
   }
 }

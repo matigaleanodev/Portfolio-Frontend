@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfilePanelComponent implements OnInit {
   @Input() data!: Profile;
-  @Output() onEditProfile = new EventEmitter<Profile>();
+  @Output() onEditProfile = new EventEmitter<FormData>();
   editProfile: boolean = false;
   API_URL = environment.API_URL;
   img: string = this.API_URL + '/api/image/profilePicture.jpg';
@@ -24,16 +24,16 @@ export class ProfilePanelComponent implements OnInit {
   }
 
   onSubmit(data: Profile): void {
-    if (data !== undefined) {
-      data.id = this.data.id;
-      data.image === undefined || 'undefined'
-        ? (data.image = this.data.image)
-        : data.image;
-        console.log(data);
-      this.onEditProfile.emit(data);
+    let formData = new FormData();
+      data.id !== this.data.id ? data.id = this.data.id : data.id;      
+      data.image === undefined ? (data.image = this.data.image) : data.image;
+      formData.append('id', data.id.toString());
+      formData.append('name', data.name);
+      formData.append('subtitle', data.subtitle);
+      formData.append('adress', data.adress);
+      formData.append('description', data.description);
+      formData.append('image', data.image);
+      this.onEditProfile.emit(formData);
       this.editProfile = false;
-    } else {
-      this.editProfile = false;
-    }
   }
 }

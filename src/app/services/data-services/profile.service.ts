@@ -33,12 +33,12 @@ export class ProfileService {
     });
   }
 
-  postProfile(data: Profile): Observable<Profile> {
+  postProfile(data: FormData): Observable<Profile> {
     return this.http.post<Profile>(this.baseUrl, data)
     .pipe(tap(() => this.Refreshrequired.next()));;
   }
 
-  putProfile(data: Profile): Observable<Profile> {
+  putProfile(data: FormData): Observable<Profile> {
     return this.http.put<Profile>(this.baseUrl, data)
     .pipe(tap(() => this.Refreshrequired.next()));;
   }

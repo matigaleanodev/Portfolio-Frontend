@@ -61,9 +61,10 @@ export class DataFormComponent implements OnInit {
     try {
       event.preventDefault();
       this.data = this.form.value;
-      this.file !== null || undefined
-        ? (this.data.image = this.imgName)
-        : (this.data.image = this.file.name) && this.uploadImage();
+      console.log(this.file);
+      this.file !== undefined
+        ? (this.data.image = this.file.name) && this.uploadImage()
+        : (this.data.image = this.imgName);
       this.dataChange.emit(this.data);
       this.form.reset();
       this.preview = '';

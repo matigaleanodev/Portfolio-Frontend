@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Project } from 'src/app/models/projects.interface';
 import { AuthService } from 'src/app/services/authentication/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-project-card',
@@ -13,11 +14,11 @@ export class ProjectCardComponent implements OnInit {
   @Output() onEdit = new EventEmitter<number>();
   @Output() onDelete = new EventEmitter<number>();
   onLogin: boolean = false;
+  API_URL = environment.API_URL;
 
   constructor(private authService: AuthService) {
     this.authService.isLoggedIn().subscribe(res => {
       this.onLogin = res;
-      console.log(res);
     }
     );
   }

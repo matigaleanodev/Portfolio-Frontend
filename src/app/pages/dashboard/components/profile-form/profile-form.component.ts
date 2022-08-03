@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Profile } from 'src/app/models/profile.interface';
 import { ImageService } from 'src/app/services/data-services/image.service';
@@ -17,12 +10,11 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./profile-form.component.scss'],
 })
 export class ProfileFormComponent implements OnInit {
-  @ViewChild('imgInput') imgInput!: HTMLInputElement;
   @Output() dataChange = new EventEmitter<Profile>();
   @Input() data!: Profile;
   file: any;
   preview: string = '';
-  form: FormGroup;
+  form!: FormGroup;
   imgName!: string;
   API_URL = environment.API_URL;
 
@@ -63,12 +55,10 @@ export class ProfileFormComponent implements OnInit {
   onSubmit(event: Event): void {
     try {
       event.preventDefault();
-      console.log(this.form.value);
-      console.log(this.data);
       this.data = this.form.value;
-      this.file !== null || undefined
-        ? (this.data.image = this.imgName)
-        : (this.data.image = this.file.name) && this.uploadImage();
+      this.file !== undefined
+        ? (this.data.image = this.file.name) && this.uploadImage()
+        : (this.data.image = this.imgName);
       this.dataChange.emit(this.data);
       this.form.reset();
       this.preview = '';

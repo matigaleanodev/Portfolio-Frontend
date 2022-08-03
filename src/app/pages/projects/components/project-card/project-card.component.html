@@ -16,7 +16,7 @@
       ></i>
     </span>
   </div>
-  <img src="{{ data.image }}" alt="{{ data.name }}" class="card-img-top" />
+  <img src="{{ API_URL + '/api/image/' + data.image }}" alt="{{ data.name }}" class="card-img-top" />
   <div class="card-body bg-dark bg-opacity-25">
     <p class="card-text text-light text-center">{{ data.description }}</p>
   </div>
@@ -31,7 +31,7 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      <i class="fa-brands fa-github card-button-icon"></i> Github Repo
+      <i class="fa-brands fa-github card-button-icon"></i> Frontend Repo
     </a>
     <a
       type="button"
@@ -41,7 +41,7 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      <i class="fa-brands fa-github card-button-icon"></i> Github Repo
+      <i class="fa-brands fa-github card-button-icon"></i> Backend Repo
     </a>
     <a
       type="button"

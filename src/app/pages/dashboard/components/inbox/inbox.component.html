@@ -1,7 +1,7 @@
-<section class="container-fluid">
+<section class="container-fluid d-flex flex-column g-5">
     <h3 class="text-primary text-center fw-bolder fs-4 pt-2 mb-5">Bandeja de entrada</h3>
         <app-contact-card
-            class="mx-auto mb-2"
+        class="mb-3"
             *ngFor="let data of contact"
             [contact]="data"
             (delete)="onDelete($event)"
