@@ -44,8 +44,8 @@ export class LoginComponent {
     event.preventDefault();
     if (this.loginForm.valid) {
       let cred = JSON.stringify(this.loginForm.value);
-      this.authService.login(cred).subscribe((data: any) => {
-        console.log(data);
+      this.authService.login(cred).subscribe(() => {
+        console.log("session iniciada");
         this.closeModal.nativeElement.click();
         this.router.navigate(['/dashboard']);
       });

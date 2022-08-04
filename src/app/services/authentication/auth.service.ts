@@ -36,7 +36,7 @@ export class AuthService {
     sessionStorage.clear();
     this.tokenSubject.next('{}');
     this.loged.next(false);
-    console.log('Logout', this.tokenSubject.value);
+    console.log("session cerrada");
   }
 
   register(data: any): Observable<any> {

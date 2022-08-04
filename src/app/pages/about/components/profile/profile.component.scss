@@ -1,7 +1,7 @@
 @import "variables";
 
 .profile {
-  &-picture {
+  &__picture {
     border-radius: 1rem;
     background-color: $color-primary;
     box-shadow: 5px 5px 10px 3px $color-shadow-light;
@@ -29,7 +29,7 @@
       width: 250px;
       height: 250px;
     }
-    &-img {
+    &__img {
       width: 100%;
       height: 100%;
       border-radius: 1rem;
@@ -41,11 +41,14 @@
         transform: rotate(0);
         transition: all 0.3s ease-in-out;
       }
+      &-pointer {
+        cursor: pointer;
+      }
     }
   }
-  &-content {
+  &__content {
     box-shadow: 5px 5px 10px 3px $color-shadow-light;
-    &-icon {
+    &__icon {
       cursor: pointer;
       transition: all 0.3s ease-in-out;
       &:hover {
@@ -56,11 +59,11 @@
         transform: scale(0.8);
       }
     }
-    &-body {
+    &__body {
       margin: auto 0;
       padding: auto;
     }
-    &-p {
+    &__p {
       text-justify: distribute;
       line-height: 1.5rem;
       font-size: 1.2rem;
