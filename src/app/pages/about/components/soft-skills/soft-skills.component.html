@@ -8,7 +8,7 @@
       <div class="border border-primary border-1 rounded-2 skill-wrapped">
         <picture class="d-flex w-100 skill-picture">
           <img
-            src="{{ skill.url }}"
+            src="{{ API_URL + '/api/image/' + skill.image }}"
             alt="icono de {{ skill.name }}"
             ngbTooltip="{{ skill.name }}"
             class="mx-auto skill-icon"

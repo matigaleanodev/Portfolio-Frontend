@@ -9,7 +9,7 @@ import { BYPASS_JW_TOKEN } from '../authentication/interceptor.service';
   providedIn: 'root',
 })
 export class SoftSkillService {
-  baseUrl = `${environment.API_URL}/api/soft-skills`;
+  baseUrl = `${environment.API_URL}/api/softskill`;
 
   constructor(private http: HttpClient) {}
 

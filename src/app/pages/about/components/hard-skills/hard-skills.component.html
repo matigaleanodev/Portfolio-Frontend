@@ -68,13 +68,13 @@
         <picture
           *ngFor="let skill of skills"
           [ngClass]="{
-            'd-inline-flex': skill.function === 'frontend',
-            'd-none': skill.function !== 'frontend'
+            'd-inline-flex': skill.type === 'frontend',
+            'd-none': skill.type !== 'frontend'
           }"
           class="d-none skill-panel-picture"
         >
           <img
-            src="{{ skill.url }}"
+            src="{{ API_URL + '/api/image/' + skill.image }}"
             alt="icono de {{ skill.name }}"
             ngbTooltip="{{ skill.name }}"
             class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
@@ -98,13 +98,13 @@
         <picture
           *ngFor="let skill of skills"
           [ngClass]="{
-            'd-inline-flex': skill.function === 'backend',
-            'd-none': skill.function !== 'backend'
+            'd-inline-flex': skill.type === 'backend',
+            'd-none': skill.type !== 'backend'
           }"
           class="d-none skill-panel-picture"
         >
           <img
-            src="{{ skill.url }}"
+            src="{{ API_URL + '/api/image/' + skill.image }}"
             alt="icono de {{ skill.name }}"
             ngbTooltip="{{ skill.name }}"
             class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
@@ -128,13 +128,13 @@
         <picture
           *ngFor="let skill of skills"
           [ngClass]="{
-            'd-inline-flex': skill.function === 'tool',
-            'd-none': skill.function !== 'tool'
+            'd-inline-flex': skill.type === 'tool',
+            'd-none': skill.type !== 'tool'
           }"
           class="d-none skill-panel-picture"
         >
           <img
-            src="{{ skill.url }}"
+            src="{{ API_URL + '/api/image/' + skill.image }}"
             alt="icono de {{ skill.name }}"
             ngbTooltip="{{ skill.name }}"
             class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"

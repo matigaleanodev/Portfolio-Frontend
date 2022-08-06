@@ -8,7 +8,7 @@ export interface SoftSkill {
 export interface HardSkill {
     id: number;
     name: string;
-    type: string;
+    type: 'frontend' | 'backend' | 'tool';
     description: string;
     image: string;
     url: string;
