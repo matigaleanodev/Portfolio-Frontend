@@ -3,7 +3,12 @@
     class="row d-flex align-items-center justify-content-center bg-dark bg-opacity-50 about-section"
     id="about"
   >
-    <app-profile></app-profile>
+    <app-profile
+      *ngIf="profile"
+      [profile]="profile"
+      data-aos="fade-in"
+      data-aos-duration="1550"
+    ></app-profile>
   </section>
   <section class="container about-section" id="soft-skills">
     <app-soft-skills

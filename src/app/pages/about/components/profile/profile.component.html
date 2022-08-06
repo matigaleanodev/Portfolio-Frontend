@@ -4,7 +4,10 @@
       class="d-flex justify-content-center align-items-center col-12 col-md-4 py-5 py-md-2 mx-auto"
     >
       <ul class="nav flex-column gap-2">
-        <picture class="mx-auto mb-4 profile__picture">
+        <picture
+          class="mx-auto mb-4 profile__picture"
+          [ngClass]="{ 'edit__picture': editMode }"
+        >
           <input
             #imgInput
             (change)="onFileChange($event)"
@@ -20,7 +23,7 @@
             *ngIf="preview === ''"
             alt="Matias Galeano foto de perfil"
             class="profile__picture__img"
-            [ngClass]="{ 'profile__picture__img-pointer': editMode }"
+            [ngClass]="{ 'edit__img': editMode }"
           />
           <img
             (click)="imgInput.click()"
@@ -28,7 +31,7 @@
             *ngIf="preview !== ''"
             alt="Matias Galeano foto de perfil"
             class="profile__picture__img"
-            [ngClass]="{ 'profile__picture__img-pointer': editMode }"
+            [ngClass]="{ 'edit__img': editMode }"
           />
         </picture>
         <button
@@ -61,7 +64,7 @@
       class="d-flex justify-content-center col-12 col-md-8 py-5 py-md-2 mx-auto"
     >
       <article
-        class="border border-primary border-1 rounded-2 p-4 bg-dark profile__content"
+        class="col-12 border border-primary border-1 rounded-2 p-4 bg-dark profile__content"
       >
         <div class="col-12 d-flex pb-2 align-items-center border-bottom">
           <h3 class="fw-bold fs-2 text-primary profile__content__title">
@@ -74,7 +77,7 @@
           ></i>
         </div>
         <div class="pt-2 profile__content__body">
-          <p class="profile__content__p" *ngIf="!editMode">
+          <p class="text-break profile__content__p" *ngIf="!editMode">
             {{ profile.description }}
           </p>
           <form
@@ -82,22 +85,22 @@
             [formGroup]="form"
             (ngSubmit)="onSubmit($event)"
           >
-          <div class="form-floating mb-1 mb-md-3">
-            <textarea
-              class="form-control bg-secondary bg-opacity-25 text-light form__textarea"
-              formControlName="description"
-              id="description"
-              placeholder="Descripción"
-              [(ngModel)]="profile.description"
-            ></textarea>
-            <label class="text-light fw-bold">Descripción</label>
-          </div>
-          <input
-            class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
-            type="submit"
-            value="Enviar"
-          />
-        </form>
+            <div class="form-floating mb-1 mb-md-3">
+              <textarea
+                class="form-control bg-secondary bg-opacity-25 text-light profile__textarea"
+                formControlName="description"
+                id="description"
+                placeholder="Descripción"
+                [(ngModel)]="profile.description"
+              ></textarea>
+              <label class="text-light fw-bold">Descripción</label>
+            </div>
+            <input
+              class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+              type="submit"
+              value="Enviar"
+            />
+          </form>
         </div>
       </article>
     </div>

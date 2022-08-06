@@ -12,19 +12,13 @@
     >
       Registrar Usuario
     </button>
-    <button
-      class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-6"
-      (click)="onProfile()"
-    >
-      Ver Perfil
-    </button>
     </div>
     <app-user-register
       *ngIf="showRegister"
       class="col-11 col-sm-10 col-md-8 col-lg-8 mb-4"
     ></app-user-register>
     <app-profile-panel
-      *ngIf="showProfile"
+      *ngIf="profile"
       [data]="profile"
       (onEditProfile)="onEditProfile($event)"
       class="col-11 col-sm-10 col-md-8 col-lg-8 mb-4"

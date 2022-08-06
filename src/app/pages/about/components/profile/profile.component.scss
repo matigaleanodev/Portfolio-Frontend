@@ -41,9 +41,6 @@
         transform: rotate(0);
         transition: all 0.3s ease-in-out;
       }
-      &-pointer {
-        cursor: pointer;
-      }
     }
   }
   &__content {
@@ -67,6 +64,16 @@
       text-justify: distribute;
       line-height: 1.5rem;
       font-size: 1.2rem;
+      white-space: pre-wrap;
     }
   }
+  &__textarea {
+    height: 18rem !important;
+  }
+}
+.edit__img {
+  cursor: pointer;
+  position: block;
+  filter: brightness(0.5);
+  border: 4px solid $color-light;
 }

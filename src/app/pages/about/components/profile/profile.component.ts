@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ViewportScroller } from '@angular/common';
 
@@ -14,7 +14,7 @@ import { ImageService } from 'src/app/services/data-services/image.service';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  profile!: Profile;
+  @Input() profile!: Profile;
   onLogin: boolean = false;
   editMode: boolean = false;
   file: any;
@@ -74,13 +74,15 @@ export class ProfileComponent implements OnInit {
 
   uploadImage(): void {
     const file = new FormData();
-    file.append('file', this.file, this.profile.image);
-    this.imgService.deleteImage(this.profile.image).subscribe((res: any) => {
-      console.log(res);
-    });    
-    this.imgService.postImage(file).subscribe((res: any) => {
-      console.log(res);
-    });
+    if (this.file) {
+      file.append('file', this.file, this.profile.image);
+      this.imgService.deleteImage(this.profile.image).subscribe((res: any) => {
+        console.log(res);
+      });
+      this.imgService.postImage(file).subscribe((res: any) => {
+        console.log(res);
+      });
+    }
   }
 
   onSubmit(event: Event): void {
