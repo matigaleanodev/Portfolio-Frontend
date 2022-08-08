@@ -13,12 +13,22 @@ import { environment } from 'src/environments/environment';
 })
 export class DataFormComponent implements OnInit {
   @Output() dataChange = new EventEmitter<Education | Work>();
+  @Output() cancelEdit = new EventEmitter<void>();
   @Input() formLabels: string[] = ['institution', 'title'];
-  @Input() data!: Work | Education;
+  @Input() data: Work | Education = {
+    id : 0,
+    institution: '',
+    title: '',
+    startDate: new Date(),
+    endDate: new Date(),
+    actual: false,
+    description: '',
+    image: '',
+  }
   file: any;
   preview: string = '';
   form!: FormGroup;
-  imgName!: string;
+  imgName: string = '';
   API_URL = environment.API_URL;
 
   constructor(private fb: FormBuilder, private imgService: ImageService) {
@@ -61,7 +71,6 @@ export class DataFormComponent implements OnInit {
     try {
       event.preventDefault();
       this.data = this.form.value;
-      console.log(this.file);
       this.file !== undefined
         ? (this.data.image = this.file.name) && this.uploadImage()
         : (this.data.image = this.imgName);

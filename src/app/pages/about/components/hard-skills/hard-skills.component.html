@@ -46,7 +46,7 @@
       </li>
     </ul>
   </nav>
-  <div class="d-flex tab-content bg-light bg-opacity-25 rounded-3 skill-panel">
+  <div class="d-flex tab-content bg-gradient bg-opacity-25 rounded-3 skill-panel">
     <article
       class="tab-pane active skill-panel-article"
       id="front"
@@ -64,21 +64,16 @@
         convinar librerias como Bootstrap con el toque personal que le puede dar
         sass.
       </p>
-      <div class="d-inline align-self-end py-3">
-        <picture
-          *ngFor="let skill of skills"
-          [ngClass]="{
-            'd-inline-flex': skill.type === 'frontend',
-            'd-none': skill.type !== 'frontend'
-          }"
-          class="d-none skill-panel-picture"
-        >
-          <img
-            src="{{ API_URL + '/api/image/' + skill.image }}"
-            alt="icono de {{ skill.name }}"
-            ngbTooltip="{{ skill.name }}"
-            class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
-          />
+      <div class="d-flex gap-3 py-3 mb-3">
+        <picture *ngFor="let skill of frontend" class="skill-panel-picture">
+          <a href="{{ skill.url }}" target="_blank" rel="noopener noreferrer">
+            <img
+              src="{{ API_URL + '/api/image/' + skill.image }}"
+              alt="icono de {{ skill.name }}"
+              ngbTooltip="{{ skill.name }}"
+              class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
+            />
+          </a>
         </picture>
       </div>
     </article>
@@ -94,21 +89,16 @@
         Eh desarrollado algunas Rest API utilizando Spring Boot conectando una
         base de datos de MySQL y algunos proyectos pequeños en Node Js
       </p>
-      <div class="d-inline py-3">
-        <picture
-          *ngFor="let skill of skills"
-          [ngClass]="{
-            'd-inline-flex': skill.type === 'backend',
-            'd-none': skill.type !== 'backend'
-          }"
-          class="d-none skill-panel-picture"
-        >
-          <img
-            src="{{ API_URL + '/api/image/' + skill.image }}"
-            alt="icono de {{ skill.name }}"
-            ngbTooltip="{{ skill.name }}"
-            class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
-          />
+      <div class="d-flex gap-3 py-3 mb-3">
+        <picture *ngFor="let skill of backend" class="skill-panel-picture">
+          <a href="{{ skill.url }}" target="_blank" rel="noopener noreferrer">
+            <img
+              src="{{ API_URL + '/api/image/' + skill.image }}"
+              alt="icono de {{ skill.name }}"
+              ngbTooltip="{{ skill.name }}"
+              class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
+            />
+          </a>
         </picture>
       </div>
     </article>
@@ -124,21 +114,16 @@
         Llevo mi dia a dia con varias herramientas para organizar y agilizar mi
         trabajo asi poder optimizar mi tiempo
       </p>
-      <div class="d-inline py-3 px-0">
-        <picture
-          *ngFor="let skill of skills"
-          [ngClass]="{
-            'd-inline-flex': skill.type === 'tool',
-            'd-none': skill.type !== 'tool'
-          }"
-          class="d-none skill-panel-picture"
-        >
-          <img
-            src="{{ API_URL + '/api/image/' + skill.image }}"
-            alt="icono de {{ skill.name }}"
-            ngbTooltip="{{ skill.name }}"
-            class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
-          />
+      <div class="d-flex gap-3 py-3 mb-3">
+        <picture *ngFor="let skill of tools" class="skill-panel-picture">
+          <a href="{{ skill.url }}" target="_blank" rel="noopener noreferrer">
+            <img
+              src="{{ API_URL + '/api/image/' + skill.image }}"
+              alt="icono de {{ skill.name }}"
+              ngbTooltip="{{ skill.name }}"
+              class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
+            />
+          </a>
         </picture>
       </div>
     </article>

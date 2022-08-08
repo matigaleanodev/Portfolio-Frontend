@@ -1,10 +1,9 @@
 @import "variables";
 
 .app {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   &__footer {
     z-index: 0;
     margin-top: auto;

@@ -2,35 +2,35 @@
   <div class="form-floating mb-1 mb-md-3">
     <input
       type="text"
-      class="form-control"
+      class="form-control bg-secondary bg-opacity-25 text-light"
       id="name"
       placeholder="Name"
       formControlName="name"
       required
     />
-    <label for="name" class="text-dark mb-1">Name</label>
+    <label for="name" class="text-light fw-bold mb-1">Name</label>
   </div>
   <div class="form-floating mb-1 mb-md-3">
     <input
       type="email"
-      class="form-control"
+      class="form-control bg-secondary bg-opacity-25 text-light"
       id="mail"
       placeholder="Mail"
       formControlName="mail"
       required
     />
-    <label for="email" class="text-dark mb-1">Email</label>
+    <label for="email" class="text-light fw-bold mb-1">Email</label>
   </div>
   <div class="form-floating mb-1 mb-md-3">
     <textarea
-      class="form-control"
+      class="form-control bg-secondary bg-opacity-25 text-light"
       id="message"
       placeholder="Message"
       [ngStyle]="{ height: '40vh' }"
       formControlName="message"
       required
     ></textarea>
-    <label for="message" class="text-dark">Message</label>
+    <label for="message" class="text-light fw-bold ">Message</label>
   </div>
   <input type="submit" value="Enviar" class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12" />
 </form>

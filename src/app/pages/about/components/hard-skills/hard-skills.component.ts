@@ -10,7 +10,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./hard-skills.component.scss'],
 })
 export class HardSkillsComponent implements OnInit {
-  skills: HardSkill[] = [];  
+  frontend: HardSkill[] = [];
+  backend: HardSkill[] = [];
+  tools: HardSkill[] = [];  
   API_URL = environment.API_URL;
 
   constructor(private skillService: HardSkillService) {}
@@ -26,7 +28,9 @@ export class HardSkillsComponent implements OnInit {
 
   getData(): void {
     this.skillService.getHardSkills().subscribe((data: HardSkill[]) => {
-      this.skills = data;
+      this.frontend = data.filter((skill) => skill.type === 'frontend');
+      this.backend = data.filter((skill) => skill.type === 'backend');
+      this.tools = data.filter((skill) => skill.type === 'tool');
     });
   }
 }

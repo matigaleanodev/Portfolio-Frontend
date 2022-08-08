@@ -31,8 +31,7 @@ export class ExperienceComponent implements OnInit {
   }
 
   onAdd(): boolean {
-    this.addWork = !this.addWork;
-    return this.addWork;
+    return this.addWork = !this.addWork;
   }
 
   onSubmit(data: Work): void {

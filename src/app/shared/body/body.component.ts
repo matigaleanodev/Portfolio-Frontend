@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 import { trigger, transition, useAnimation } from '@angular/animations';
 import {
@@ -28,7 +29,14 @@ export class BodyComponent {
   @Input() collapsed: boolean = false;
   @Input() screenWidth: number = 0;
 
-  constructor() {}
+  constructor(private router: Router) {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
+  }
   getState(outlet: any) {
     return outlet.activatedRouteData.state;
   }

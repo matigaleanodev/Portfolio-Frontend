@@ -64,7 +64,7 @@
       class="d-flex justify-content-center col-12 col-md-8 py-5 py-md-2 mx-auto"
     >
       <article
-        class="col-12 border border-primary border-1 rounded-2 p-4 bg-dark profile__content"
+        class="col-12 border border-primary border-1 rounded-2 p-4 bg-gradient bg-opacity-25 profile__content"
       >
         <div class="col-12 d-flex pb-2 align-items-center border-bottom">
           <h3 class="fw-bold fs-2 text-primary profile__content__title">
@@ -95,11 +95,14 @@
               ></textarea>
               <label class="text-light fw-bold">Descripción</label>
             </div>
-            <input
-              class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+            <div class="d-flex gap-1">
+              <input
+              class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3"
               type="submit"
               value="Enviar"
-            />
+            />    
+            <input class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3" type="button" value="Cancelar" (click)="editMode = !editMode">
+            </div>
           </form>
         </div>
       </article>

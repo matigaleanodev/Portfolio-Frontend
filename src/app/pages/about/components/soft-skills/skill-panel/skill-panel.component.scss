@@ -1,0 +1,41 @@
+@import "variables";
+
+.skill {
+  margin: 5rem auto;
+  &__wrapped {
+    min-height: 25rem;
+    box-shadow: 5px 5px 15px $color-shadow-light;
+  }
+  &__header {
+    height: 2rem;
+    padding: 0.25rem 0.5rem 0 0;
+    align-items: center;
+    &-icon {
+      cursor: pointer;
+      transition: all 0.5s ease;
+      &:hover {
+        color: $color-light;
+        transform: scale(1.25);
+      }
+      &:active {
+        color: $color-light;
+        transform: scale(0.75);
+      }
+    }
+  }
+  &__picture {
+    padding-top: 5px;
+  }
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    background: $color-secondary;
+    border: 1px solid $color-secondary;
+    box-shadow: 2px 5px 10px $color-shadow;
+    border-radius: 50%;
+  }
+  // &__body{
+  //     &-title{}
+  //     &-description{}
+  // }
+}

@@ -1,14 +1,18 @@
-
-<app-data-form [data]="data" *ngIf="editMode" (dataChange)="onSubmit($event)"></app-data-form>
-<article *ngIf="!editMode" class="card mb-3 bg-light bg-opacity-25 border border-primary article">
+<app-data-form
+  [data]="data"
+  *ngIf="editMode"
+  (dataChange)="onSubmit($event)"
+  (cancelEdit)="editMode = !editMode"
+></app-data-form>
+<article
+  *ngIf="!editMode"
+  class="card mb-3 bg-light bg-opacity-25 border border-primary article"
+>
   <div
     *ngIf="onLogin"
     class="d-flex justify-content-end gap-3 text-primary card-header"
   >
-    <i
-      class="fa-solid fa-pencil article-icon me-2"
-      (click)="onEditMode()"
-    ></i>
+    <i class="fa-solid fa-pencil article-icon me-2" (click)="onEditMode()"></i>
     <i
       class="fa-solid fa-trash article-icon"
       (click)="onDelete.emit(data.id)"

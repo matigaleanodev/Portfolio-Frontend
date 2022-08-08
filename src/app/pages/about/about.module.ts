@@ -15,6 +15,7 @@ import { EducationComponent } from './components/education/education.component';
 import { DataCardComponent } from './components/data-card/data-card.component';
 import { DataFormComponent } from './components/data-form/data-form.component';
 import { SkillFormComponent } from './components/soft-skills/skill-form/skill-form.component';
+import { SkillPanelComponent } from './components/soft-skills/skill-panel/skill-panel.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SkillFormComponent } from './components/soft-skills/skill-form/skill-fo
     DataCardComponent,
     DataFormComponent,
     SkillFormComponent,
+    SkillPanelComponent,
   ],
   imports: [
     CommonModule,

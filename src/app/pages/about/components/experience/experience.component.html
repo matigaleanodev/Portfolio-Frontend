@@ -3,7 +3,12 @@
   [title]="'Experiencia Laboral'"
   (onAdd)="onAdd()"
 ></app-about-titles>
-<app-data-form *ngIf="addWork" [formLabels]="['empresa', 'puesto']" (dataChange)="onSubmit($event)"></app-data-form>
+<app-data-form
+  *ngIf="addWork"
+  [formLabels]="['empresa', 'puesto']"
+  (dataChange)="onSubmit($event)"
+  (cancelEdit)="addWork = !addWork"
+></app-data-form>
 <div class="container" data-aos="fade-up" data-aos-duration="1550">
   <div class="row d-flex justify-content-center gap-3">
     <app-data-card
