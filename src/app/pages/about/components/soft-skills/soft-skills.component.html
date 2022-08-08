@@ -4,11 +4,13 @@
     [title]="'Soft Skills'"
     (onAdd)="onAdd()"
   ></app-about-titles>
-  <app-skill-form
+  <div class="d-flex justify-content-center mt-3">    
+    <app-skill-form
     *ngIf="addSkill"
     (dataChange)="onSubmit($event)"
-    (cancelEdit)="editMode = !editMode"
-  ></app-skill-form>
+    (cancelEdit)="addSkill = !addSkill"
+    ></app-skill-form>
+  </div>
   <div class="row d-flex justify-content-center gap-3 skill">
     <app-skill-panel 
     class="col-12 col-md-5 col-lg-4 col-xl-3 my-2 skill"

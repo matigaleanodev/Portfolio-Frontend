@@ -1,10 +1,11 @@
-<div class="container">
+<div class="container border border-primary border-1 rounded-2 bg-gradient bg-opacity-25">
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)" autocomplete="off">
     <div class="row">
       <div
-        class="d-flex justify-content-center align-items-center col-md input-group mb-3 rounded-circle"
+        class="d-flex flex-column justify-content-center align-items-center col-md input-group mb-3 rounded-circle"
       >
-        <input
+        <div class="my-2">
+          <input
           #imgInput
           (change)="onFileChange($event)"
           class="d-none"
@@ -31,8 +32,7 @@
           *ngIf="preview !== ''"
           class="form__preview bg-opacity-25 bg-light rounded-circle"
         />
-      </div>
-      <div class="col-md-8">
+        </div>      
         <div class="form-floating mb-1 mb-md-3">
           <input
             class="form-control bg-secondary bg-opacity-25 text-light"

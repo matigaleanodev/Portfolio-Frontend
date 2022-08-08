@@ -1,5 +1,13 @@
+
 <article class="container-fluid skill">
+  <app-skill-form
+  *ngIf="editMode"
+  [data]="data"
+  (dataChange)="onSubmit($event)"
+  (cancelEdit)="editMode = !editMode"
+  ></app-skill-form>
   <div
+  *ngIf="!editMode"
     class="border border-primary border-1 rounded-2 bg-gradient bg-opacity-25 skill__wrapped"
   >
     <div
@@ -20,7 +28,7 @@
         src="{{ API_URL + '/api/image/' + data.image }}"
         alt="icono de {{ data.name }}"
         ngbTooltip="{{ data.name }}"
-        class="mt-3 mx-auto skill__icon"
+        class="my-2 mx-auto skill__icon"
       />
     </picture>
     <div class="p-1 skill__body">
