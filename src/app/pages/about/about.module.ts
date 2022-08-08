@@ -16,6 +16,8 @@ import { DataCardComponent } from './components/data-card/data-card.component';
 import { DataFormComponent } from './components/data-form/data-form.component';
 import { SkillFormComponent } from './components/soft-skills/skill-form/skill-form.component';
 import { SkillPanelComponent } from './components/soft-skills/skill-panel/skill-panel.component';
+import { SkillItemComponent } from './components/hard-skills/skill-item/skill-item.component';
+import { HskillFormComponent } from './components/hard-skills/hskill-form/hskill-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { SkillPanelComponent } from './components/soft-skills/skill-panel/skill-
     DataFormComponent,
     SkillFormComponent,
     SkillPanelComponent,
+    SkillItemComponent,
+    HskillFormComponent,
   ],
   imports: [
     CommonModule,

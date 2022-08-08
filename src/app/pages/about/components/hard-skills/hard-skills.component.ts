@@ -12,8 +12,12 @@ import { environment } from 'src/environments/environment';
 export class HardSkillsComponent implements OnInit {
   frontend: HardSkill[] = [];
   backend: HardSkill[] = [];
-  tools: HardSkill[] = [];  
+  tools: HardSkill[] = [];
   API_URL = environment.API_URL;
+  addSkill: boolean = false;
+  onLogin: boolean = false;
+  editMode: boolean = false;
+  editData!: HardSkill;
 
   constructor(private skillService: HardSkillService) {}
 
@@ -31,6 +35,36 @@ export class HardSkillsComponent implements OnInit {
       this.frontend = data.filter((skill) => skill.type === 'frontend');
       this.backend = data.filter((skill) => skill.type === 'backend');
       this.tools = data.filter((skill) => skill.type === 'tool');
+    });
+  }
+
+  onAdd(): boolean {    
+    return this.addSkill = !this.addSkill;
+  }
+  
+  onSubmit(data: HardSkill): void {
+    this.skillService.postHardSkill(data).subscribe((res) => {
+      console.log(res);
+    });
+    this.addSkill = false;
+  }
+
+  onEditMode(skill: HardSkill): boolean {
+    this.editData = skill;
+    return this.editMode = true;
+  }
+
+
+  onEdit(data: HardSkill) {
+    this.skillService.putHardSkill(data).subscribe((res) => {
+      console.log(res);
+      this.editMode = false;
+    });
+  }
+
+  onDelete(id: number): void {
+    this.skillService.deleteHardSkill(id).subscribe((res) => {
+      console.log(res);
     });
   }
 }

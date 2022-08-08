@@ -1,0 +1,27 @@
+<div class="d-flex flex-column gap-2 justify-content-center">
+  <div>
+    <picture class="skill__picture">
+      <a href="{{ skill.url }}" target="_blank" rel="noopener noreferrer">
+        <img
+          src="{{ API_URL + '/api/image/' + skill.image }}"
+          alt="icono de {{ skill.name }}"
+          ngbTooltip="{{ skill.name }}"
+          class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill__icon"
+        />
+      </a>
+    </picture>
+  </div>
+  <div
+    *ngIf="onLogin"
+    class="d-flex justify-content-center gap-1 text-primary border-dark border-bottom"
+  >
+    <i
+      class="fa-solid fa-pencil skill__icon me-2"
+      (click)="onEdit.emit(skill)"
+    ></i>
+    <i
+      class="fa-solid fa-trash skill__icon"
+      (click)="onDelete.emit(skill.id)"
+    ></i>
+  </div>
+</div>

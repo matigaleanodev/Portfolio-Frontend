@@ -1,0 +1,22 @@
+@import "variables";
+
+.skill {
+    &__picture {
+        width: 3rem;
+        height: 3rem;
+      }
+      &__icon {
+        height: 2.5rem;
+        width: auto;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        &:hover {
+          color: $color-light;
+          transform: scale(1.25);
+        }
+        &:active {
+          color: $color-light;
+          transform: scale(0.75);
+        }
+      }
+}

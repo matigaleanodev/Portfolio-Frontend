@@ -1,10 +1,28 @@
-<app-about-titles class="row" [title]="'Hard Skills'"></app-about-titles>
+<app-about-titles
+  class="row"
+  [title]="'Hard Skills'"
+  (onAdd)="onAdd()"
+></app-about-titles>
+<div class="d-flex justify-content-center mt-3">
+  <app-hskill-form
+    *ngIf="addSkill"
+    (dataChange)="onSubmit($event)"
+    (cancelEdit)="addSkill = !addSkill"
+  ></app-hskill-form>
+  <app-hskill-form
+    *ngIf="editMode"
+    (dataChange)="onEdit($event)"
+    (cancelEdit)="editMode = !editMode"
+    [data]="editData"
+    [id]="editData.id"
+  ></app-hskill-form>
+</div>
 <section class="container skill" data-aos="fade-up" data-aos-duration="1550">
-  <nav class="skill-nav">
-    <ul class="nav nav-tabs skill-nav-list">
-      <li class="nav-item skill-nav-item" role="presentation">
+  <nav class="skill__nav">
+    <ul class="nav nav-tabs skill__nav__list">
+      <li class="nav-item skill__nav__item" role="presentation">
         <button
-          class="nav-link active skill-nav-button"
+          class="nav-link active skill__nav__button"
           id="front-tab"
           data-bs-toggle="tab"
           data-bs-target="#front"
@@ -46,18 +64,20 @@
       </li>
     </ul>
   </nav>
-  <div class="d-flex tab-content bg-gradient bg-opacity-25 rounded-3 skill-panel">
+  <div
+    class="d-flex tab-content bg-gradient bg-opacity-25 rounded-3 skill__panel"
+  >
     <article
-      class="tab-pane active skill-panel-article"
+      class="tab-pane active skill__panel__article"
       id="front"
       role="tabpanel"
       aria-labelledby="home-tab"
       tabindex="0"
     >
-      <h3 class="p-2 text-primary mb-auto fs-2 fw-bold skill-panel-title">
+      <h3 class="p-2 text-primary mb-auto fs-2 fw-bold skill__panel__title">
         Frontend
       </h3>
-      <p class="text-light pb-2 skill-panel-text">
+      <p class="text-light pb-2 skill__panel__text">
         Tengo mucha afinidad con la programacion modular y orientada a
         componentes que ofrece Angular y todo su entorno. Trabajo tanto con
         Javascript nativo como con Typescript y para los estilos me gusta
@@ -65,66 +85,54 @@
         sass.
       </p>
       <div class="d-flex gap-3 py-3 mb-3">
-        <picture *ngFor="let skill of frontend" class="skill-panel-picture">
-          <a href="{{ skill.url }}" target="_blank" rel="noopener noreferrer">
-            <img
-              src="{{ API_URL + '/api/image/' + skill.image }}"
-              alt="icono de {{ skill.name }}"
-              ngbTooltip="{{ skill.name }}"
-              class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
-            />
-          </a>
-        </picture>
+        <app-skill-item
+          *ngFor="let skill of frontend"
+          [skill]="skill"
+          (onEdit)="onEditMode($event)"
+          (onDelete)="onDelete($event)"
+        ></app-skill-item>
       </div>
     </article>
     <article
-      class="tab-pane skill-panel-article"
+      class="tab-pane skill__panel__article"
       id="back"
       role="tabpanel"
       aria-labelledby="back-tab"
       tabindex="0"
     >
-      <h3 class="p-2 text-primary fs-2 fw-bold skill-panel-title">Backend</h3>
-      <p class="text-light pb-2 skill-panel-text">
+      <h3 class="p-2 text-primary fs-2 fw-bold skill__panel__title">Backend</h3>
+      <p class="text-light pb-2 skill__panel__text">
         Eh desarrollado algunas Rest API utilizando Spring Boot conectando una
         base de datos de MySQL y algunos proyectos pequeños en Node Js
       </p>
       <div class="d-flex gap-3 py-3 mb-3">
-        <picture *ngFor="let skill of backend" class="skill-panel-picture">
-          <a href="{{ skill.url }}" target="_blank" rel="noopener noreferrer">
-            <img
-              src="{{ API_URL + '/api/image/' + skill.image }}"
-              alt="icono de {{ skill.name }}"
-              ngbTooltip="{{ skill.name }}"
-              class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
-            />
-          </a>
-        </picture>
+        <app-skill-item
+          *ngFor="let skill of backend"
+          [skill]="skill"
+          (onEdit)="onEditMode($event)"
+          (onDelete)="onDelete($event)"
+        ></app-skill-item>
       </div>
     </article>
     <article
-      class="tab-pane skill-panel-article"
+      class="tab-pane skill__panel__article"
       id="tools"
       role="tabpanel"
       aria-labelledby="tools-tab"
       tabindex="0"
     >
-      <h3 class="p-2 text-primary fs-2 fw-bold skill-panel-title">Tools</h3>
-      <p class="text-light pb-2 skill-panel-text">
+      <h3 class="p-2 text-primary fs-2 fw-bold skill__panel__title">Tools</h3>
+      <p class="text-light pb-2 skill__panel__-text">
         Llevo mi dia a dia con varias herramientas para organizar y agilizar mi
         trabajo asi poder optimizar mi tiempo
       </p>
       <div class="d-flex gap-3 py-3 mb-3">
-        <picture *ngFor="let skill of tools" class="skill-panel-picture">
-          <a href="{{ skill.url }}" target="_blank" rel="noopener noreferrer">
-            <img
-              src="{{ API_URL + '/api/image/' + skill.image }}"
-              alt="icono de {{ skill.name }}"
-              ngbTooltip="{{ skill.name }}"
-              class="mt-1 mt-md-5 mb-1 mx-0 px-1 skill-panel-icon"
-            />
-          </a>
-        </picture>
+        <app-skill-item
+          *ngFor="let skill of tools"
+          [skill]="skill"
+          (onEdit)="onEditMode($event)"
+          (onDelete)="onDelete($event)"
+        ></app-skill-item>
       </div>
     </article>
   </div>

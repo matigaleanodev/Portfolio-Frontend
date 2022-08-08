@@ -11,8 +11,8 @@ import { environment } from 'src/environments/environment';
 })
 export class SoftSkillsComponent implements OnInit {
   skills: SoftSkill[] = [];
-  addSkill: boolean = false;
   API_URL = environment.API_URL;
+  addSkill: boolean = false;
   onLogin: boolean = false;
   editMode: boolean = false;
 

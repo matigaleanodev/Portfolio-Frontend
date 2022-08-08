@@ -8,21 +8,21 @@
   padding: 0;
   margin: 5rem auto;
   max-width: 50rem;
-  &-nav {
-    &-button {
+  &__nav {
+    &__button {
       font-weight: 500;
     }
   }
-  &-panel {
+  &__panel {
     padding: 1rem 0.75rem 2rem;
-    &-article.active {
+    &__article.active {
       animation: fade-in 2.5s ease;
     }
-    &-picture {
+    &__picture {
       width: 3rem;
       height: 3rem;
     }
-    &-icon {
+    &__icon {
       height: 2.5rem;
       width: auto;
       transition: all 0.3s ease-in-out;

@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./skill-panel.component.scss']
 })
 export class SkillPanelComponent implements OnInit {
-  @Output() onDelete = new EventEmitter<number>();  
+  @Output() onDelete = new EventEmitter<number>();
   @Output() onEdit = new EventEmitter<SoftSkill>();
   @Input() data: SoftSkill = {
     id: 0,

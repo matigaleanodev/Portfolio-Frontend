@@ -9,7 +9,6 @@ export interface HardSkill {
     id: number;
     name: string;
     type: 'frontend' | 'backend' | 'tool';
-    description: string;
     image: string;
     url: string;
 }

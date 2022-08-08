@@ -1,0 +1,95 @@
+<div
+  class="container border border-primary border-1 rounded-2 bg-gradient bg-opacity-25"
+>
+  <form [formGroup]="form" (ngSubmit)="onSubmit($event)" autocomplete="off">
+    <div class="row">
+      <div
+        class="d-flex flex-column justify-content-center align-items-center col-md input-group mb-3 rounded-circle"
+      >
+        <div class="my-2">
+          <input
+            #imgInput
+            (change)="onFileChange($event)"
+            class="d-none"
+            accept="image/png, image/jpeg"
+            type="file"
+            id="image"
+            name="image"
+          />
+          <img
+            (click)="imgInput.click()"
+            src="/assets/images/addimg.png"
+            *ngIf="preview === '' && data.image === ''"
+            class="form__preview bg-opacity-25 bg-light rounded-circle"
+          />
+          <img
+            (click)="imgInput.click()"
+            src="{{ API_URL + '/api/image/' + data.image }}"
+            *ngIf="preview === '' && data.image !== ''"
+            class="form__preview bg-opacity-25 bg-light rounded-circle"
+          />
+          <img
+            (click)="imgInput.click()"
+            [src]="preview"
+            *ngIf="preview !== ''"
+            class="form__preview bg-opacity-25 bg-light rounded-circle"
+          />
+        </div>
+        <div class="form-floating mb-1 mb-md-3">
+          <input
+            class="form-control bg-secondary bg-opacity-25 text-light"
+            type="text"
+            formControlName="name"
+            id="name"
+            placeholder="Name"
+            [(ngModel)]="data.name"
+          />
+          <label for="name" class="text-light fw-bold">Name</label>
+        </div>
+        <div class="form-floating mb-1 mb-md-3">
+          <input
+            class="form-control bg-secondary bg-opacity-25 text-light"
+            type="url"
+            formControlName="url"
+            id="url"
+            placeholder="Url"
+            [(ngModel)]="data.url"
+          />
+          <label for="url" class="text-light fw-bold">Url</label>
+        </div>
+        <div class="form-floating mb-1 mb-md-3 col-12">
+          <select
+            class="form-select bg-secondary bg-opacity-25 text-light"
+            formControlName="type"
+            id="type"
+            [(ngModel)]="data.type"
+          >
+            <option class="text-dark bg-light bg-opacity-25" value="frontend">
+              Frontend
+            </option>
+            <option class="text-dark bg-light bg-opacity-25" value="backend">
+              Backend
+            </option>
+            <option class="text-dark bg-light bg-opacity-25" value="tool">
+              Tool
+            </option>
+          </select>
+          <label for="type" class="text-light fw-bold">Type</label>
+        </div>
+        <div class="d-flex gap-1">
+          <input
+            class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3"
+            type="submit"
+            value="Enviar"
+          />
+          <input
+            class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3"
+            type="button"
+            value="Cancelar"
+            (click)="cancelEdit.emit()"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
