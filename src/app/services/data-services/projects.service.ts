@@ -36,7 +36,7 @@ export class ProjectsService {
     .pipe(tap(() => this.Refreshrequired.next()));;
   }
 
-  putWork(data: Project): Observable<Project> {
+  putProject(data: Project): Observable<Project> {
     return this.http.put<Project>(this.baseUrl, data)
     .pipe(tap(() => this.Refreshrequired.next()));;
   }

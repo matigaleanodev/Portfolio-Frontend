@@ -3,7 +3,7 @@ export interface Project {
   name: string;
   description: string;
   date: Date;
-  image: String;
+  image: string;
   frontUrl: string;
   backUrl: string;
   demoUrl: string;

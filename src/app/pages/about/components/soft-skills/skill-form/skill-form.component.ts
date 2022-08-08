@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-skill-form',
   templateUrl: './skill-form.component.html',
-  styleUrls: ['./skill-form.component.scss']
+  styleUrls: ['./skill-form.component.scss'],
 })
 export class SkillFormComponent implements OnInit {
   @Output() dataChange = new EventEmitter<SoftSkill>();
@@ -18,7 +18,7 @@ export class SkillFormComponent implements OnInit {
     name: '',
     description: '',
     image: '',
-  }
+  };
   file: any;
   preview: string = '';
   form!: FormGroup;
@@ -70,6 +70,5 @@ export class SkillFormComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-  }    
-
+  }
 }

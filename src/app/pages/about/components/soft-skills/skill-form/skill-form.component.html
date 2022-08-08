@@ -1,4 +1,6 @@
-<div class="container border border-primary border-1 rounded-2 bg-gradient bg-opacity-25">
+<div
+  class="container border border-primary border-1 rounded-2 bg-gradient bg-opacity-25"
+>
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)" autocomplete="off">
     <div class="row">
       <div
@@ -6,33 +8,33 @@
       >
         <div class="my-2">
           <input
-          #imgInput
-          (change)="onFileChange($event)"
-          class="d-none"
-          accept="image/png, image/jpeg"
-          type="file"
-          id="image"
-          name="image"
-        />
-        <img
-          (click)="imgInput.click()"
-          src="/assets/images/addimg.png"
-          *ngIf="preview === '' && data.image === ''"
-          class="form__preview bg-opacity-25 bg-light rounded-circle"
-        />
-        <img
-          (click)="imgInput.click()"
-          src="{{ API_URL + '/api/image/' + data.image }}"
-          *ngIf="preview === '' && data.image !== ''"
-          class="form__preview bg-opacity-25 bg-light rounded-circle"
-        />
-        <img
-          (click)="imgInput.click()"
-          [src]="preview"
-          *ngIf="preview !== ''"
-          class="form__preview bg-opacity-25 bg-light rounded-circle"
-        />
-        </div>      
+            #imgInput
+            (change)="onFileChange($event)"
+            class="d-none"
+            accept="image/png, image/jpeg"
+            type="file"
+            id="image"
+            name="image"
+          />
+          <img
+            (click)="imgInput.click()"
+            src="/assets/images/addimg.png"
+            *ngIf="preview === '' && data.image === ''"
+            class="form__preview bg-opacity-25 bg-light rounded-circle"
+          />
+          <img
+            (click)="imgInput.click()"
+            src="{{ API_URL + '/api/image/' + data.image }}"
+            *ngIf="preview === '' && data.image !== ''"
+            class="form__preview bg-opacity-25 bg-light rounded-circle"
+          />
+          <img
+            (click)="imgInput.click()"
+            [src]="preview"
+            *ngIf="preview !== ''"
+            class="form__preview bg-opacity-25 bg-light rounded-circle"
+          />
+        </div>
         <div class="form-floating mb-1 mb-md-3">
           <input
             class="form-control bg-secondary bg-opacity-25 text-light"
@@ -53,7 +55,9 @@
             [(ngModel)]="data.description"
           >
           </textarea>
-          <label for="description" class="text-light fw-bold">Descripcion</label>
+          <label for="description" class="text-light fw-bold"
+            >Descripcion</label
+          >
         </div>
         <div class="d-flex gap-1">
           <input
@@ -68,7 +72,7 @@
             (click)="cancelEdit.emit()"
           />
         </div>
-      </div>      
-    </div>    
+      </div>
+    </div>
   </form>
 </div>

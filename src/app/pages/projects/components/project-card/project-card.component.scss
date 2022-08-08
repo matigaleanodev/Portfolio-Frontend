@@ -8,7 +8,7 @@
     transform: scale(1.05);
     box-shadow: 10px 10px 20px 3px $color-shadow;
   }
-  &-icon {
+  &__icon {
     transition: all 0.5s ease;
     &:hover {
       color: $color-light;
@@ -19,21 +19,21 @@
       transform: scale(0.75);
     }
   }
-  &-body {
+  &__body {
     height: 10rem;
   }
-  &-img-top {
+  &__img-top {
     width: 100%;
     height: 15rem;
     object-fit: cover;
   }
-  &-button {
+  &__button {
     transition: all 0.5s ease;
     &:active {
       transform: scale(0.75);
     }
   }
-  &-footer {
+  &__footer {
     min-height: 6rem;
   }
 }

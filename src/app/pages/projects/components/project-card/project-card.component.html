@@ -1,56 +1,55 @@
 <article class="card bg-light bg-opacity-25 border border-primary">
-  <div class="d-flex justify-content-between card-header">
-    <h5 class="card-title fs-5 fw-bold text-center text-primary">
+  <div class="d-flex gap-2 text-primary justify-content-end p-2" *ngIf="onLogin">
+    <i
+      class="fa-solid fa-pencil card__icon"
+      (click)="onEdit.emit(data)"
+    ></i>
+    <i
+      class="fa-solid fa-trash card__icon"
+      (click)="onDelete.emit(data.id)"
+    ></i>
+  </div>
+  <div class="d-flex justify-content-center card-header">
+    <h5 class="card__title fs-5 fw-bold text-center text-primary">
       {{ data.name }}
     </h5>
-    <span class="d-flex gap-3 text-primary p-1">
-      <i
-        *ngIf="onLogin"
-        class="fa-solid fa-pencil card-icon"
-        (click)="onEdit.emit(data.id)"
-      ></i>
-      <i
-        *ngIf="onLogin"
-        class="fa-solid fa-trash card-icon"
-        (click)="onDelete.emit(data.id)"
-      ></i>
-    </span>
   </div>
-  <img src="{{ API_URL + '/api/image/' + data.image }}" alt="{{ data.name }}" class="card-img-top" />
+   
   <div class="card-body bg-dark bg-opacity-25">
-    <p class="card-text text-light text-center">{{ data.description }}</p>
+    <img src="{{ API_URL + '/api/image/' + data.image }}" alt="{{ data.name }}" class="card__img-top" />
+    <p class="card__text text-light text-center">{{ data.description }}</p>
   </div>
   <div
     class="card-footer d-inline-flex flex-column justify-content-center align-items-center g-3"
   >
     <a
       type="button"
-      class="btn btn-primary col-10 card-button"
+      class="btn bg-primary bg-opacity-50 text-light col-10 card__button"
       *ngIf="data.frontUrl"
       href="{{ data.frontUrl }}"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <i class="fa-brands fa-github card-button-icon"></i> Frontend Repo
+      <i class="fa-brands fa-github card__button-icon"></i> Frontend Repo
     </a>
     <a
       type="button"
-      class="btn btn-primary col-10 mt-2 card-button"
+      class="btn bg-primary bg-opacity-50 text-light col-10 mt-2 card__button"
       *ngIf="data.backUrl"
       href="{{ data.backUrl }}"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <i class="fa-brands fa-github card-button-icon"></i> Backend Repo
+      <i class="fa-brands fa-github card__button-icon"></i> Backend Repo
     </a>
     <a
       type="button"
-      class="btn btn-primary col-10 mt-2 card-button"
+      class="btn bg-primary bg-opacity-50 text-light col-10 mt-2 card__button"
       href="{{ data.demoUrl }}"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <i class="fa-solid fa-arrow-up-right-from-square card-button-icon"></i>
+      <i class="fa-solid fa-arrow-up-right-from-square card__button-icon"></i>
       Live Demo
     </a>
   </div>

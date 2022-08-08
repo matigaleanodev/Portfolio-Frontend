@@ -1,0 +1,24 @@
+@import "variables";
+.container {
+  min-height: 28rem;  
+  box-shadow: 5px 5px 15px $color-shadow-light;
+}
+.form {
+  &__image{
+    height: 10rem;
+  }
+  &__preview {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+      lighting-color: #DAD5DF;
+    }
+  }
+  &__textarea{
+    height: 10rem;
+  }
+}

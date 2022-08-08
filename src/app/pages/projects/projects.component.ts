@@ -10,6 +10,7 @@ import { ProjectsService } from 'src/app/services/data-services/projects.service
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
+  addProject: boolean = false;
 
   constructor(private projectService: ProjectsService) {}
 
@@ -27,15 +28,26 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  onEdit(id: number) {
-    console.log(id);
+  onAdd(): boolean {
+    return (this.addProject = !this.addProject);
+  }
+
+  onSubmit(data: Project): void {
+    this.projectService.postProject(data).subscribe((res) => {
+      console.log(res);
+    });
+    this.addProject = false;
+  }
+
+  onEdit(data: Project) {
+    this.projectService.putProject(data).subscribe((res) => {
+      console.log(res);
+    });
   }
 
   onDelete(id: number) {
-    for (let inx = 0; inx < this.projects.length; inx++) {
-      if (this.projects[inx].id === id) {
-        this.projects.splice(inx, 1);
-      }
-    }
+    this.projectService.deleteProject(id).subscribe((res) => {
+      console.log(res);
+    });
   }
 }

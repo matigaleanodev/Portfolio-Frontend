@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProjectCardComponent implements OnInit {
   @Input() data!: Project;
-  @Output() onEdit = new EventEmitter<number>();
+  @Output() onEdit = new EventEmitter<Project>();
   @Output() onDelete = new EventEmitter<number>();
   onLogin: boolean = false;
   API_URL = environment.API_URL;
