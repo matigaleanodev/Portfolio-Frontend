@@ -17,7 +17,7 @@ import {
     trigger('animation', [
       transition(
         '* => home',
-        useAnimation(fromTopEasing, { params: { timing: 0.5 } })
+        useAnimation(fromLeftEasing, { params: { timing: 0.5 } })
       ),
       transition('* => *', useAnimation(fromRightEasing)),
     ]),

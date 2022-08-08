@@ -2,12 +2,16 @@
   class="row"
   [title]="'Educación y Certificaciones'"
   (onAdd)="onAdd()"
+  data-aos="fade-up"
+  data-aos-duration="1550"
 ></app-about-titles>
 <app-data-form
   *ngIf="addEducation"
   [formLabels]="['institucion', 'titulo']"
   (dataChange)="onSubmit($event)"
   (cancelEdit)="addEducation = !addEducation"
+  data-aos="fade-up"
+  data-aos-duration="1550"
 ></app-data-form>
 <div class="container" data-aos="fade-up" data-aos-duration="1550">
   <div

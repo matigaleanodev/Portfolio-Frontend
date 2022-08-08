@@ -1,0 +1,34 @@
+@import "variables";
+
+.socialbox {
+  z-index: 2;
+  &-link {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    color: $color-light;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    &:hover {
+      transform: scale(1.5);
+    }
+    .fa-envelope:hover {
+      color: $color-info;
+    }
+    .fa-whatsapp:hover {
+      color: $color-success;
+    }
+    .fa-linkedin:hover {
+      color: $linkedin;
+    }
+    .fa-github:hover {
+      color: $github;
+    }
+    .fa-brands, .fas {
+      font-size: 1.5rem;
+      width: 2rem;
+      min-width: 2rem;
+      text-align: center;
+    }
+  }
+}

@@ -1,5 +1,11 @@
 <section class="container dashboard">
-  <app-dashboard-title class="row" [title]="'Dashboard'" id="dashboard"></app-dashboard-title>
+  <app-dashboard-title
+    class="row"
+    [title]="'Dashboard'"
+    id="dashboard"
+    data-aos="fade-up"
+    data-aos-duration="1550"
+  ></app-dashboard-title>
   <div class="row d-flex justify-content-center align-item-center">
     <!-- <div class="d-flex flex-column gap-3 mb-3">
       <button
@@ -21,7 +27,16 @@
       (onEditProfile)="onEditProfile($event)"
       class="col-11 col-sm-10 col-md-8 col-lg-8 mb-4"
     ></app-profile-panel>
-    <app-dashboard-title class="row" [title]="'Bandeja de entrada'"></app-dashboard-title>
-    <app-inbox class="col-11 col-sm-10 col-md-8 col-lg-8 mb-4"></app-inbox>
+    <app-dashboard-title
+      class="row"
+      [title]="'Bandeja de entrada'"
+      data-aos="fade-up"
+      data-aos-duration="1550"
+    ></app-dashboard-title>
+    <app-inbox
+      class="col-11 col-sm-10 col-md-8 col-lg-8 mb-4"
+      data-aos="fade-up"
+      data-aos-duration="1550"
+    ></app-inbox>
   </div>
 </section>

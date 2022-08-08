@@ -13,7 +13,6 @@ export class AuthService {
   loged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {
-    console.log('Authentication Service Initialized...');
     this.tokenSubject = new BehaviorSubject<any>(sessionStorage.getItem('token') || '{}');
     sessionStorage.getItem('token') && sessionStorage.getItem('token') !== '{}' ? this.loged.next(true) : this.loged.next(false);
   }
@@ -49,6 +48,10 @@ export class AuthService {
 
   get Token() {
     return this.tokenSubject.value;
+  }
+
+  initApi(): Observable<any> {
+    return this.http.get<any>(`${environment.API_URL}/api/init`);
   }
 }
 

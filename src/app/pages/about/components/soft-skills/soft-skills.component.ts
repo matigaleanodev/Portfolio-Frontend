@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { SoftSkill } from 'src/app/models/skill.interface';
 import { AuthService } from 'src/app/services/authentication/auth.service';
 import { SoftSkillService } from 'src/app/services/data-services/soft-skill.service';
 import { environment } from 'src/environments/environment';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-soft-skills',
@@ -23,6 +25,8 @@ export class SoftSkillsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
     this.getData();
     this.skillService.Refreshrequired.subscribe(() => {
       this.getData();

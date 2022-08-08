@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as AOS from 'aos';
 import { Project } from 'src/app/models/projects.interface';
 import { ProjectsService } from 'src/app/services/data-services/projects.service';
 
@@ -15,6 +16,8 @@ export class ProjectsComponent implements OnInit {
   constructor(private projectService: ProjectsService) {}
 
   ngOnInit(): void {
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
     this.getData();
     this.projectService.Refreshrequired.subscribe(() => {
       this.getData();

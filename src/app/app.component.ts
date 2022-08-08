@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { particles } from './animations/particles.animation';
 import { Container, Engine } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
+import { AuthService } from './services/authentication/auth.service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -16,9 +17,12 @@ interface SideNavToggle {
 })
 export class AppComponent {
   title = 'Matias Galeano';
-
   isSideBarCollapsed: boolean = false;
   screenWidth: number = 0;
+
+  constructor(private authService: AuthService) {
+    this.authService.initApi().subscribe(res => console.log(res));
+  }
 
   id = 'tsparticles';
   particlesUrl = 'http://foo.bar/particles.json';

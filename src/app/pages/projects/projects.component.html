@@ -3,6 +3,8 @@
     class="row"
     [title]="'Proyectos'"
     (onAdd)="onAdd()"
+    data-aos="fade-up"
+    data-aos-duration="1550"
   ></app-project-title>
   <div class="row d-flex justify-content-center mt-3">
     <app-project-form
@@ -18,6 +20,8 @@
       class="d-flex justify-content-center align-item-center col-12 col-md-6 col-lg-4 col-xl-3 mb-3 px-1 px-lg-2 px-xl-3"
       (onEdit)="onEdit($event)"
       (onDelete)="onDelete($event)"
+      data-aos="fade-up"
+      data-aos-duration="1550"
     ></app-project-card>
   </div>
 </section>

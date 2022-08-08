@@ -2,12 +2,16 @@
   class="row"
   [title]="'Hard Skills'"
   (onAdd)="onAdd()"
+  data-aos="fade-up"
+  data-aos-duration="1550"
 ></app-about-titles>
 <div class="d-flex justify-content-center mt-3">
   <app-hskill-form
     *ngIf="addSkill"
     (dataChange)="onSubmit($event)"
     (cancelEdit)="addSkill = !addSkill"
+    data-aos="fade-up"
+    data-aos-duration="1550"
   ></app-hskill-form>
   <app-hskill-form
     *ngIf="editMode"
@@ -15,6 +19,8 @@
     (cancelEdit)="editMode = !editMode"
     [data]="editData"
     [id]="editData.id"
+    data-aos="fade-up"
+    data-aos-duration="1550"
   ></app-hskill-form>
 </div>
 <section class="container skill" data-aos="fade-up" data-aos-duration="1550">

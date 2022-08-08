@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as AOS from 'aos';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -8,5 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
+  }
 }
