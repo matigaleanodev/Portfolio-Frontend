@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfileFormComponent implements OnInit {
   @Output() dataChange = new EventEmitter<Profile>();
+  @Output() cancelEdit = new EventEmitter<void>();
   @Input() data!: Profile;
   file: any;
   preview: string = '';

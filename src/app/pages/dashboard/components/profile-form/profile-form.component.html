@@ -74,10 +74,13 @@
       ></textarea>
       <label class="text-light fw-bold">Descripción</label>
     </div>
-    <input
-      class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12"
+    <div class="d-flex gap-1">
+      <input
+      class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3"
       type="submit"
       value="Enviar"
-    />
+    />    
+    <input class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3" type="button" value="Cancelar" (click)="cancelEdit.emit()">
+    </div>
   </form>
 </div>

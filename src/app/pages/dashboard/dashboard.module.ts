@@ -10,6 +10,7 @@ import { UserRegisterComponent } from './components/user-register/user-register.
 import { ContactCardComponent } from './components/contact-card/contact-card.component';
 import { ProfilePanelComponent } from './components/profile-panel/profile-panel.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
+import { DashboardTitleComponent } from './components/dashboard-title/dashboard-title.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProfileFormComponent } from './components/profile-form/profile-form.com
     ContactCardComponent,
     ProfilePanelComponent,
     ProfileFormComponent,
+    DashboardTitleComponent,
   ],
   imports: [
     CommonModule,

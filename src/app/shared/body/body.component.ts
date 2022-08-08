@@ -19,9 +19,7 @@ import {
         '* => home',
         useAnimation(fromTopEasing, { params: { timing: 0.5 } })
       ),
-      transition('* => about', useAnimation(fromLeftEasing)),
-      transition('* => projects', useAnimation(fromRightEasing)),
-      transition('* => contact', useAnimation(fromBottomEasing)),
+      transition('* => *', useAnimation(fromRightEasing)),
     ]),
   ],
 })

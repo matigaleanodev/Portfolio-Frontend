@@ -1,9 +1,15 @@
-<article class="card bg-light bg-opacity-25 border border-primary">
-  <div class="d-flex gap-2 text-primary justify-content-end p-2" *ngIf="onLogin">
-    <i
-      class="fa-solid fa-pencil card__icon"
-      (click)="onEdit.emit(data)"
-    ></i>
+<app-project-form
+  [data]="data"
+  *ngIf="editMode"
+  (dataChange)="onSubmit($event)"
+  (cancelEdit)="editMode = !editMode"
+></app-project-form>
+<article class="card bg-light bg-opacity-25 border border-primary" *ngIf="!editMode">
+  <div
+    class="d-flex gap-2 text-primary justify-content-end py-2 pe-3"
+    *ngIf="onLogin"
+  >
+    <i class="fa-solid fa-pencil card__icon" (click)="onEditMode()"></i>
     <i
       class="fa-solid fa-trash card__icon"
       (click)="onDelete.emit(data.id)"
@@ -14,10 +20,14 @@
       {{ data.name }}
     </h5>
   </div>
-   
+  <img
+    src="{{ API_URL + '/api/image/' + data.image }}"
+    alt="{{ data.name }}"
+    class="card__img-top"
+  />
   <div class="card-body bg-dark bg-opacity-25">
-    <img src="{{ API_URL + '/api/image/' + data.image }}" alt="{{ data.name }}" class="card__img-top" />
     <p class="card__text text-light text-center">{{ data.description }}</p>
+    <p class="card__text text-light text-center mt-auto">Fecha de Creacion: <time> {{data.date | date:'dd/MM/yyyy':'GTM'}}</time></p>
   </div>
   <div
     class="card-footer d-inline-flex flex-column justify-content-center align-items-center g-3"

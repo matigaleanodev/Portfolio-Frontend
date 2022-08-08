@@ -54,7 +54,8 @@
             [(ngModel)]="data.title"
           />
           <label for="title" class="text-light fw-bold">
-            {{ formLabels[1] }}</label>
+            {{ formLabels[1] }}</label
+          >
         </div>
         <div class="d-flex gap-1 align-items-center">
           <div class="form-floating mb-1 mb-md-3 col-5">
@@ -66,8 +67,7 @@
               [value]="data.startDate"
               [(ngModel)]="data.startDate"
             />
-            <label for="startDate" class="text-light fw-bold"
-              >Inicio</label>
+            <label for="startDate" class="text-light fw-bold">Inicio</label>
           </div>
           <div class="form-floating mb-1 mb-md-3 col-5">
             <input
@@ -78,8 +78,7 @@
               [value]="data.endDate"
               [(ngModel)]="data.endDate"
             />
-            <label for="endDate" class="text-light fw-bold"
-              >Finalizacion</label>
+            <label for="endDate" class="text-light fw-bold">Finalizacion</label>
           </div>
           <div class="form-check form-switch mb-1 mb-md-3 col-2">
             <input
@@ -91,29 +90,35 @@
               [(ngModel)]="data.actual"
             />
             <label for="actual" class="form-check-label text-light fw-bold"
-              >Actual?</label>
+              >Actual?</label
+            >
           </div>
         </div>
       </div>
     </div>
     <div class="form-floating mb-1 mb-md-3">
       <textarea
-      class="form-control bg-secondary bg-opacity-25 text-light form__textarea"
-      formControlName="description"
-      id="description"
-      placeholder="Descricion"
-      [(ngModel)]="data.description"
+        class="form-control bg-secondary bg-opacity-25 text-light form__textarea"
+        formControlName="description"
+        id="description"
+        placeholder="Descricion"
+        [(ngModel)]="data.description"
       >
-    </textarea>
-    <label for="description" class="text-light fw-bold">Descripcion</label>
+      </textarea>
+      <label for="description" class="text-light fw-bold">Descripcion</label>
     </div>
     <div class="d-flex gap-1">
       <input
-      class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3"
-      type="submit"
-      value="Enviar"
-    />    
-    <input class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3" type="button" value="Cancelar" (click)="cancelEdit.emit()">
+        class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3"
+        type="submit"
+        value="Enviar"
+      />
+      <input
+        class="btn bg-primary bg-opacity-50 text-light mx-auto col-6 mb-3"
+        type="button"
+        value="Cancelar"
+        (click)="cancelEdit.emit()"
+      />
     </div>
   </form>
 </div>

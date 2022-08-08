@@ -4,11 +4,13 @@
     [title]="'Proyectos'"
     (onAdd)="onAdd()"
   ></app-project-title>
-  <app-project-form
-    class="row"
-    *ngIf="addProject"
-    (dataChange)="onSubmit($event)"
-  ></app-project-form>
+  <div class="row d-flex justify-content-center mt-3">
+    <app-project-form
+      class="col-12 col-md-6"
+      *ngIf="addProject"
+      (dataChange)="onSubmit($event)"
+    ></app-project-form>
+  </div>
   <div class="row d-flex justify-content-center align-item-center">
     <app-project-card
       *ngFor="let project of projects"

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import * as AOS from 'aos';
 import { Profile } from 'src/app/models/profile.interface';
 import { ProfileService } from 'src/app/services/data-services/profile.service';
 
@@ -14,6 +16,8 @@ export class DashboardComponent implements OnInit {
   constructor(private profService: ProfileService) {}
 
   ngOnInit(): void {
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
     this.getData();
     this.profService.Refreshrequired.subscribe(() => {
       this.getData();

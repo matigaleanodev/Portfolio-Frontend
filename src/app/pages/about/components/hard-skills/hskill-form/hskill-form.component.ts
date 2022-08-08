@@ -13,7 +13,13 @@ import { environment } from 'src/environments/environment';
 export class HskillFormComponent implements OnInit {
   @Output() dataChange = new EventEmitter<HardSkill>();
   @Output() cancelEdit = new EventEmitter<void>();
-  @Input() data!: HardSkill;
+  @Input() data: HardSkill = {
+    id: 0,
+    name: '',
+    url: '',
+    type: 'frontend',
+    image: '',
+  };
   @Input() id!: number;
   file: any;
   preview: string = '';
