@@ -29,7 +29,9 @@
         autocomplete="off"
       >
         <div class="modal-header">
-          <h5 class="modal-title fw-bold fs-4 offset-4" id="loginModalLabel">Inicio Sesión</h5>
+          <h5 class="modal-title fw-bold fs-4 offset-4" id="loginModalLabel">
+            Inicio Sesión
+          </h5>
           <button
             #closeModal
             type="button"
@@ -42,26 +44,55 @@
           <div class="form-floating mb-3">
             <input
               type="email"
-              class="form-control bg-light bg-opacity-25 text-light"
+              class="form-control bg-light bg-opacity-25 text-light mb-2"
               id="username"
               formControlName="username"
               placeholder="Username"
+              [ngClass]="{
+                'is-invalid': Username?.errors && Username?.touched,
+                'is-valid': !Username?.errors && Username?.touched
+              }"
             />
             <label for="username">Username</label>
+            <div *ngIf="Username?.errors && Username?.touched">
+              <div class="text-danger" *ngIf="Username?.hasError('required')">
+                Ingrese un nombre de usuario.
+              </div>
+              <div class="text-danger" *ngIf="Username?.hasError('email')">
+                El nombre de usuario debe ser un correo electrónico.
+              </div>
+            </div>
           </div>
           <div class="form-floating mb-3">
             <input
               type="password"
-              class="form-control bg-light bg-opacity-25 text-light"
+              class="form-control bg-light bg-opacity-25 text-light mb-2"
               id="password"
               formControlName="password"
+              minlength="8"
               placeholder="Password"
+              [ngClass]="{
+                'is-invalid': Password?.errors && Password?.touched,
+                'is-valid': !Password?.errors && Password?.touched
+              }"
             />
             <label for="password">Password</label>
+            <div *ngIf="Password?.errors && Password?.touched">
+              <div class="text-danger" *ngIf="Password?.hasError('minlength')">
+                La contraseña debe tener al menos 8 caracteres.
+              </div>
+              <div class="text-danger" *ngIf="Password?.hasError('required')">
+                Ingrese una contraseña.
+              </div>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
-          <input type="submit" class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12 login__button" value="Login" />          
+          <input
+            type="submit"
+            class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12 login__button"
+            value="Login"
+          />
         </div>
       </form>
     </div>

@@ -20,9 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [
-               "lodash"
-            ],
+            "allowedCommonJsDependencies": ["lodash"],
             "outputPath": "dist/portfolio-web",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -30,7 +28,11 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["node_modules/aos/dist/aos.css", "src/styles.scss"],
+            "styles": [
+              "node_modules/aos/dist/aos.css",
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
+            ],
             "stylePreprocessorOptions": {
               "includePaths": ["src/styles"]
             },
@@ -99,7 +101,11 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["node_modules/aos/dist/aos.css", "src/styles.scss"],
+            "styles": [
+              "node_modules/aos/dist/aos.css",
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
+            ],
             "stylePreprocessorOptions": {
               "includePaths": ["src/styles"]
             },
