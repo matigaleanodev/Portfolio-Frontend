@@ -30,7 +30,7 @@ export class LoginComponent {
   );
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required], [Validators.minLength(8)]],
+      password: ['', [Validators.required]],
     });
   }
 
@@ -49,9 +49,9 @@ export class LoginComponent {
       let cred = JSON.stringify(this.loginForm.value);
       this.authService.login(cred).subscribe(() => {
         console.log("session iniciada");
+        this.toastr.success('Sesion Iniciada', 'Login');
         this.closeModal.nativeElement.click();
         this.router.navigate(['/dashboard']);
-        this.toastr.success('Sesion Iniciada', 'Login');
       });
     } else {
       this.toastr.error('Por favor verifique los campos', 'Error');

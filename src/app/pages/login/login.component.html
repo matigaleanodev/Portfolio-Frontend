@@ -78,9 +78,6 @@
             />
             <label for="password">Password</label>
             <div *ngIf="Password?.errors && Password?.touched">
-              <div class="text-danger" *ngIf="Password?.hasError('minlength')">
-                La contraseña debe tener al menos 8 caracteres.
-              </div>
               <div class="text-danger" *ngIf="Password?.hasError('required')">
                 Ingrese una contraseña.
               </div>
