@@ -38,9 +38,16 @@ export class DataFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.data.startDate = this.dateTransform(this.data.startDate)
+    if (!this.data.actual)this.data.endDate = this.dateTransform(this.data.endDate)
     this.imgName = this.data.image!;
-    this.data.startDate = this.datepipe.transform(this.data.startDate, 'yyyy-MM-dd')!
-    if (!this.data.actual)this.data.endDate = this.datepipe.transform(this.data.endDate, 'yyyy-MM-dd')!
+  }
+  
+
+  dateTransform(date: any): Date{
+    let aux = date.split('T')
+    date =  this.datepipe.transform(aux[0], 'yyyy-MM-dd')!
+    return date
   }
 
   onFileChange(event: Event): any {
