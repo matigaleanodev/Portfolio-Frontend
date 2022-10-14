@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Work } from 'src/app/models/works.interface';
+import { DataForm } from 'src/app/models/dataForm.model';
 import * as AOS from 'aos';
 import { ExperienceService } from 'src/app/services/data-services/experience.service';
 
@@ -10,7 +10,7 @@ import { ExperienceService } from 'src/app/services/data-services/experience.ser
   styleUrls: ['./experience.component.scss'],
 })
 export class ExperienceComponent implements OnInit {
-  workData!: Work[];
+  workData!: DataForm[];
   addWork: boolean = false;
 
   constructor(private expService: ExperienceService) {}
@@ -25,7 +25,7 @@ export class ExperienceComponent implements OnInit {
   }
 
   getData(): void {
-    this.expService.getWorks().subscribe((works: Work[]) => {
+    this.expService.getWorks().subscribe((works: DataForm[]) => {
       this.workData = works.slice().reverse();
     });
   }
@@ -34,14 +34,14 @@ export class ExperienceComponent implements OnInit {
     return this.addWork = !this.addWork;
   }
 
-  onSubmit(data: Work): void {
+  onSubmit(data: DataForm): void {
     this.expService.postWork(data).subscribe((res) => {
       console.log(res);
     });
     this.addWork = false;
   }
 
-  onEdit(data: Work) {
+  onEdit(data: DataForm) {
     this.expService.putWork(data).subscribe((res) => {
       console.log(res);
     });

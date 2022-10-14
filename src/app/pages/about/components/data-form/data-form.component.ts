@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { Education } from 'src/app/models/education.interface';
-import { Work } from 'src/app/models/works.interface';
+import { DataForm } from 'src/app/models/dataForm.model';
 import { ImageService } from 'src/app/services/data-services/image.service';
 import { environment } from 'src/environments/environment';
 
@@ -12,38 +12,35 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./data-form.component.scss'],
 })
 export class DataFormComponent implements OnInit {
-  @Output() dataChange = new EventEmitter<Education | Work>();
+
+
+  @Output() dataChange = new EventEmitter<DataForm>();
   @Output() cancelEdit = new EventEmitter<void>();
   @Input() formLabels: string[] = ['institution', 'title'];
-  @Input() data: Work | Education = {
-    id : 0,
-    institution: '',
-    title: '',
-    startDate: new Date(),
-    endDate: new Date(),
-    actual: false,
-    description: '',
-    image: '',
-  }
+  @Input() data = new DataForm()
+
+  datepipe: DatePipe = new DatePipe('en-US');
   file: any;
   preview: string = '';
-  form!: FormGroup;
+  form: FormGroup;
   imgName: string = '';
   API_URL = environment.API_URL;
 
   constructor(private fb: FormBuilder, private imgService: ImageService) {
     this.form = this.fb.group({
-      institution: ['', Validators.required],
-      title: ['', Validators.required],
-      startDate: [new Date(), Validators.required],
-      endDate: [new Date(), Validators.required],
-      actual: [false, Validators.required],
-      description: ['', Validators.required],
+      institution: [this.data.institution, Validators.required],
+      title: [this.data.title, Validators.required],
+      startDate: [this.data.startDate, Validators.required],
+      endDate: [this.data.endDate, Validators.required],
+      actual: [this.data.actual, Validators.required],
+      description: [this.data.institution, Validators.required],
     });
   }
 
   ngOnInit(): void {
-    this.imgName = this.data.image;
+    this.imgName = this.data.image!;
+    this.data.startDate = this.datepipe.transform(this.data.startDate, 'yyyy-MM-dd')!
+    if (!this.data.actual)this.data.endDate = this.datepipe.transform(this.data.endDate, 'yyyy-MM-dd')!
   }
 
   onFileChange(event: Event): any {

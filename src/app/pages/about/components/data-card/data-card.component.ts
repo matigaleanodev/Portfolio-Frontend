@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Education } from 'src/app/models/education.interface';
-import { Work } from 'src/app/models/works.interface';
+import { DataForm } from 'src/app/models/dataForm.model';
 import { environment } from 'src/environments/environment';
 
 import * as AOS from 'aos';
@@ -13,9 +12,9 @@ import { AuthService } from 'src/app/services/authentication/auth.service';
   styleUrls: ['./data-card.component.scss'],
 })
 export class DataCardComponent implements OnInit {
-  @Input() data!: Work | Education;
+  @Input() data = new DataForm();
   @Output() onDelete = new EventEmitter<number>();
-  @Output() onEdit = new EventEmitter<Work | Education>();
+  @Output() onEdit = new EventEmitter<DataForm>();
   API_URL = environment.API_URL;
   onLogin: boolean = false;
   editMode: boolean = false;
@@ -35,7 +34,7 @@ export class DataCardComponent implements OnInit {
     this.editMode = !this.editMode;
   }
 
-  onSubmit(data: Work | Education): void {
+  onSubmit(data: DataForm): void {
     if (data !== undefined) {
       data.id = this.data.id;
       data.image === undefined || 'undefined'

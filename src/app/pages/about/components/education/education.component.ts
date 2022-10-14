@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Education } from 'src/app/models/education.interface';
 import * as AOS from 'aos';
 import { EducationService } from 'src/app/services/data-services/education.service';
+import { DataForm } from 'src/app/models/dataForm.model';
 
 @Component({
   selector: 'app-education',
@@ -10,7 +10,7 @@ import { EducationService } from 'src/app/services/data-services/education.servi
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
-  educationData!: Education[];
+  educationData: DataForm[] = [];
   addEducation: boolean = false;
 
   constructor(private eduService: EducationService) {}
@@ -25,7 +25,7 @@ export class EducationComponent implements OnInit {
   }
 
   getData(): void {
-    this.eduService.getEducation().subscribe((data: Education[]) => {
+    this.eduService.getEducation().subscribe((data: DataForm[]) => {
       this.educationData = data.slice().reverse();
     });
   }
@@ -35,14 +35,14 @@ export class EducationComponent implements OnInit {
     return this.addEducation;
   }
 
-  onSubmit(data: Education): void {
+  onSubmit(data: DataForm): void {
     this.eduService.postEducation(data).subscribe((res) => {
       console.log(res);
     });
     this.addEducation = false;
   }
 
-  onEdit(data: Education) {
+  onEdit(data: DataForm) {
     this.eduService.putEducation(data).subscribe((res) => {
       console.log(res);
     });
