@@ -26,7 +26,7 @@ export class ExperienceComponent implements OnInit {
 
   getData(): void {
     this.expService.getWorks().subscribe((works: Work[]) => {
-      this.workData = works;
+      this.workData = works.slice().reverse();
     });
   }
 
