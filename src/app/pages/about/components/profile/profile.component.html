@@ -10,7 +10,7 @@
         >
           <input
             #imgInput
-            [disabled]="!onLogin"
+            [disabled]="!onLogin || !editMode"
             (change)="onFileChange($event)"
             class="d-none"
             accept="image/png, image/jpeg"
