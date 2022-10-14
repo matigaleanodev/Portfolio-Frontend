@@ -18,9 +18,11 @@ interface SideNavToggle {
 export class AppComponent {
   title = 'Matias Galeano';
   isSideBarCollapsed: boolean = false;
+  loading: boolean = false;
   screenWidth: number = 0;
 
   constructor(private authService: AuthService) {
+    this.authService.onLoading.subscribe(data => this.loading = data)
     this.authService.initApi().subscribe(res => console.log(res));
   }
 

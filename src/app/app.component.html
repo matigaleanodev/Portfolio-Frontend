@@ -1,11 +1,18 @@
+<div
+  *ngIf="loading"
+  class="spinner"
+  role="status"
+  style="z-index: 10; margin: auto;"
+><span class="spinner-grow text-success "></span>
+</div>
 <div class="app">
   <ng-particles
-    [id]="id"
-    [options]="particlesOptions"
-    [particlesInit]="particlesInit"
+  [id]="id"
+  [options]="particlesOptions"
+  [particlesInit]="particlesInit"
   ></ng-particles>
   <app-sidebar-nav
-    (onToggleSideBar)="onToggleSideBar($event)"
+  (onToggleSideBar)="onToggleSideBar($event)"
   ></app-sidebar-nav>
   <app-header></app-header>
   <app-body

@@ -11,6 +11,7 @@ export class AuthService {
   baseUrl = `${environment.API_URL}/auth`;
   tokenSubject: BehaviorSubject<any>;
   loged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  onLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {
     this.tokenSubject = new BehaviorSubject<any>(sessionStorage.getItem('token') || '{}');

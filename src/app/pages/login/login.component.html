@@ -21,7 +21,7 @@
   data-bs-backdrop="static"
   data-bs-keyboard="false"
 >
-  <div class="modal-dialog modal-dialog-centered">
+<div class="modal-dialog modal-dialog-centered">  
     <div class="modal-content bg-dark bg-opacity-75">
       <form
         [formGroup]="loginForm"
@@ -40,18 +40,18 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body bg-dark text-dark">
+        <div class="modal-body bg-dark text-dark" style="z-index: 300;">
           <div class="form-floating mb-3">
             <input
-              type="email"
-              class="form-control bg-light bg-opacity-25 text-light mb-2"
-              id="username"
-              formControlName="username"
-              placeholder="Username"
-              [ngClass]="{
-                'is-invalid': Username?.errors && Username?.touched,
-                'is-valid': !Username?.errors && Username?.touched
-              }"
+            type="email"
+            class="form-control bg-light bg-opacity-25 text-light mb-2"
+            id="username"
+            formControlName="username"
+            placeholder="Username"
+            [ngClass]="{
+              'is-invalid': Username?.errors && Username?.touched,
+              'is-valid': !Username?.errors && Username?.touched
+            }"
             />
             <label for="username">Username</label>
             <div *ngIf="Username?.errors && Username?.touched">
@@ -63,6 +63,7 @@
               </div>
             </div>
           </div>
+          
           <div class="form-floating mb-3">
             <input
               type="password"
@@ -86,6 +87,7 @@
         </div>
         <div class="modal-footer">
           <input
+            [disabled]="loading"
             type="submit"
             class="btn bg-primary bg-opacity-50 text-light mx-auto col-8 col-md-12 login__button"
             value="Login"

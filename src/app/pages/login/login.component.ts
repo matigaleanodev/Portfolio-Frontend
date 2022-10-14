@@ -15,6 +15,7 @@ export class LoginComponent {
   @Input() collapsed: boolean = false;
   @ViewChild('loginModal') myModal: any;
   @ViewChild('closeModal') closeModal: any;
+  loading: boolean = false
   loginForm!: FormGroup;
   onLogin: boolean = false;
 
@@ -45,15 +46,18 @@ export class LoginComponent {
   login(event: Event) {
     event.preventDefault();
     if (this.loginForm.valid) {
+      this.authService.onLoading.next(true)
       this.toastr.success('Iniciando Sesion', 'Login');
       let cred = JSON.stringify(this.loginForm.value);
       this.authService.login(cred).subscribe(() => {
+        this.authService.onLoading.next(false)
         console.log("session iniciada");
         this.toastr.success('Sesion Iniciada', 'Login');
         this.closeModal.nativeElement.click();
         this.router.navigate(['/dashboard']);
       });
     } else {
+      this.authService.onLoading.next(false)
       this.toastr.error('Por favor verifique los campos', 'Error');
       console.log('Form is not valid');
     }
