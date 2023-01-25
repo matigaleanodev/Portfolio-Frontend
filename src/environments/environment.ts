@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,  
-  API_URL: "https://portfolio-matigaleano.herokuapp.com"
+  production: false,
+  //API_URL: "http://localhost:8080"
+  API_URL: "http://portfolio-matias-galeano.us-east-1.elasticbeanstalk.com"
 };
 
 /*
