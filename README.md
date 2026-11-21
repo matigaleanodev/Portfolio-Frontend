@@ -1,17 +1,31 @@
-# Portfolio Web Personal
+# Portfolio Frontend
 
-<img src="https://raw.githubusercontent.com/MatiGaleano/Portfolio-Frontend/main/src/assets/images/projects/portfolio_01.png" width="600px" />
+[Español](README.es.md)
 
-<p>Proyecto desarrollado dentro del curso de Web Developer de Argentina Programa</p>
+Deprecated portfolio frontend, created as part of Argentina Programa. Preserved as a learning reference; the current portfolio is developed in the repositories below.
 
-### Project developed with:
+## Stack
 
-<img src="https://img.icons8.com/color/344/angularjs.png" width="25px"/>
+Angular · TypeScript · SCSS · Bootstrap.
 
-<img src="https://img.icons8.com/color/452/typescript.png" width="25px"/>
+## Scope and configuration
 
-<img src="https://img.icons8.com/color/452/sass.png" width="25px"/>
+The application includes editable profile, education, experience, skills and project views. It depends on the API URL configured by its services; the paired original backend is Portfolio-Backend.
 
-<img src="https://brandlogos.net/wp-content/uploads/2021/09/bootstrap-logo.png" width="30px"/>
+## Local development
 
-<img src="https://iconape.com/wp-content/files/pm/370894/svg/370894.svg" width="20px"/>
+Use a Node.js toolchain compatible with package.json and the dependency lockfile, when present.
+
+```sh
+npm install
+npm start
+npm run build
+npm test
+```
+
+## Related repositories
+
+- [Portfolio-Backend](https://github.com/matigaleanodev/Portfolio-Backend)
+- [portfolio](https://github.com/matigaleanodev/portfolio)
+- [portfolio-api](https://github.com/matigaleanodev/portfolio-api)
+- [portfolio-cloud](https://github.com/matigaleanodev/portfolio-cloud)
